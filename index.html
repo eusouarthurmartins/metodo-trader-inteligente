@@ -9,211 +9,299 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0c0f1a, #1a1f30);
-      color: #f0f0f0;
+      color: #c0c9d9; /* prata */
+      background: linear-gradient(180deg, #001f3f 0%, #6c7a89 100%); /* azul escuro para prata */
+      overflow-x: hidden;
     }
-
     .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1, h2 {
+      max-width: 900px;
+      margin: 60px auto;
+      background-color: #b0bac7; /* prata escuro */
+      padding: 35px 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 20px #3a4b6d88;
       text-align: center;
-      margin-bottom: 30px;
+      color: #1f2a44;
+    }
+    h1 {
+      color: #4da6ff; /* azul claro */
+      font-size: 2.6em;
+      font-weight: 900;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 5px #82b1ffcc;
+    }
+    p, ul li {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin: 14px 0;
+      color: #2b3a5a; /* azul escuro */
+    }
+    .highlight {
+      color: #4da6ff;
+      font-weight: bold;
+    }
+    ul {
+      text-align: left;
+      padding-left: 30px;
+      margin-bottom: 35px;
+      list-style: none;
+    }
+    ul li::before {
+      content: "✔️";
+      margin-right: 12px;
       color: #4da6ff;
     }
-
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto 30px auto;
-    }
-
-    .button {
-      display: inline-block;
-      background: #4da6ff;
-      color: white;
-      font-weight: bold;
-      padding: 15px 40px;
-      border-radius: 10px;
-      font-size: 1.2em;
-      text-decoration: none;
-      box-shadow: 0 0 15px #4da6ffbb;
-      margin: 20px;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .button:hover {
-      background: #82b1ff;
-      box-shadow: 0 0 25px #82b1ffdd;
-    }
-
-    /* Módulos estilo Netflix */
-    .modulos-section {
-      padding: 40px 0;
-    }
-
-    .modulos-section h2 {
-      margin-bottom: 20px;
-    }
-
-    .modulos-carousel-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .modulos-carousel {
-      display: flex;
-      gap: 20px;
-      animation: scroll 40s linear infinite;
-    }
-
-    .modulo {
-      flex: 0 0 auto;
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 12px #00000088;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .modulo img {
-      width: 100%;
-      display: block;
-    }
-
-    .modulo:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .modulos-carousel:hover {
-      animation-play-state: paused;
-    }
-
-    .depoimentos, .garantia, .duvidas {
-      background: #121825;
+    .depoimentos {
+      background-color: #174074; /* azul mais escuro */
+      padding: 22px 20px;
       border-radius: 12px;
-      padding: 30px 20px;
-      margin: 50px auto;
-      max-width: 900px;
-      box-shadow: 0 0 12px #4da6ff44;
+      margin: 35px 0;
+      text-align: left;
+      box-shadow: 0 0 12px #3468b1cc;
+      color: #cbd6e8; /* prata clara */
     }
-
     .depoimento {
       font-style: italic;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
+      font-size: 1.05em;
       color: #d0dbf5;
     }
-
     .depoimento strong {
       display: block;
       margin-top: 5px;
       color: #8ab9ff;
+      font-weight: 700;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
+    #countdown {
+      font-size: 1.7em;
+      color: #4da6ff;
+      font-weight: 900;
+      margin: 25px 0 40px 0;
+      text-shadow: 0 0 6px #82b1ffcc;
+      animation: blink 1.5s infinite;
     }
-
-    ul li::before {
-      content: "✔️ ";
-      margin-right: 8px;
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
-
-    footer {
+    .whatsapp-button {
+      display: inline-block;
+      background: #4da6ff;
+      color: white;
+      font-weight: bold;
+      padding: 16px 40px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      text-decoration: none;
+      box-shadow: 0 0 15px #4da6ffbb;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 40px;
+    }
+    .whatsapp-button:hover {
+      background: #82b1ff;
+      box-shadow: 0 0 25px #82b1ffdd;
+    }
+    p.offer-price {
+      color: #4da6ff;
+      font-size: 2.2em;
+      font-weight: 900;
+      margin-top: 30px;
+      text-shadow: 0 0 6px #82b1ffcc;
+    }
+    /* Carrossel dos módulos */
+    .modulos-section {
+      margin-bottom: 50px;
+      text-align: left;
+    }
+    .modulos-section h2 {
+      color: #4da6ff;
+      font-weight: 900;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px #82b1ffcc;
       text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9em;
-      color: #888;
     }
-
-    @media (max-width: 600px) {
-      .modulo {
-        width: 220px;
+    .modulos-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding-bottom: 10px;
+      scrollbar-width: none; /* Firefox */
+    }
+    .modulos-carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+    .modulo-card {
+      flex: 0 0 auto;
+      width: 170px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(77, 166, 255, 0.5);
+      border: 3px solid #4da6ff;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      background: #dbe9ff;
+    }
+    .modulo-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(77, 166, 255, 0.8);
+    }
+    .modulo-card img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      display: block;
+    }
+    /* Animação para o carrossel rolando automático */
+    @keyframes scrollModules {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .modulos-carousel.auto-scroll {
+      animation: scrollModules 20s linear infinite;
+    }
+    /* Garantia */
+    .garantia {
+      background-color: #174074;
+      border-radius: 12px;
+      padding: 25px 20px;
+      margin-bottom: 50px;
+      box-shadow: 0 0 15px #3468b1cc;
+      color: #cbd6e8;
+      text-align: left;
+    }
+    .garantia h3 {
+      color: #4da6ff;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+    /* Dúvidas */
+    .duvidas {
+      background-color: #174074;
+      border-radius: 12px;
+      padding: 25px 20px;
+      margin-bottom: 50px;
+      box-shadow: 0 0 15px #3468b1cc;
+      color: #cbd6e8;
+      text-align: left;
+    }
+    .duvidas h3 {
+      color: #4da6ff;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+    .duvidas details {
+      margin-bottom: 15px;
+    }
+    .duvidas summary {
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+      color: #82b1ff;
+      font-size: 1.1em;
+    }
+    .duvidas p {
+      margin-top: 5px;
+      font-size: 1em;
+      color: #cbd6e8;
+    }
+    /* Benefícios */
+    .beneficios {
+      margin-bottom: 50px;
+      text-align: left;
+    }
+    .beneficios h2 {
+      color: #4da6ff;
+      font-weight: 900;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px #82b1ffcc;
+      text-align: center;
+    }
+    .beneficios ul {
+      list-style: none;
+      padding-left: 0;
+      color: #2b3a5a;
+      font-size: 1.1em;
+    }
+    .beneficios ul li::before {
+      content: "✔️";
+      margin-right: 12px;
+      color: #4da6ff;
+    }
+    /* Depoimentos */
+    .depoimentos {
+      margin-bottom: 50px;
+    }
+    /* Botões compra */
+    .buy-buttons {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .buy-buttons a {
+      background: #4da6ff;
+      color: white;
+      font-weight: bold;
+      padding: 15px 38px;
+      border-radius: 10px;
+      font-size: 1.25em;
+      text-decoration: none;
+      margin: 0 10px 15px 10px;
+      display: inline-block;
+      box-shadow: 0 0 15px #4da6ffbb;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .buy-buttons a:hover {
+      background: #82b1ff;
+      box-shadow: 0 0 25px #82b1ffdd;
+    }
+    @media (max-width: 768px) {
+      .modulos-carousel.auto-scroll {
+        animation-play-state: paused;
+      }
+      .modulos-carousel {
+        overflow-x: scroll;
+      }
+      .modulo-card {
+        width: 140px;
+      }
+    }
+    @media (max-width: 480px) {
+      .container {
+        margin: 30px 10px;
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      .modulo-card {
+        width: 120px;
+      }
+      .whatsapp-button, .buy-buttons a {
+        font-size: 1em;
+        padding: 14px 28px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Método Trader Inteligente</h1>
-    <p>Transforme sua jornada como trader com o curso mais completo sobre opções binárias. Do zero ao avançado, aprenda estratégias reais para lucrar com segurança.</p>
 
-    <a href="https://seulink.com" class="button">🔒 Quero garantir minha vaga</a>
+    <h1>🎉 Parabéns por adquirir o Método Trader Inteligente!</h1>
 
-    <!-- Seção Módulos -->
-    <div class="modulos-section">
-      <h2>O que você vai aprender com esse Método:</h2>
-      <div class="modulos-carousel-wrapper">
-        <div class="modulos-carousel">
-          <!-- Repetido para efeito contínuo -->
-          <div class="modulo"><img src="assets/modulo1.jpg" alt="Módulo 1"></div>
-          <div class="modulo"><img src="assets/modulo2.jpg" alt="Módulo 2"></div>
-          <div class="modulo"><img src="assets/modulo3.jpg" alt="Módulo 3"></div>
-          <div class="modulo"><img src="assets/modulo4.jpg" alt="Módulo 4"></div>
-          <div class="modulo"><img src="assets/modulo5.jpg" alt="Módulo 5"></div>
-          <div class="modulo"><img src="assets/modulo6.jpg" alt="Módulo 6"></div>
-          <div class="modulo"><img src="assets/modulo7.jpg" alt="Módulo 7"></div>
-          <div class="modulo"><img src="assets/modulo8.jpg" alt="Módulo 8"></div>
-          <div class="modulo"><img src="assets/modulo9.jpg" alt="Módulo 9"></div>
-          <div class="modulo"><img src="assets/modulo10.jpg" alt="Módulo 10"></div>
+    <p><span class="highlight">QUE BOM QUE VOCÊ CHEGOU ATÉ AQUI!</span><br />
+    O <strong>MTI</strong> é um produto completo, que vai te ensinar tudo sobre o mercado de opções binárias.</p>
 
-          <!-- Duplicado para rolagem infinita -->
-          <div class="modulo"><img src="assets/modulo1.jpg" alt="Módulo 1"></div>
-          <div class="modulo"><img src="assets/modulo2.jpg" alt="Módulo 2"></div>
-          <div class="modulo"><img src="assets/modulo3.jpg" alt="Módulo 3"></div>
-          <div class="modulo"><img src="assets/modulo4.jpg" alt="Módulo 4"></div>
-          <div class="modulo"><img src="assets/modulo5.jpg" alt="Módulo 5"></div>
-          <div class="modulo"><img src="assets/modulo6.jpg" alt="Módulo 6"></div>
-          <div class="modulo"><img src="assets/modulo7.jpg" alt="Módulo 7"></div>
-          <div class="modulo"><img src="assets/modulo8.jpg" alt="Módulo 8"></div>
-          <div class="modulo"><img src="assets/modulo9.jpg" alt="Módulo 9"></div>
-          <div class="modulo"><img src="assets/modulo10.jpg" alt="Módulo 10"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Seção de Depoimentos -->
-    <div class="depoimentos">
-      <h2>Depoimentos de Alunos</h2>
-      <div class="depoimento">"Esse método abriu minha mente! Hoje opero com confiança." <strong>– Thiago F.</strong></div>
-      <div class="depoimento">"Em 2 semanas consegui meus primeiros lucros com consistência." <strong>– Juliana S.</strong></div>
-      <div class="depoimento">"Muito além do que esperava. Curso direto, prático e eficiente!" <strong>– Roberto M.</strong></div>
-    </div>
-
-    <!-- Garantia -->
-    <div class="garantia">
-      <h2>Garantia de 7 Dias</h2>
-      <p>Você tem 7 dias para testar o curso. Se por qualquer motivo achar que não é pra você, é só pedir reembolso. Simples assim. Sem letras miúdas.</p>
-    </div>
-
-    <!-- Seção de Dúvidas -->
-    <div class="duvidas">
-      <h2>Ainda está com dúvidas?</h2>
+    <div class="beneficios">
+      <h2>Benefícios do Método Trader Inteligente</h2>
       <ul>
-        <li>O acesso é vitalício?</li>
-        <li>Consigo fazer mesmo sem experiência?</li>
-        <li>Tem suporte se eu precisar?</li>
-        <li>Posso acessar pelo celular?</li>
+        <li>Aprenda estratégias vencedoras de trading.</li>
+        <li>Entenda os sinais e indicadores do mercado.</li>
+        <li>Controle emocional para operar com segurança.</li>
+        <li>Suporte exclusivo para alunos.</li>
+        <li>Acesso vitalício ao conteúdo.</li>
       </ul>
-      <p>Sim para todas essas perguntas! 😉</p>
     </div>
 
-    <a href="https://seulink.com" class="button">🚀 Começar agora</a>
-  </div>
-
-  <footer>
-    © 2025 - Método Trader Inteligente. Todos os direitos reservados.
-  </footer>
-</body>
-</html>
+    <
