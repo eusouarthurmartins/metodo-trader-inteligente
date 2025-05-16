@@ -1,152 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente</title>
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Método Trader Inteligente</title>
+<style>
+  /* Reset básico */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: white;
+    background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
 
-    body, html {
-      height: 100%;
-      font-family: 'Arial Black', Arial, sans-serif;
-      color: white;
-      background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
+  /* Fundo com camada escura para melhor leitura */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+  }
 
-    .overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: 0;
-    }
+  /* Container central */
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+    text-align: left;
+  }
 
+  /* Foto maior, sem borda e alinhada ao topo do texto */
+  .foto {
+    flex-shrink: 0;
+    width: 450px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 0;
+    padding: 0;
+    display: block;
+  }
+
+  .texto {
+    max-width: 400px;
+  }
+
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #3e0669; /* roxo estilo Netflix */
+    text-shadow: 1px 1px 6px #1a012b;
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #ddd;
+    max-width: 700px;
+    text-shadow: 0 0 10px #000000bb;
+    margin-bottom: 30px;
+  }
+
+  .highlight {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #fff;
+    margin-top: 20px;
+    text-shadow: 0 0 20px #ffcc00cc;
+  }
+
+  /* Botão de ação */
+  .btn-cta {
+    background: #632f9a;
+    color: white;
+    font-weight: 900;
+    font-size: 1.3rem;
+    padding: 15px 50px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px #632f9acc;
+    transition: background 0.3s ease, transform 0.3s ease;
+    user-select: none;
+  }
+
+  .btn-cta:hover {
+    background: #7b4fc1;
+    transform: scale(1.05);
+  }
+
+  /* Responsividade */
+  @media (max-width: 1000px) {
     .container {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 60px;
-      padding: 0 20px;
-      text-align: left;
-    }
-
-    .foto {
-      flex-shrink: 0;
-      width: 450px;
+      flex-direction: column;
       height: auto;
-      object-fit: contain;
-      display: block;
+      text-align: center;
     }
-
-    .texto {
-      max-width: 500px;
-    }
-
-    h1 {
-      font-size: 3.8rem;
-      font-weight: 900;
-      color: #3e0669;
-      text-shadow: 2px 2px 5px #000;
-      margin-bottom: 25px;
-    }
-
-    p {
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.5;
-      color: #ddd;
-      text-shadow: 0 0 10px #000000bb;
+    .foto {
+      width: 300px;
       margin-bottom: 30px;
     }
+    .texto {
+      max-width: 100%;
+    }
+  }
 
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
     .highlight {
-      font-size: 1.7rem;
-      font-weight: 900;
-      color: #fff;
-      margin-top: 20px;
-      text-shadow: 0 0 20px #ffcc00cc;
-    }
-
-    .btn-cta {
-      background: #632f9a;
-      color: white;
-      font-weight: 900;
       font-size: 1.3rem;
-      padding: 15px 50px;
-      border-radius: 40px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 2px 2px 10px #000;
-      transition: transform 0.3s ease, background 0.3s ease;
-      user-select: none;
-      text-decoration: none;
-      display: inline-block;
     }
-
-    .btn-cta:hover {
-      transform: scale(1.08);
-      background: #7b4fc1;
+    .btn-cta {
+      padding: 12px 30px;
+      font-size: 1rem;
     }
+  }
 
-    @media (max-width: 1000px) {
-      .container {
-        flex-direction: column;
-        height: auto;
-        text-align: center;
-        padding: 60px 20px;
-      }
+  /* ANIMAÇÃO DE ENTRADA */
+  #intro-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #3e0669;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+    animation: fadeOut 2.5s ease forwards;
+    animation-delay: 2s;
+  }
 
-      .foto {
-        width: 300px;
-        margin-bottom: 30px;
-      }
-
-      .texto {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      p {
-        font-size: 1.1rem;
-      }
-
-      .highlight {
-        font-size: 1.3rem;
-      }
-
-      .btn-cta {
-        padding: 12px 30px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+</style>
 </head>
 <body>
 
-  <div class="overlay"></div>
+<div id="intro-screen">
+  Método Trader Inteligente
+</div>
 
-  <div class="container">
-    <img src="assets/sua-foto.png" alt="Foto do Arthur" class="foto" />
-    <div class="texto">
-      <h1>Método Trader Inteligente</h1>
-      <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
-      <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
-      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="btn-cta" target="_blank">Quero aprender agora</a>
-    </div>
+<div class="overlay"></div>
+
+<div class="container">
+  <img src="assets/sua-foto.png" alt="Foto do Arthur" class="foto" />
+  <div class="texto">
+    <h1>Método Trader Inteligente</h1>
+    <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
+    <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
+    <button class="btn-cta" onclick="location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">Quero aprender agora</button>
   </div>
+</div>
+
+<script>
+  // Remove a tela de intro após a animação
+  document.addEventListener('DOMContentLoaded', () => {
+    const intro = document.getElementById('intro-screen');
+    intro.addEventListener('animationend', () => {
+      intro.style.display = 'none';
+    });
+  });
+</script>
 
 </body>
 </html>
