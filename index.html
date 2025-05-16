@@ -11,65 +11,54 @@
 </footer>
 
 <style>
-  /* Roxo escuro e mais vibrante */
+  /* Roxo salvo e aprovado */
   :root {
-    --roxo-escuro: #5b3b8a;  /* roxo vibrante escuro */
-    --roxo-escuro-2: #462d6e; /* tom complementar um pouco mais escuro */
-    --roxo-sombra: rgba(91, 59, 138, 0.85); /* sombra roxa intensa */
-    --roxo-texto: #b9a9e0; /* tom roxo claro para texto */
+    --roxo-intenso: #6a00ff;
+    --roxo-sombra-intensa: rgba(106, 0, 255, 0.85);
   }
 
   .compra-final {
-    background: #120d2e; /* fundo roxo muito escuro */
+    background: #000; /* fundo preto puro */
     text-align: center;
     padding: 60px 20px;
-    color: var(--roxo-texto);
-    border-radius: 12px;
+    color: #fff;
+    border-radius: 15px;
     box-shadow:
-      0 0 30px 12px var(--roxo-sombra),
-      inset 0 0 25px 10px var(--roxo-sombra);
-    transition: box-shadow 0.3s ease;
-  }
-
-  .compra-final:hover {
-    box-shadow:
-      0 0 45px 16px var(--roxo-sombra),
-      inset 0 0 35px 14px var(--roxo-sombra);
+      0 0 30px 8px var(--roxo-sombra-intensa);
   }
 
   .compra-final h2 {
     font-size: 2.6rem;
-    color: var(--roxo-escuro);
+    color: var(--roxo-intenso);
     margin-bottom: 20px;
     font-weight: 700;
-    text-shadow: 0 0 8px var(--roxo-sombra);
-    transition: text-shadow 0.3s ease;
+    text-shadow: 0 0 10px var(--roxo-sombra-intensa);
   }
 
   .compra-final p {
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 30px;
-    color: var(--roxo-texto);
+    color: #ddd;
   }
 
   .botao-compra-final {
-    background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo-escuro-2));
-    color: #e2d9ff;
+    background: linear-gradient(135deg, var(--roxo-intenso), #3f00b2);
+    color: #fff;
     font-size: 1.4rem;
     font-weight: 700;
     padding: 16px 40px;
     border-radius: 12px;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 6px 15px rgba(91, 59, 138, 0.7);
+    box-shadow: 0 6px 15px var(--roxo-sombra-intensa);
     transition: transform 0.25s ease, box-shadow 0.3s ease;
   }
 
   .botao-compra-final:hover {
     transform: scale(1.08);
     box-shadow:
-      0 0 25px 12px var(--roxo-sombra);
+      0 0 25px 15px var(--roxo-sombra-intensa);
     color: #fff;
   }
 
@@ -78,12 +67,11 @@
   }
 
   .rodape {
-    background-color: #1b143b;
-    color: var(--roxo-texto);
+    background-color: #111;
+    color: #aaa;
     text-align: center;
     padding: 20px 10px;
     font-size: 0.95rem;
     user-select: none;
   }
 </style>
- 
