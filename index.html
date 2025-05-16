@@ -1,119 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Método Trader Inteligente</title>
-<style>
-  /* Reset básico */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body, html {
-    height: 100%;
-    font-family: 'Arial Black', Arial, sans-serif;
-    color: white;
-    background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Método Trader Inteligente</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Black', Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 30px 20px;
+      text-align: center;
+    }
 
-  /* Fundo com camada escura para melhor leitura */
-  .overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    z-index: 0;
-  }
-
-  /* Container central */
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 3.8rem;
-    font-weight: 900;
-    color: #7b4fc1; /* roxo metálico claro que você gosta */
-    text-shadow: 0 0 15px #7b4fc1cc;
-    margin-bottom: 25px;
-  }
-
-  p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #ddd;
-    max-width: 700px;
-    text-shadow: 0 0 10px #000000bb;
-    margin-bottom: 30px;
-  }
-
-  .highlight {
-    font-size: 1.7rem;
-    font-weight: 900;
-    color: #fff;
-    margin-top: 20px;
-    text-shadow: 0 0 20px #ffcc00cc;
-  }
-
-  /* Botão de ação */
-  .btn-cta {
-    background: #7b4fc1; /* roxo metálico claro */
-    color: white;
-    font-weight: 900;
-    font-size: 1.3rem;
-    padding: 15px 50px;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 20px #7b4fc1cc;
-    transition: background 0.3s ease, transform 0.3s ease;
-    user-select: none;
-  }
-
-  .btn-cta:hover {
-    background: #632f9a;
-    transform: scale(1.05);
-  }
-
-  /* Responsividade */
-  @media (max-width: 600px) {
     h1 {
-      font-size: 2.5rem;
+      font-size: 3.8rem;
+      font-weight: 900;
+      color: #5a3ea1; /* roxo escuro e nítido */
+      text-shadow: 0 0 15px #5a3ea1cc;
+      margin-bottom: 25px;
     }
+
     p {
-      font-size: 1.1rem;
-    }
-    .highlight {
       font-size: 1.3rem;
+      max-width: 600px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+      font-weight: 600;
     }
+
     .btn-cta {
-      padding: 12px 30px;
-      font-size: 1rem;
+      background: #5a3ea1; /* roxo escuro e nítido */
+      color: white;
+      font-weight: 900;
+      font-size: 1.3rem;
+      padding: 15px 50px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 20px #5a3ea1cc;
+      transition: background 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
     }
-  }
-</style>
+
+    .btn-cta:hover {
+      background: #462f81;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+
+      .btn-cta {
+        padding: 12px 35px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<div class="overlay"></div>
-
-<div class="container">
   <h1>Método Trader Inteligente</h1>
-  <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
-  <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
-  <button class="btn-cta" onclick="location.href='#modulos'">Quero aprender agora</button>
-</div>
-
+  <p>
+    Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.<br><br>
+    Só quem pode impedir seu progresso, é você mesmo!
+  </p>
+  <a href="#" class="btn-cta">Quero saber mais</a>
 </body>
 </html>
