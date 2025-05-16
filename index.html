@@ -1,4 +1,4 @@
-<section class="descricao-mti">
+<section class="descricao-mti fade-in">
   <div class="descricao-container">
     <h2>Sobre o Método Trader Inteligente</h2>
     <p>
@@ -15,9 +15,11 @@
 
 <style>
   .descricao-mti {
-    background-color: #0a0a0a;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('assets/bg-mti.jpg') no-repeat center center/cover;
     padding: 60px 30px;
     color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
   }
 
   .descricao-container {
@@ -28,9 +30,9 @@
 
   .descricao-container h2 {
     font-size: 2.5rem;
-    color: #800040;
+    color: #ff0077;
     margin-bottom: 25px;
-    text-shadow: 0 0 10px #800040aa;
+    text-shadow: 0 0 15px #ff007799;
   }
 
   .descricao-container p {
@@ -40,7 +42,12 @@
   }
 
   .descricao-container strong {
-    color: #d94784;
+    color: #ff5588;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @media (max-width: 600px) {
