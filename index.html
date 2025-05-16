@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente - Módulos</title>
+  <title>Métodos Trader Inteligente - Módulos</title>
   <style>
-    /* Fundo roxo espalhado por toda a tela */
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
       background: url('assets/fundoroxo.jpg') no-repeat center center fixed;
-      background-size: cover; /* espalha sem cortar */
+      background-size: contain; /* Ajusta para caber toda a imagem sem cortar */
+      background-color: #12003a; /* cor complementar do fundo */
       color: #7b4fc1; /* roxo metálico claro */
       overflow-x: hidden;
       padding: 0;
     }
 
-    /* TOPO */
+    /* --- TOPO --- */
     .topo {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 30px;
       padding: 40px;
-      background: #000; /* mantém topo preto sólido */
+      background: #000;
     }
 
     .topo-imagem {
@@ -33,11 +33,12 @@
       object-fit: cover;
       transition: transform 0.3s ease;
       cursor: pointer;
+      box-shadow: 0 0 12px #7b4fc1; /* sombra roxa nas bordas */
     }
 
     .topo-imagem:hover {
       transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 0 15px #800040cc;
+      box-shadow: 0 0 20px #7b4fc1cc;
     }
 
     .topo-texto {
@@ -76,16 +77,11 @@
       }
     }
 
-    /* SEÇÃO MÓDULOS - agora sem fundo, só borda roxa intensa */
+    /* --- CARROSSEL DE MÓDULOS --- */
     .modules-section {
       max-width: 1100px;
       margin: 40px auto 80px;
       padding: 0 20px;
-      background: rgba(17, 17, 17, 0.8); /* fundo escuro sem esconder tudo */
-      border-radius: 16px;
-      box-shadow: 0 0 20px 6px rgba(123, 79, 193, 0.9); /* sombra roxa intensa */
-      border: 3px solid #7b4fc1; /* borda roxa viva */
-      backdrop-filter: blur(6px); /* leve blur para efeito moderno */
     }
 
     .modules-title {
