@@ -1,74 +1,67 @@
-<section class="garantia-section">
-  <img src="assets/garantia1.png" alt="Selo de Garantia" class="garantia-imagem" />
-  <div class="garantia-texto">
-    <h2>Garantia Incondicional de 7 Dias</h2>
-    <p>
-      Ao se inscrever no <strong style="color:#8000ff;">Método Trader Inteligente</strong>, você tem <strong style="color:#8000ff;">7 dias completos</strong> para acessar o conteúdo, assistir às aulas e aplicar os ensinamentos.
-      <br /><br />
-      Se por qualquer motivo você sentir que o curso não é para você, basta solicitar o reembolso dentro desse prazo — <strong style="color:#8000ff;">sem perguntas, sem burocracia</strong>. <strong style="color:#8000ff;">O risco é todo nosso!</strong>
-    </p>
-  </div>
+<section class="sessao-preco">
+  <h2>Você está a uma decisão de transformar sua jornada no mercado!</h2>
+  <p class="preco">
+    De <span class="preco-riscado">R$ 689,99</span> por apenas <span class="preco-atual">R$ 119,88</span> à vista!
+  </p>
+  <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-preco" target="_blank">
+    GARANTIR MINHA VAGA COM DESCONTO
+  </a>
 </section>
 
 <style>
-  .garantia-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .sessao-preco {
     background-color: #000;
+    text-align: center;
+    padding: 70px 20px;
     color: #fff;
-    padding: 60px 30px;
-    gap: 40px;
-    flex-wrap: wrap;
-    box-shadow: inset 60px 0 120px #8000ffcc, inset -60px 0 120px #8000ffcc;
   }
 
-  .garantia-imagem {
-    width: 180px;
-    animation: pulse 2s infinite;
+  .sessao-preco h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    max-width: 800px;
+    margin-inline: auto;
   }
 
-  .garantia-texto {
-    max-width: 600px;
-    text-align: left;
+  .preco {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
   }
 
-  .garantia-texto h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #8000ff;
+  .preco-riscado {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
   }
 
-  .garantia-texto p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+  .preco-atual {
+    color: #b084ff;
+    font-weight: bold;
+    font-size: 1.8rem;
   }
 
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
+  .botao-preco {
+    background: linear-gradient(135deg, #6a00ff, #1a001f);
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    animation: pulsar 1.5s infinite;
+    transition: transform 0.2s ease;
+    display: inline-block;
   }
 
-  @media (max-width: 700px) {
-    .garantia-section {
-      flex-direction: column;
-      text-align: center;
-    }
+  .botao-preco:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #7c1fff, #22002a);
+  }
 
-    .garantia-texto h2 {
-      font-size: 2rem;
-    }
-
-    .garantia-texto p {
-      font-size: 1rem;
-    }
-
-    .garantia-imagem {
-      width: 140px;
-    }
+  @keyframes pulsar {
+    0% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(106, 0, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
   }
 </style>
