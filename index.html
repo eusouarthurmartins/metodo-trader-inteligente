@@ -1,3 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Métodos Trader Inteligente - Módulos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Black', Arial, sans-serif;
+      background: #000000; /* preto */
+      color: #6a0d4d; /* roxo vinho escuro */
+      overflow-x: hidden;
+      padding: 0;
+    }
+
+    /* --- TOPO --- */
+    .topo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+      background: #000;
+    }
+
+    .topo-imagem {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .topo-imagem:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 0 15px #800040cc;
+    }
+
+    .topo-texto {
+      color: #fff;
+      text-align: center;
+    }
+
+    .topo-texto h1 {
+      font-size: 3.2rem;
+      margin: 0 0 10px;
+    }
+
+    .topo-texto p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .topo {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .topo-imagem {
+        width: 120px;
+        height: 120px;
+      }
+
+      .topo-texto h1 {
+        font-size: 2.5rem;
+      }
+
+      .topo-texto p {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* --- CARROSSEL DE MÓDULOS --- */
+    .modules-section {
+      max-width: 1100px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+
+    .modules-title {
+      text-align: center;
+      font-size: 2.4em;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: #800040; /* roxo vinho mais vibrante */
+      text-shadow: 0 0 10px #800040cc;
+    }
+
+    .modules-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding-bottom: 15px;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE 10+ */
+    }
+
+    .modules-carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    .module-card {
+      flex: 0 0 auto;
+      width: 250px;
+      border-radius: 14px;
+      box-shadow: 0 0 15px #6a0d4dcc;
+      background: #111111;
+      color: #6a0d4d;
+      user-select: none;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .module-card:hover {
+      transform: scale(1.12);
+      box-shadow: 0 0 30px #800040cc;
+    }
+
+    .module-card img {
+      width: 100%;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+      display: block;
+      height: 160px;
+      object-fit: cover;
+      filter: drop-shadow(0 0 4px #6a0d4dbb);
+    }
+
+    .module-caption {
+      padding: 12px 15px;
+      font-weight: 900;
+      font-size: 1.2em;
+      text-align: center;
+      color: #800040;
+      text-shadow: 0 0 6px #800040cc;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPO -->
+  <section class="topo">
+    <img src="assets/imagemdetopo.jpg" alt="Foto do Trader" class="topo-imagem" />
+    <div class="topo-texto">
+      <h1>Método Trader Inteligente</h1>
+      <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO MÓDULOS -->
+  <section class="modules-section">
+    <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
+    <div class="modules-carousel" id="modules-carousel">
+      <div class="module-card">
+        <img src="assets/modulo1.jpg" alt="Módulo 1" />
+        <div class="module-caption">Módulo 1</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo2.jpg" alt="Módulo 2" />
+        <div class="module-caption">Módulo 2</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo3.jpg" alt="Módulo 3" />
+        <div class="module-caption">Módulo 3</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo4.jpg" alt="Módulo 4" />
+        <div class="module-caption">Módulo 4</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo5.jpg" alt="Módulo 5" />
+        <div class="module-caption">Módulo 5</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo6.jpg" alt="Módulo 6" />
+        <div class="module-caption">Módulo 6</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo7.jpg" alt="Módulo 7" />
+        <div class="module-caption">Módulo 7</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo8.jpg" alt="Módulo 8" />
+        <div class="module-caption">Módulo 8</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo9.jpg" alt="Módulo 9" />
+        <div class="module-caption">Módulo 9</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo10.jpg" alt="Módulo 10" />
+        <div class="module-caption">Módulo 10</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const carousel = document.getElementById('modules-carousel');
+    let scrollAmount = 0;
+    const scrollStep = 2;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    function autoScroll() {
+      scrollAmount += scrollStep;
+      if (scrollAmount >= maxScroll) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+    setInterval(autoScroll, 40);
+  </script>
+
+</body>
+</html>
+<section class="beneficios">
+  <div class="beneficios-conteudo">
+    <h2>Por que escolher o Método Trader Inteligente?</h2>
+    <ul>
+      <li>✔ Estratégias que funcionam no mercado real</li>
+      <li>✔ Acesso vitalício às aulas</li>
+      <li>✔ Suporte direto com quem vive do mercado</li>
+      <li>✔ Resultados comprovados pelos alunos</li>
+    </ul>
+
+    <div class="oferta">
+      <p class="preco">
+        De <span class="riscado">R$689,99</span> por apenas <strong>12x de R$9,99</strong>
+      </p>
+      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-compra" target="_blank">Quero Começar Agora</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .beneficios {
+    background: #111;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    background-image: url('assets/fundobeneficios.jpg'); /* opcional */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .beneficios h2 {
+    font-size: 2.8rem;
+    color: #fff;
+    text-shadow: 0 0 10px #800040cc;
+    margin-bottom: 30px;
+  }
+
+  .beneficios ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .beneficios ul li {
+    margin-bottom: 15px;
+  }
+
+  .oferta .preco {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .oferta .riscado {
+    text-decoration: line-through;
+    color: #aaa;
+    margin-right: 10px;
+  }
+
+  .botao-compra {
+    background-color: #800040;
+    color: white;
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 15px #800040aa;
+    animation: pulsar 1.5s infinite;
+    display: inline-block;
+  }
+
+  .botao-compra:hover {
+    background-color: #a10050;
+    box-shadow: 0 0 25px #a10050cc;
+  }
+
+  @keyframes pulsar {
+    0% { box-shadow: 0 0 10px #800040aa; }
+    50% { box-shadow: 0 0 25px #ff0077cc; }
+    100% { box-shadow: 0 0 10px #800040aa; }
+  }
+
+  @media (max-width: 600px) {
+    .beneficios h2 {
+      font-size: 2rem;
+    }
+
+    .beneficios ul {
+      font-size: 1.1rem;
+    }
+
+    .botao-compra {
+      width: 100%;
+    }
+  }
+</style>
 <section class="preco-section">
   <div class="preco-texto">
     <h2>Quero aprender agora</h2>
