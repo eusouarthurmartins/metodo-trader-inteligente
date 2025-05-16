@@ -220,3 +220,184 @@
     100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
   }
 </style>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Métodos Trader Inteligente - Módulos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Black', Arial, sans-serif;
+      background: #000000; /* preto */
+      color: #7b4fc1; /* roxo metálico claro */
+      overflow-x: hidden;
+      padding: 0;
+    }
+
+    /* --- FUNDO --- */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+      background-size: contain; /* mantém a imagem inteira visível */
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* --- TOPO REMOVIDO --- */
+
+    /* --- CARROSSEL DE MÓDULOS --- */
+    .modules-section {
+      max-width: 1100px;
+      margin: 200px auto 80px; /* reduzido para diminuir espaço */
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .modules-title {
+      text-align: center;
+      font-size: 2.4em;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: #fff; /* cor branca nítida */
+      text-shadow: 0 0 12px #000000cc; /* sombra preta forte */
+    }
+
+    .modules-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding-bottom: 15px;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE 10+ */
+    }
+
+    .modules-carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    .module-card {
+      flex: 0 0 auto;
+      width: 250px;
+      border-radius: 14px;
+      box-shadow: 0 0 15px #000000cc; /* sombra preta */
+      background: #111111;
+      color: #7b4fc1; /* roxo metálico claro */
+      user-select: none;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border: 2px solid #7b4fc1; /* borda roxa */
+    }
+
+    .module-card:hover {
+      transform: scale(1.12);
+      box-shadow: 0 0 30px #7b4fc1cc; /* sombra roxa maior */
+    }
+
+    .module-card img {
+      width: 100%;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+      display: block;
+      height: 160px;
+      object-fit: cover;
+      filter: drop-shadow(0 0 4px #7b4fc1bb);
+    }
+
+    .module-caption {
+      padding: 12px 15px;
+      font-weight: 900;
+      font-size: 1.2em;
+      text-align: center;
+      color: #6e3ecf; /* roxo metálico claro */
+      text-shadow: 0 0 8px #000000cc;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      .modules-section {
+        margin-top: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPO REMOVIDO -->
+
+  <!-- SEÇÃO MÓDULOS -->
+  <section class="modules-section">
+    <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
+    <div class="modules-carousel" id="modules-carousel">
+      <div class="module-card">
+        <img src="assets/modulo1.jpg" alt="Módulo 1" />
+        <div class="module-caption">Módulo 1</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo2.jpg" alt="Módulo 2" />
+        <div class="module-caption">Módulo 2</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo3.jpg" alt="Módulo 3" />
+        <div class="module-caption">Módulo 3</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo4.jpg" alt="Módulo 4" />
+        <div class="module-caption">Módulo 4</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo5.jpg" alt="Módulo 5" />
+        <div class="module-caption">Módulo 5</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo6.jpg" alt="Módulo 6" />
+        <div class="module-caption">Módulo 6</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo7.jpg" alt="Módulo 7" />
+        <div class="module-caption">Módulo 7</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo8.jpg" alt="Módulo 8" />
+        <div class="module-caption">Módulo 8</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo9.jpg" alt="Módulo 9" />
+        <div class="module-caption">Módulo 9</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo10.jpg" alt="Módulo 10" />
+        <div class="module-caption">Módulo 10</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const carousel = document.getElementById('modules-carousel');
+    let scrollAmount = 0;
+    const scrollStep = 2;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    function autoScroll() {
+      scrollAmount += scrollStep;
+      if (scrollAmount >= maxScroll) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+    setInterval(autoScroll, 40);
+  </script>
+
+</body>
+</html>
