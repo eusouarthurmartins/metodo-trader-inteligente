@@ -8,7 +8,7 @@
       <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Não! O <span class="destaque-roxo">MTI</span> foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
+      <p>Não! O MTI foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
       <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Sim! Todo o conteúdo é <span class="destaque-roxo">100% online</span> e responsivo. Você pode assistir pelo celular, computador ou tablet.</p>
+      <p>Sim! Todo o conteúdo é 100% online e responsivo. Você pode assistir pelo celular, computador ou tablet.</p>
     </div>
   </div>
 
@@ -28,7 +28,7 @@
       <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Sim! Depois de adquirir o <span class="destaque-roxo">MTI</span>, o acesso é vitalício. Você pode assistir quantas vezes quiser e no seu tempo.</p>
+      <p>Sim! Depois de adquirir o MTI, o acesso é vitalício. Você pode assistir quantas vezes quiser e no seu tempo.</p>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
       <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Com certeza! Você terá acesso a um canal exclusivo de <span class="destaque-roxo">suporte</span> para tirar todas as dúvidas diretamente com nossa equipe.</p>
+      <p>Com certeza! Você terá acesso a um canal exclusivo de suporte para tirar todas as dúvidas diretamente com nossa equipe.</p>
     </div>
   </div>
 
@@ -48,7 +48,7 @@
       <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Você tem <span class="destaque-roxo">7 dias de garantia</span> incondicional. Se não gostar do conteúdo, pode solicitar reembolso total sem burocracia.</p>
+      <p>Você tem 7 dias de garantia incondicional. Se não gostar do conteúdo, pode solicitar reembolso total sem burocracia.</p>
     </div>
   </div>
 </section>
@@ -62,14 +62,18 @@
     margin: auto;
     text-align: center;
     box-shadow:
-      inset 0 0 90px #8000ffcc,
-      inset 0 0 180px #8000ff88;
+      0 0 30px 15px rgba(176, 132, 255, 0.6),
+      inset 0 0 40px 20px rgba(176, 132, 255, 0.3);
+    border-radius: 12px;
   }
 
   .faq-netflix h2 {
     font-size: 3rem;
-    color: #a566ff;
+    color: #b084ff; /* roxo destacado */
     margin-bottom: 10px;
+    text-shadow:
+      0 0 10px #b084ff,
+      0 0 20px #b084ffcc;
   }
 
   .faq-sub {
@@ -100,6 +104,7 @@
     justify-content: space-between;
     align-items: center;
     transition: background 0.3s ease;
+    animation: pulsar-roxo 2.5s infinite;
   }
 
   .faq-pergunta:hover {
@@ -129,9 +134,16 @@
     transform: rotate(180deg);
   }
 
-  .destaque-roxo {
-    color: #b084ff;
-    font-weight: bold;
+  @keyframes pulsar-roxo {
+    0% {
+      box-shadow: 0 0 0 0 rgba(176, 132, 255, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 15px 8px rgba(176, 132, 255, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(176, 132, 255, 0);
+    }
   }
 
   @media (max-width: 600px) {
