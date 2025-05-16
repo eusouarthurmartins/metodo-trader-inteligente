@@ -901,56 +901,58 @@
 
 -------------------------------------------------------
 <section class="faq-netflix">
-  <h2>Dúvidas Frequentes</h2>
-  <p class="faq-sub">Clique nas perguntas abaixo para revelar as respostas</p>
+  <div class="faq-container">
+    <h2>Dúvidas Frequentes</h2>
+    <p class="faq-sub">Clique nas perguntas abaixo para revelar as respostas</p>
 
-  <div class="faq-item">
-    <button class="faq-pergunta">
-      <span class="pergunta-texto">Preciso ter experiência para fazer o curso?</span>
-      <span class="seta">↓</span>
-    </button>
-    <div class="faq-resposta">
-      <p>Não! O <span class="destaque-roxo">MTI</span> foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span class="pergunta-texto">Preciso ter experiência para fazer o curso?</span>
+        <span class="seta">↓</span>
+      </button>
+      <div class="faq-resposta">
+        <p>Não! O <span class="destaque-roxo">MTI</span> foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-pergunta">
-      <span class="pergunta-texto">Posso acessar o curso pelo celular?</span>
-      <span class="seta">↓</span>
-    </button>
-    <div class="faq-resposta">
-      <p>Sim! Todo o conteúdo é <span class="destaque-roxo">100% online</span> e responsivo. Você pode assistir pelo celular, computador ou tablet.</p>
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span class="pergunta-texto">Posso acessar o curso pelo celular?</span>
+        <span class="seta">↓</span>
+      </button>
+      <div class="faq-resposta">
+        <p>Sim! Todo o conteúdo é <span class="destaque-roxo">100% online</span> e responsivo. Você pode assistir pelo celular, computador ou tablet.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-pergunta">
-      <span class="pergunta-texto">O acesso é vitalício?</span>
-      <span class="seta">↓</span>
-    </button>
-    <div class="faq-resposta">
-      <p>Sim! Depois de adquirir o <span class="destaque-roxo">MTI</span>, o acesso é vitalício. Você pode assistir quantas vezes quiser e no seu tempo.</p>
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span class="pergunta-texto">O acesso é vitalício?</span>
+        <span class="seta">↓</span>
+      </button>
+      <div class="faq-resposta">
+        <p>Sim! Depois de adquirir o <span class="destaque-roxo">MTI</span>, o acesso é vitalício. Você pode assistir quantas vezes quiser e no seu tempo.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-pergunta">
-      <span class="pergunta-texto">Terei suporte para dúvidas?</span>
-      <span class="seta">↓</span>
-    </button>
-    <div class="faq-resposta">
-      <p>Com certeza! Você terá acesso a um canal exclusivo de <span class="destaque-roxo">suporte</span> para tirar todas as dúvidas diretamente com nossa equipe.</p>
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span class="pergunta-texto">Terei suporte para dúvidas?</span>
+        <span class="seta">↓</span>
+      </button>
+      <div class="faq-resposta">
+        <p>Com certeza! Você terá acesso a um canal exclusivo de <span class="destaque-roxo">suporte</span> para tirar todas as dúvidas diretamente com nossa equipe.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-pergunta">
-      <span class="pergunta-texto">E se eu não gostar do curso?</span>
-      <span class="seta">↓</span>
-    </button>
-    <div class="faq-resposta">
-      <p>Você tem <span class="destaque-roxo">7 dias de garantia</span> incondicional. Se não gostar do conteúdo, pode solicitar reembolso total sem burocracia.</p>
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span class="pergunta-texto">E se eu não gostar do curso?</span>
+        <span class="seta">↓</span>
+      </button>
+      <div class="faq-resposta">
+        <p>Você tem <span class="destaque-roxo">7 dias de garantia</span> incondicional. Se não gostar do conteúdo, pode solicitar reembolso total sem burocracia.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -959,14 +961,19 @@
   body {
     background: #000;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
   }
 
   .faq-netflix {
     background: #000;
     color: #fff;
-    padding: 60px 20px;
     width: 100%;
+    padding: 60px 20px;
+  }
+
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
   }
 
@@ -983,11 +990,10 @@
   }
 
   .faq-item {
-    margin: 0 auto 15px;
+    margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
     background-color: #111;
-    max-width: 900px;
   }
 
   .faq-pergunta {
@@ -1078,3 +1084,4 @@
     });
   });
 </script>
+
