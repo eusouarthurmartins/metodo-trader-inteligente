@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Método Trader Inteligente</title>
   <style>
-    /* Reset básico */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -33,7 +32,6 @@
       z-index: 1;
     }
 
-    /* Animação de entrada suave */
     @keyframes fadeSlideIn {
       from {
         opacity: 0;
@@ -84,12 +82,22 @@
       text-shadow: 0 0 20px #ffcc00cc;
     }
 
-    .preco-pulsando {
-      font-size: 2.7rem;
+    .preco-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .preco-antigo {
+      font-size: 1.6rem;
+      color: #bbb;
+      text-decoration: line-through;
+      margin-bottom: 5px;
+    }
+
+    .preco-novo {
+      font-size: 2.4rem;
       font-weight: 900;
       color: #FFD700;
-      text-align: center;
-      margin: 25px 0;
       animation: pulsar 1.6s infinite;
       text-shadow: 0 0 10px #FFD700aa;
     }
@@ -112,6 +120,8 @@
       box-shadow: 0 0 20px #3e0669cc;
       transition: background 0.3s ease, transform 0.3s ease;
       user-select: none;
+      display: block;
+      margin: 0 auto;
     }
 
     .btn-cta:hover {
@@ -145,8 +155,11 @@
       .highlight {
         font-size: 1.3rem;
       }
-      .preco-pulsando {
-        font-size: 2rem;
+      .preco-antigo {
+        font-size: 1.2rem;
+      }
+      .preco-novo {
+        font-size: 1.7rem;
       }
       .btn-cta {
         padding: 12px 30px;
@@ -164,7 +177,10 @@
     <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
     <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
 
-    <p class="preco-pulsando">POR APENAS 12X DE R$9,99</p>
+    <div class="preco-container">
+      <div class="preco-antigo">DE R$689,99</div>
+      <div class="preco-novo">POR APENAS 12X DE R$9,99</div>
+    </div>
 
     <button class="btn-cta" onclick="location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">Quero aprender agora</button>
   </div>
@@ -172,6 +188,7 @@
 
 </body>
 </html>
+
 
 
 <!DOCTYPE html>
