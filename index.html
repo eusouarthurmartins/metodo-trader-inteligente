@@ -653,3 +653,45 @@
     100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
   }
 </style>
+<section class="cta-botao">
+  <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-acesso" target="_blank" rel="noopener noreferrer">
+    QUERO ACESSAR AGORA
+  </a>
+</section>
+
+<style>
+  .cta-botao {
+    background: #000;
+    padding: 60px 30px;
+    text-align: center;
+  }
+
+  .botao-acesso {
+    padding: 25px 60px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: #800040;
+    color: #fff;
+    border-radius: 16px;
+    text-decoration: none;
+    display: inline-block;
+    animation: piscar 2s infinite;
+    transition: background 0.3s ease;
+  }
+
+  .botao-acesso:hover {
+    background: #aa005d;
+  }
+
+  @keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  @media (max-width: 700px) {
+    .botao-acesso {
+      padding: 20px 40px;
+      font-size: 2rem;
+    }
+  }
+</style>
