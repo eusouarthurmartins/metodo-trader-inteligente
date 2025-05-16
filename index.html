@@ -1,106 +1,68 @@
-<section class="beneficios">
-  <div class="beneficios-conteudo">
-    <h2>Por que escolher o Método Trader Inteligente?</h2>
-    <ul>
-      <li>✔ Estratégias que funcionam no mercado real</li>
-      <li>✔ Acesso vitalício às aulas</li>
-      <li>✔ Suporte direto com quem vive do mercado</li>
-      <li>✔ Resultados comprovados pelos alunos</li>
-    </ul>
-
-    <div class="oferta">
-      <p class="preco">
-        De <span class="riscado">R$689,99</span> por apenas <strong>12x de R$9,99</strong>
-      </p>
-      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-compra" target="_blank">Quero Começar Agora</a>
-    </div>
+<section class="descricao-mti fade-in">
+  <div class="descricao-container">
+    <h2>Sobre o Método Trader Inteligente</h2>
+    <p>
+      O <strong>MTI - Método Trader Inteligente</strong> é um curso completo dividido em <strong>10 módulos estratégicos</strong>, com <strong>19 aulas práticas e objetivas</strong>, desenvolvidas especialmente para quem deseja dominar o mercado de opções binárias com consistência e inteligência.
+    </p>
+    <p>
+      Ao longo dos módulos, você vai aprender desde os fundamentos do mercado, configuração das plataformas, até <strong>estratégias exclusivas</strong>, <strong>gestão de banca</strong>, <strong>psicologia do trader</strong> e <strong>operações ao vivo</strong>. O conteúdo foi estruturado para te guiar passo a passo — do zero até o nível avançado — de forma clara, direta e 100% aplicável.
+    </p>
+    <p>
+      Prepare-se para <strong>transformar sua forma de operar</strong> e conquistar <strong>resultados reais</strong> no mercado!
+    </p>
   </div>
 </section>
 
 <style>
-  .beneficios {
-    background-image: url('assets/fundo-mti.jpg');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 60px 20px;
-    text-align: center;
-    color: white;
+  .descricao-mti {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('assets/bg-mti.jpg') no-repeat center center/cover;
+    padding: 60px 30px;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
 
-    /* Sombras roxas para destaque */
+    /* sombra roxa nas bordas */
     box-shadow:
-      0 0 15px 3px #7b4fc1cc,
-      0 0 30px 8px #7b4fc144;
+      0 0 20px 5px #7b4fc1cc,
+      inset 0 0 30px 3px #7b4fc1bb;
     border-radius: 15px;
   }
 
-  .beneficios h2 {
-    font-size: 2.8rem;
-    color: #fff;
-    text-shadow: 0 0 10px #7b4fc1cc; /* roxo metálico */
-    margin-bottom: 30px;
+  .descricao-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  .beneficios ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 40px;
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-
-  .beneficios ul li {
-    margin-bottom: 15px;
-  }
-
-  .oferta .preco {
-    font-size: 1.5rem;
+  .descricao-container h2 {
+    font-size: 2.5rem;
+    color: #7b4fc1; /* roxo metálico */
     margin-bottom: 25px;
+    text-shadow: 0 0 15px #7b4fc1cc;
   }
 
-  .oferta .riscado {
-    text-decoration: line-through;
-    color: #aaa;
-    margin-right: 10px;
+  .descricao-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
   }
 
-  .botao-compra {
-    background-color: #7b4fc1; /* roxo metálico */
-    color: white;
-    padding: 18px 40px;
-    font-size: 1.4rem;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    box-shadow: 0 0 15px #7b4fc1aa; /* sombra roxa */
-    animation: pulsar 1.5s infinite;
-    display: inline-block;
+  .descricao-container strong {
+    color: #7b4fc1; /* roxo metálico */
   }
 
-  .botao-compra:hover {
-    background-color: #6e3ecf; /* hover roxo metálico mais escuro */
-    box-shadow: 0 0 25px #6e3ecfcc;
-  }
-
-  @keyframes pulsar {
-    0% { box-shadow: 0 0 10px #7b4fc1aa; }
-    50% { box-shadow: 0 0 25px #6e3ecfcc; }
-    100% { box-shadow: 0 0 10px #7b4fc1aa; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @media (max-width: 600px) {
-    .beneficios h2 {
+    .descricao-container h2 {
       font-size: 2rem;
     }
 
-    .beneficios ul {
-      font-size: 1.1rem;
-    }
-
-    .botao-compra {
-      width: 100%;
+    .descricao-container p {
+      font-size: 1.05rem;
     }
   }
 </style>
