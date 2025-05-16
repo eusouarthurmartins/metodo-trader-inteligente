@@ -11,30 +11,30 @@
 </footer>
 
 <style>
-  /* Roxo bem escuro e quase preto */
+  /* Roxo escuro e mais vibrante */
   :root {
-    --roxo-escuro: #2b1e4f;  /* roxo escuro */
-    --preto-roxo: #1a1429;    /* preto com toque roxo */
-    --roxo-sombra: rgba(43, 30, 79, 0.8); /* sombra roxa mais opaca */
+    --roxo-escuro: #5b3b8a;  /* roxo vibrante escuro */
+    --roxo-escuro-2: #462d6e; /* tom complementar um pouco mais escuro */
+    --roxo-sombra: rgba(91, 59, 138, 0.85); /* sombra roxa intensa */
+    --roxo-texto: #b9a9e0; /* tom roxo claro para texto */
   }
 
   .compra-final {
-    background: #000000;
+    background: #120d2e; /* fundo roxo muito escuro */
     text-align: center;
     padding: 60px 20px;
-    color: #fff;
+    color: var(--roxo-texto);
     border-radius: 12px;
-    /* sombra roxa intensa nas bordas */
     box-shadow:
-      0 0 25px 10px var(--roxo-sombra),
-      inset 0 0 20px 6px var(--roxo-sombra);
+      0 0 30px 12px var(--roxo-sombra),
+      inset 0 0 25px 10px var(--roxo-sombra);
     transition: box-shadow 0.3s ease;
   }
 
   .compra-final:hover {
     box-shadow:
-      0 0 40px 14px var(--roxo-sombra),
-      inset 0 0 28px 10px var(--roxo-sombra);
+      0 0 45px 16px var(--roxo-sombra),
+      inset 0 0 35px 14px var(--roxo-sombra);
   }
 
   .compra-final h2 {
@@ -42,8 +42,7 @@
     color: var(--roxo-escuro);
     margin-bottom: 20px;
     font-weight: 700;
-    /* leve brilho roxo escuro */
-    text-shadow: 0 0 6px var(--roxo-sombra);
+    text-shadow: 0 0 8px var(--roxo-sombra);
     transition: text-shadow 0.3s ease;
   }
 
@@ -51,26 +50,26 @@
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 30px;
-    color: #ccc;
+    color: var(--roxo-texto);
   }
 
   .botao-compra-final {
-    background: linear-gradient(135deg, var(--preto-roxo), var(--roxo-escuro));
-    color: #ddd;
+    background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo-escuro-2));
+    color: #e2d9ff;
     font-size: 1.4rem;
     font-weight: 700;
     padding: 16px 40px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 4px 12px rgba(43, 30, 79, 0.6);
+    box-shadow: 0 6px 15px rgba(91, 59, 138, 0.7);
     transition: transform 0.25s ease, box-shadow 0.3s ease;
   }
 
   .botao-compra-final:hover {
-    transform: scale(1.07);
+    transform: scale(1.08);
     box-shadow:
-      0 0 20px 8px var(--roxo-sombra);
+      0 0 25px 12px var(--roxo-sombra);
     color: #fff;
   }
 
@@ -79,8 +78,8 @@
   }
 
   .rodape {
-    background-color: #111;
-    color: #aaa;
+    background-color: #1b143b;
+    color: var(--roxo-texto);
     text-align: center;
     padding: 20px 10px;
     font-size: 0.95rem;
