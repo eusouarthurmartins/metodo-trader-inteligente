@@ -28,15 +28,28 @@
       text-shadow: 0 0 10px #800040cc;
     }
 
+    .carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
     .modules-carousel {
       display: flex;
-      overflow-x: hidden;
       gap: 20px;
-      padding-bottom: 15px;
+      animation: scroll-left 40s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .module-card {
-      flex: 0 0 auto;
       width: 250px;
       border-radius: 14px;
       box-shadow: 0 0 15px #6a0d4dcc;
@@ -45,6 +58,7 @@
       user-select: none;
       transition: transform 0.3s ease;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
     .module-card:hover {
@@ -77,36 +91,34 @@
 
   <section class="modules-section">
     <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
-    <div class="modules-carousel" id="modules-carousel">
-      <div class="module-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /><div class="module-caption">Módulo 1</div></div>
-      <div class="module-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /><div class="module-caption">Módulo 2</div></div>
-      <div class="module-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /><div class="module-caption">Módulo 3</div></div>
-      <div class="module-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /><div class="module-caption">Módulo 4</div></div>
-      <div class="module-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /><div class="module-caption">Módulo 5</div></div>
-      <div class="module-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /><div class="module-caption">Módulo 6</div></div>
-      <div class="module-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /><div class="module-caption">Módulo 7</div></div>
-      <div class="module-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /><div class="module-caption">Módulo 8</div></div>
-      <div class="module-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /><div class="module-caption">Módulo 9</div></div>
-      <div class="module-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /><div class="module-caption">Módulo 10</div></div>
+    <div class="carousel-wrapper">
+      <div class="modules-carousel" id="modules-carousel">
+        <!-- Cards normais -->
+        <div class="module-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /><div class="module-caption">Módulo 1</div></div>
+        <div class="module-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /><div class="module-caption">Módulo 2</div></div>
+        <div class="module-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /><div class="module-caption">Módulo 3</div></div>
+        <div class="module-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /><div class="module-caption">Módulo 4</div></div>
+        <div class="module-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /><div class="module-caption">Módulo 5</div></div>
+        <div class="module-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /><div class="module-caption">Módulo 6</div></div>
+        <div class="module-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /><div class="module-caption">Módulo 7</div></div>
+        <div class="module-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /><div class="module-caption">Módulo 8</div></div>
+        <div class="module-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /><div class="module-caption">Módulo 9</div></div>
+        <div class="module-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /><div class="module-caption">Módulo 10</div></div>
+
+        <!-- Cópia dos mesmos cards para efeito looping -->
+        <div class="module-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /><div class="module-caption">Módulo 1</div></div>
+        <div class="module-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /><div class="module-caption">Módulo 2</div></div>
+        <div class="module-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /><div class="module-caption">Módulo 3</div></div>
+        <div class="module-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /><div class="module-caption">Módulo 4</div></div>
+        <div class="module-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /><div class="module-caption">Módulo 5</div></div>
+        <div class="module-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /><div class="module-caption">Módulo 6</div></div>
+        <div class="module-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /><div class="module-caption">Módulo 7</div></div>
+        <div class="module-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /><div class="module-caption">Módulo 8</div></div>
+        <div class="module-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /><div class="module-caption">Módulo 9</div></div>
+        <div class="module-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /><div class="module-caption">Módulo 10</div></div>
+      </div>
     </div>
   </section>
-
-  <script>
-    const carousel = document.getElementById('modules-carousel');
-    let scrollPosition = 0;
-    const scrollSpeed = 1.2; // velocidade em pixels por frame
-
-    function autoScroll() {
-      scrollPosition += scrollSpeed;
-      if (scrollPosition >= carousel.scrollWidth - carousel.clientWidth) {
-        scrollPosition = 0;
-      }
-      carousel.scrollLeft = scrollPosition;
-      requestAnimationFrame(autoScroll);
-    }
-
-    requestAnimationFrame(autoScroll);
-  </script>
 
 </body>
 </html>
