@@ -8,35 +8,86 @@
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
-      background: #000000; /* preto */
-      color: #7b4fc1; /* roxo metálico claro */
+      background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+      background-size: contain;
+      color: #7b4fc1;
       overflow-x: hidden;
-      padding: 0;
+      padding: 60px 0 0; /* espaço para o header fixo */
+      height: 100vh;
+      box-sizing: border-box;
     }
 
-    /* --- FUNDO --- */
-    body::before {
-      content: "";
+    /* --- CABEÇALHO FIXO --- */
+    .site-header {
       position: fixed;
       top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
-      background-size: contain; /* mantém a imagem inteira visível */
-      z-index: 0;
-      pointer-events: none;
+      width: 100%;
+      background: #0a001a; /* preto arroxeado */
+      border-bottom: 2px solid #7b4fc1;
+      z-index: 999;
+      box-shadow: 0 2px 8px #000000aa;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* --- TOPO REMOVIDO --- */
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    /* --- CARROSSEL DE MÓDULOS --- */
+    .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: #7b4fc1;
+      user-select: none;
+      cursor: default;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-link {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #7b4fc1;
+      text-shadow: 0 0 8px #7b4fc1;
+    }
+
+    @media (max-width: 600px) {
+      .nav-menu {
+        gap: 15px;
+      }
+      .logo {
+        font-size: 1.5rem;
+      }
+      .nav-link {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* --- SEÇÃO MÓDULOS --- */
     .modules-section {
       max-width: 1100px;
-      margin: 200px auto 80px; /* reduzido para diminuir espaço */
+      margin: 80px auto 60px;
       padding: 0 20px;
-      position: relative;
-      z-index: 1;
+      background: rgba(17, 17, 17, 0.9); /* fundo preto semi-transparente para leitura */
+      border-radius: 14px;
+      box-sizing: border-box;
+      border: 3px solid #7b4fc1; /* borda roxa intensa */
     }
 
     .modules-title {
@@ -44,8 +95,8 @@
       font-size: 2.4em;
       font-weight: 900;
       margin-bottom: 20px;
-      color: #fff; /* cor branca nítida */
-      text-shadow: 0 0 12px #000000cc; /* sombra preta forte */
+      color: #fff; /* branco bem nítido */
+      text-shadow: 0 0 12px #000000cc;
     }
 
     .modules-carousel {
@@ -54,30 +105,30 @@
       scroll-behavior: smooth;
       gap: 20px;
       padding-bottom: 15px;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* IE 10+ */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     .modules-carousel::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
+      display: none;
     }
 
     .module-card {
       flex: 0 0 auto;
       width: 250px;
       border-radius: 14px;
-      box-shadow: 0 0 15px #000000cc; /* sombra preta */
+      box-shadow: 0 0 15px #000000cc;
       background: #111111;
-      color: #7b4fc1; /* roxo metálico claro */
+      color: #7b4fc1;
       user-select: none;
       transition: transform 0.3s ease;
       cursor: pointer;
-      border: 2px solid #7b4fc1; /* borda roxa */
+      border: 2px solid #000000;
     }
 
     .module-card:hover {
       transform: scale(1.12);
-      box-shadow: 0 0 30px #7b4fc1cc; /* sombra roxa maior */
+      box-shadow: 0 0 30px #000000cc;
     }
 
     .module-card img {
@@ -95,24 +146,29 @@
       font-weight: 900;
       font-size: 1.2em;
       text-align: center;
-      color: #6e3ecf; /* roxo metálico claro */
+      color: #6e3ecf;
       text-shadow: 0 0 8px #000000cc;
       user-select: none;
-    }
-
-    @media (max-width: 600px) {
-      .modules-section {
-        margin-top: 120px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOPO REMOVIDO -->
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">MTI</div>
+      <nav class="nav-menu">
+        <a href="#modulos" class="nav-link">Módulos</a>
+        <a href="#beneficios" class="nav-link">Benefícios</a>
+        <a href="#depoimentos" class="nav-link">Depoimentos</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- SEÇÃO MÓDULOS -->
-  <section class="modules-section">
+  <section class="modules-section" id="modulos">
     <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
     <div class="modules-carousel" id="modules-carousel">
       <div class="module-card">
