@@ -11,35 +11,39 @@
 </footer>
 
 <style>
-  /* Cor roxa sóbria, sem neon */
+  /* Roxo bem escuro e quase preto */
   :root {
-    --roxo-sobrio: #6B4EFF;
-    --roxo-escuro: #4A36B1;
-    --roxo-claro: #9A8CFF;
+    --roxo-escuro: #2b1e4f;  /* roxo escuro */
+    --preto-roxo: #1a1429;    /* preto com toque roxo */
+    --roxo-sombra: rgba(43, 30, 79, 0.8); /* sombra roxa mais opaca */
   }
 
   .compra-final {
-    background: #0a0a0a;
+    background: #000000;
     text-align: center;
     padding: 60px 20px;
     color: #fff;
     border-radius: 12px;
+    /* sombra roxa intensa nas bordas */
     box-shadow:
-      0 0 30px 8px rgba(107, 78, 255, 0.25);
+      0 0 25px 10px var(--roxo-sombra),
+      inset 0 0 20px 6px var(--roxo-sombra);
     transition: box-shadow 0.3s ease;
   }
 
   .compra-final:hover {
     box-shadow:
-      0 0 40px 12px rgba(107, 78, 255, 0.45);
+      0 0 40px 14px var(--roxo-sombra),
+      inset 0 0 28px 10px var(--roxo-sombra);
   }
 
   .compra-final h2 {
     font-size: 2.6rem;
-    color: var(--roxo-claro);
+    color: var(--roxo-escuro);
     margin-bottom: 20px;
     font-weight: 700;
-    text-shadow: 0 0 8px rgba(107, 78, 255, 0.7);
+    /* leve brilho roxo escuro */
+    text-shadow: 0 0 6px var(--roxo-sombra);
     transition: text-shadow 0.3s ease;
   }
 
@@ -47,26 +51,27 @@
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 30px;
-    color: #ddd;
+    color: #ccc;
   }
 
   .botao-compra-final {
-    background: linear-gradient(135deg, var(--roxo-sobrio), var(--roxo-escuro));
-    color: #fff;
+    background: linear-gradient(135deg, var(--preto-roxo), var(--roxo-escuro));
+    color: #ddd;
     font-size: 1.4rem;
     font-weight: 700;
     padding: 16px 40px;
     border-radius: 10px;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 4px 12px rgba(107, 78, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(43, 30, 79, 0.6);
     transition: transform 0.25s ease, box-shadow 0.3s ease;
   }
 
   .botao-compra-final:hover {
     transform: scale(1.07);
     box-shadow:
-      0 0 20px 6px rgba(107, 78, 255, 0.7);
+      0 0 20px 8px var(--roxo-sombra);
+    color: #fff;
   }
 
   .botao-compra-final:active {
