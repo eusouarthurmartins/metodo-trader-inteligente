@@ -1,367 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente</title>
-  <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000;
-      color: #d1c4ff;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 40px auto 80px;
-      padding: 0 20px;
-    }
-    h1 {
-      font-size: 3.4rem;
-      font-weight: 900;
-      text-align: center;
-      margin-bottom: 14px;
-      color: #9b63ff;
-      text-shadow: 0 0 12px #8a4fff;
-    }
-    p.description {
-      font-size: 1.25rem;
-      max-width: 720px;
-      margin: 0 auto 50px;
-      line-height: 1.6;
-      color: #c4baff;
-      text-align: center;
-      text-shadow: 0 0 8px #6e47d7;
-    }
-
-    /* Botões de compra */
-    .buy-buttons {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      margin-bottom: 60px;
-      flex-wrap: wrap;
-    }
-    .buy-btn {
-      background: linear-gradient(135deg, #7b39f5, #3a007e);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 18px 36px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(123, 57, 245, 0.6);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: box-shadow 0.3s ease, background 0.3s ease;
-      min-width: 220px;
-      user-select: none;
-    }
-    .buy-btn .price {
-      font-size: 0.9rem;
-      margin-top: 6px;
-      font-weight: 500;
-      color: #d0bfff;
-    }
-    .buy-btn:hover {
-      box-shadow: 0 6px 20px rgba(123, 57, 245, 0.9);
-      background: linear-gradient(135deg, #9b63ff, #5500b8);
-    }
-
-    /* Carrossel dos módulos estilo Netflix */
-    .modules-section {
-      margin-bottom: 60px;
-    }
-    .modules-section h2 {
-      color: #9b63ff;
-      font-weight: 900;
-      font-size: 2rem;
-      margin-bottom: 24px;
-      text-align: center;
-      text-shadow: 0 0 8px #8a4fff;
-    }
-    .modules-carousel {
-      overflow-x: auto;
-      display: flex;
-      gap: 22px;
-      scroll-behavior: smooth;
-      padding-bottom: 8px;
-      scrollbar-width: thin;
-      scrollbar-color: #6e47d7 #000;
-    }
-    .modules-carousel::-webkit-scrollbar {
-      height: 8px;
-    }
-    .modules-carousel::-webkit-scrollbar-track {
-      background: #000;
-    }
-    .modules-carousel::-webkit-scrollbar-thumb {
-      background-color: #6e47d7;
-      border-radius: 20px;
-      border: 2px solid #000;
-    }
-    .module-card {
-      flex: 0 0 auto;
-      width: 200px;
-      height: 120px;
-      border-radius: 14px;
-      box-shadow: 0 0 18px #7b39f5aa;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      border: 2px solid #3a007e;
-    }
-    .module-card:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 26px #b488ffcc;
-      border-color: #9b63ff;
-    }
-    .module-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Depoimentos */
-    .testimonials {
-      max-width: 840px;
-      margin: 0 auto 60px;
-      padding: 0 12px;
-    }
-    .testimonials h2 {
-      color: #9b63ff;
-      font-weight: 900;
-      font-size: 2rem;
-      margin-bottom: 24px;
-      text-align: center;
-      text-shadow: 0 0 8px #8a4fff;
-    }
-    .testimonial {
-      background: #1a002e;
-      border-radius: 16px;
-      box-shadow: 0 0 20px #7b39f5cc;
-      padding: 24px 28px;
-      margin-bottom: 22px;
-      color: #c4baff;
-      font-style: italic;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      position: relative;
-    }
-    .testimonial strong {
-      display: block;
-      margin-top: 14px;
-      color: #caa3ff;
-      font-weight: 700;
-      font-style: normal;
-      text-align: right;
-    }
-
-    /* Dúvidas FAQ */
-    .faq-section {
-      max-width: 800px;
-      margin: 0 auto 80px;
-      color: #c4baff;
-      text-shadow: 0 0 5px #5c3aa1;
-    }
-    .faq-section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #9b63ff;
-      font-weight: 900;
-      font-size: 2rem;
-      text-shadow: 0 0 8px #8a4fff;
-    }
-    .faq-item {
-      background: #1a002e;
-      border-radius: 12px;
-      padding: 18px 24px;
-      margin-bottom: 18px;
-      box-shadow: 0 0 15px #7b39f5bb;
-      cursor: pointer;
-      user-select: none;
-      transition: background 0.3s ease;
-    }
-    .faq-item:hover {
-      background: #3e0dd0;
-    }
-    .faq-question {
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-    .faq-answer {
-      display: none;
-      font-weight: 400;
-      font-size: 1rem;
-      margin-top: 4px;
-      color: #d0bfff;
-    }
-
-    /* Garantia */
-    .guarantee-section {
-      max-width: 800px;
-      margin: 0 auto 60px;
-      background: #1a002e;
-      border-radius: 16px;
-      box-shadow: 0 0 22px #7b39f5cc;
-      padding: 28px 32px;
-      color: #c4baff;
-      text-align: center;
-      font-size: 1.15rem;
-      line-height: 1.5;
-      user-select: none;
-    }
-    .guarantee-section h2 {
-      color: #9b63ff;
-      font-weight: 900;
-      font-size: 2rem;
-      margin-bottom: 14px;
-      text-shadow: 0 0 8px #8a4fff;
-    }
-
-    /* Responsive */
-    @media (max-width: 720px) {
-      .modules-carousel {
-        gap: 16px;
-      }
-      .module-card {
-        width: 160px;
-        height: 96px;
-      }
-      h1 {
-        font-size: 2.4rem;
-      }
-      p.description {
-        font-size: 1.1rem;
-      }
-      .buy-btn {
-        min-width: 180px;
-        font-size: 1rem;
-        padding: 14px 28px;
-      }
-      .testimonials {
-        padding: 0 8px;
-      }
-      .testimonial {
-        font-size: 1rem;
-        padding: 18px 22px;
-      }
-      .faq-item {
-        font-size: 0.95rem;
-        padding: 14px 18px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Método Trader Inteligente</h1>
-    <p class="description">
-      Aprenda as melhores estratégias e técnicas para se tornar um trader profissional em opções binárias, com conteúdos completos e atualizados, suporte dedicado e garantia de 7 dias para você testar e ficar tranquilo.
-    </p>
-
-    <!-- Botões de compra -->
-    <div class="buy-buttons">
-      <button class="buy-btn">Quero acessar agora <span class="price">Preço: 12x de R$ 9,99</span></button>
-      <button class="buy-btn">Quero acessar agora <span class="price">Preço: 12x de R$ 9,99</span></button>
-      <button class="buy-btn">Quero acessar agora <span class="price">Preço: 12x de R$ 9,99</span></button>
-    </div>
-
-    <!-- Seção dos módulos -->
-    <section class="modules-section">
-      <h2>O que você vai aprender com esse Método:</h2>
-      <div class="modules-carousel" id="modules-carousel">
-        <div class="module-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /></div>
-        <div class="module-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /></div>
-        <div class="module-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /></div>
-        <div class="module-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /></div>
-        <div class="module-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /></div>
-        <div class="module-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /></div>
-        <div class="module-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /></div>
-        <div class="module-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /></div>
-        <div class="module-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /></div>
-        <div class="module-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /></div>
-      </div>
-    </section>
-
-    <!-- Depoimentos -->
-    <section class="testimonials">
-      <h2>Depoimentos</h2>
-      <div class="testimonial">
-        "Esse método mudou minha vida! Agora eu realmente entendo o mercado e consigo operar com confiança."
-        <strong>- Ana M.</strong>
-      </div>
-      <div class="testimonial">
-        "A didática é sensacional, o suporte é rápido e o conteúdo é atualizado sempre."
-        <strong>- Carlos R.</strong>
-      </div>
-      <div class="testimonial">
-        "Recomendo para quem quer começar e para quem já opera, é um investimento que vale cada centavo."
-        <strong>- Júlia S.</strong>
-      </div>
-    </section>
-
-    <!-- Dúvidas FAQ -->
-    <section class="faq-section" id="faq-section">
-      <h2>Dúvidas Frequentes</h2>
-      <div class="faq-item" tabindex="0">
-        <div class="faq-question">O curso é indicado para iniciantes?</div>
-        <div class="faq-answer">Sim! O método é criado para quem está começando e para traders que querem aprimorar suas habilidades.</div>
-      </div>
-      <div class="faq-item" tabindex="0">
-        <div class="faq-question">Qual o tempo de acesso ao curso?</div>
-        <div class="faq-answer">Você terá acesso ilimitado ao conteúdo após a compra, sem restrições de tempo.</div>
-      </div>
-      <div class="faq-item" tabindex="0">
-        <div class="faq-question">Tem suporte disponível?</div>
-        <div class="faq-answer">Sim, suporte dedicado por e-mail e grupo exclusivo para alunos.</div>
-      </div>
-    </section>
-
-    <!-- Garantia -->
-    <section class="guarantee-section">
-      <h2>Garantia de 7 dias</h2>
-      <p>
-        Se você não ficar satisfeito com o método, devolvemos seu dinheiro integralmente dentro de 7 dias após a compra. Sem burocracia.
-      </p>
-    </section>
+<section class="modules-section">
+  <h2>O que você vai aprender com esse Método:</h2>
+  <div class="modules-carousel">
+    <div class="module-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /></div>
+    <div class="module-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /></div>
+    <div class="module-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /></div>
+    <div class="module-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /></div>
+    <div class="module-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /></div>
+    <div class="module-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /></div>
+    <div class="module-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /></div>
+    <div class="module-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /></div>
+    <div class="module-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /></div>
+    <div class="module-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /></div>
   </div>
+</section>
 
-  <script>
-    // FAQ toggle
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const answer = item.querySelector('.faq-answer');
-        const isVisible = answer.style.display === 'block';
-        // Fecha todas
-        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-        if (!isVisible) {
-          answer.style.display = 'block';
-        }
-      });
-      item.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          item.click();
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+<style>
+  .modules-section {
+    margin: 60px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+  }
+  .modules-section h2 {
+    color: #9b63ff;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    text-align: center;
+    text-shadow: 0 0 8px #8a4fff;
+  }
+  .modules-carousel {
+    overflow-x: auto;
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #6e47d7 #000;
+  }
+  .modules-carousel::-webkit-scrollbar {
+    height: 8px;
+  }
+  .modules-carousel::-webkit-scrollbar-track {
+    background: #000;
+  }
+  .modules-carousel::-webkit-scrollbar-thumb {
+    background-color: #6e47d7;
+    border-radius: 20px;
+    border: 2px solid #000;
+  }
+  .module-card {
+    flex: 0 0 auto;
+    width: 220px;
+    height: 140px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px #7b39f5aa;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid #3a007e;
+    transition: transform 0.3s ease;
+  }
+  .module-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 28px #b488ffcc;
+    border-color: #9b63ff;
+  }
+  .module-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
