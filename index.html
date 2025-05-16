@@ -12,7 +12,7 @@
       <p class="preco">
         De <span class="riscado">R$689,99</span> por apenas <strong>12x de R$9,99</strong>
       </p>
-      <a href="#" class="botao-compra">Quero Começar Agora</a>
+      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-compra" target="_blank">Quero Começar Agora</a>
     </div>
   </div>
 </section>
@@ -50,8 +50,8 @@
   }
 
   .oferta .preco {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
   }
 
   .oferta .riscado {
@@ -63,18 +63,26 @@
   .botao-compra {
     background-color: #800040;
     color: white;
-    padding: 15px 25px;
-    font-size: 1.2rem;
+    padding: 18px 40px;
+    font-size: 1.4rem;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: bold;
     transition: background 0.3s ease;
     box-shadow: 0 0 15px #800040aa;
+    animation: pulsar 1.5s infinite;
+    display: inline-block;
   }
 
   .botao-compra:hover {
     background-color: #a10050;
     box-shadow: 0 0 25px #a10050cc;
+  }
+
+  @keyframes pulsar {
+    0% { box-shadow: 0 0 10px #800040aa; }
+    50% { box-shadow: 0 0 25px #ff0077cc; }
+    100% { box-shadow: 0 0 10px #800040aa; }
   }
 
   @media (max-width: 600px) {
@@ -88,7 +96,6 @@
 
     .botao-compra {
       width: 100%;
-      display: inline-block;
     }
   }
 </style>
