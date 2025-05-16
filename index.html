@@ -666,75 +666,224 @@
   }
 </style>
 -------------------------------------------------------------------------------------------
-<section class="sessao-preco">
-  <h2>Você está a uma decisão de transformar sua jornada no mercado!</h2>
-  <p class="preco">
-    De <span class="preco-riscado">R$ 689,99</span> por apenas <span class="preco-atual">R$ 119,88</span> à vista!
-  </p>
-  <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-preco" target="_blank">
-    GARANTIR MINHA VAGA COM DESCONTO
+<section class="cta-botao">
+  <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-acesso" target="_blank" rel="noopener noreferrer">
+    QUERO ACESSAR AGORA
   </a>
 </section>
 
 <style>
-  .sessao-preco {
-    background-color: #000;
+  .cta-botao {
+    background: #000;
+    padding: 60px 30px;
     text-align: center;
-    padding: 70px 20px;
-    color: #fff;
-    box-shadow:
-      inset 0 0 80px #8000ffcc,
-      inset 0 0 160px #8000ff88;
   }
 
-  .sessao-preco h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    max-width: 800px;
-    margin-inline: auto;
-  }
-
-  .preco {
-    font-size: 1.6rem;
-    margin-bottom: 30px;
-  }
-
-  .preco-riscado {
-    text-decoration: line-through;
-    color: #888;
-    margin-right: 10px;
-  }
-
-  .preco-atual {
-    color: #b084ff;
+  .botao-acesso {
+    padding: 25px 60px;
+    font-size: 2.5rem;
     font-weight: bold;
-    font-size: 1.8rem;
-  }
-
-  .botao-preco {
-    background: linear-gradient(135deg, #6a00ff, #1a001f);
+    background: #800040;
     color: #fff;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding: 15px 35px;
-    border-radius: 10px;
+    border-radius: 16px;
     text-decoration: none;
-    animation: pulsar 1.5s infinite;
-    transition: transform 0.2s ease;
     display: inline-block;
+    animation: piscar 2s infinite;
+    transition: background 0.3s ease;
   }
 
-  .botao-preco:hover {
-    transform: scale(1.08);
-    background: linear-gradient(135deg, #7c1fff, #22002a);
+  .botao-acesso:hover {
+    background: #aa005d;
   }
 
-  @keyframes pulsar {
-    0% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(106, 0, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
+  @keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  @media (max-width: 700px) {
+    .botao-acesso {
+      padding: 20px 40px;
+      font-size: 2rem;
+    }
   }
 </style>
+----------------------------------------------------------------------------------------------------------------
+<section class="faq-netflix">
+  <h2>Dúvidas Frequentes</h2>
+  <p class="faq-sub">Clique nas perguntas abaixo para revelar as respostas</p>
+
+  <div class="faq-item">
+    <button class="faq-pergunta">
+      <span class="pergunta-texto">Preciso ter experiência para fazer o curso?</span>
+      <span class="seta">↓</span>
+    </button>
+    <div class="faq-resposta">
+      <p>Não! O <span class="destaque-roxo">MTI</span> foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-pergunta">
+      <span class="pergunta-texto">Posso acessar o curso pelo celular?</span>
+      <span class="seta">↓</span>
+    </button>
+    <div class="faq-resposta">
+      <p>Sim! Todo o conteúdo é <span class="destaque-roxo">100% online</span> e responsivo. Você pode assistir pelo celular, computador ou tablet.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-pergunta">
+      <span class="pergunta-texto">O acesso é vitalício?</span>
+      <span class="seta">↓</span>
+    </button>
+    <div class="faq-resposta">
+      <p>Sim! Depois de adquirir o <span class="destaque-roxo">MTI</span>, o acesso é vitalício. Você pode assistir quantas vezes quiser e no seu tempo.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-pergunta">
+      <span class="pergunta-texto">Terei suporte para dúvidas?</span>
+      <span class="seta">↓</span>
+    </button>
+    <div class="faq-resposta">
+      <p>Com certeza! Você terá acesso a um canal exclusivo de <span class="destaque-roxo">suporte</span> para tirar todas as dúvidas diretamente com nossa equipe.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-pergunta">
+      <span class="pergunta-texto">E se eu não gostar do curso?</span>
+      <span class="seta">↓</span>
+    </button>
+    <div class="faq-resposta">
+      <p>Você tem <span class="destaque-roxo">7 dias de garantia</span> incondicional. Se não gostar do conteúdo, pode solicitar reembolso total sem burocracia.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-netflix {
+    background: #000;
+    color: #fff;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    box-shadow:
+      inset 0 0 90px #8000ffcc,
+      inset 0 0 180px #8000ff88;
+  }
+
+  .faq-netflix h2 {
+    font-size: 3rem;
+    color: #a566ff;
+    margin-bottom: 10px;
+  }
+
+  .faq-sub {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+  }
+
+  .faq-item {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #111;
+    box-shadow: 0 0 12px #80004044;
+  }
+
+  .faq-pergunta {
+    width: 100%;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 20px;
+    text-align: left;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+
+  .faq-pergunta:hover {
+    background: #2a2a2a;
+  }
+
+  .faq-resposta {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    padding: 0 20px;
+    transition: max-height 0.4s ease;
+  }
+
+  .faq-resposta p {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    color: #ccc;
+    text-align: left;
+  }
+
+  .faq-item.active .faq-resposta {
+    max-height: 200px;
+  }
+
+  .faq-item.active .seta {
+    transform: rotate(180deg);
+  }
+
+  .destaque-roxo {
+    color: #b084ff;
+    font-weight: bold;
+  }
+
+  @media (max-width: 600px) {
+    .faq-netflix h2 {
+      font-size: 2.2rem;
+    }
+
+    .faq-sub {
+      font-size: 1rem;
+    }
+
+    .faq-pergunta {
+      font-size: 1.2rem;
+      padding: 18px;
+    }
+
+    .faq-resposta p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const pergunta = item.querySelector('.faq-pergunta');
+    const seta = item.querySelector('.seta');
+
+    pergunta.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(el => {
+        el.classList.remove('active');
+        el.querySelector('.seta').textContent = '↓';
+      });
+      if (!isActive) {
+        item.classList.add('active');
+        seta.textContent = '↑';
+      }
+    });
+  });
+</script>
 
 
