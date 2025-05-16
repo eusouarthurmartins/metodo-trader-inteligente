@@ -1,83 +1,379 @@
-<section class="preco-section">
-  <div class="preco-texto">
-    <h2>Quero aprender agora</h2>
-    <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-comprar" target="_blank" rel="noopener noreferrer">Comprar Agora</a>
-  </div>
-  <img src="assets/imagemdepreco.jpg" alt="Imagem do curso" class="imagem-preco" />
-</section>
-
-<style>
-  .preco-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px;
-    background: #000;
-  }
-
-  .preco-texto {
-    color: #fff;
-    font-size: 2.8rem;
-    font-weight: 700;
-  }
-
-  .botao-comprar {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 20px 50px;
-    background: #800040;
-    color: #fff;
-    font-weight: 900;
-    font-size: 2rem;
-    border-radius: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    animation: piscar 1.8s infinite;
-    transition: background 0.3s ease;
-  }
-
-  .botao-comprar:hover {
-    background: #aa005d;
-  }
-
-  @keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-  }
-
-  .imagem-preco {
-    width: 320px;
-    border-radius: 16px;
-    box-shadow: 0 0 15px #800040cc;
-    animation: zoom-suave 6s ease-in-out infinite;
-  }
-
-  @keyframes zoom-suave {
-    0%, 100% {
-      transform: scale(1);
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Método Trader Inteligente</title>
+  <style>
+    /* --- TOPO --- */
+    .topo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+      background: #000;
     }
-    50% {
-      transform: scale(1.05);
-    }
-  }
 
-  @media (max-width: 700px) {
-    .preco-section {
-      flex-direction: column;
-      gap: 25px;
-      padding: 25px;
+    .topo-imagem {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
-    .imagem-preco {
-      width: 250px;
+
+    .topo-imagem:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 0 15px #800040cc;
     }
-    .preco-texto {
-      font-size: 2.2rem;
+
+    .topo-texto {
+      color: #fff;
       text-align: center;
     }
-    .botao-comprar {
-      padding: 16px 40px;
-      font-size: 1.6rem;
+
+    .topo-texto h1 {
+      font-size: 3.2rem;
+      margin: 0 0 10px;
     }
-  }
-</style>
+
+    .topo-texto p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .topo {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .topo-imagem {
+        width: 120px;
+        height: 120px;
+      }
+      .topo-texto h1 {
+        font-size: 2.5rem;
+      }
+      .topo-texto p {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* --- CARROSSEL DOS MÓDULOS --- */
+    .modulos-section {
+      background: #0a002b;
+      padding: 30px 20px;
+      color: #fff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .modulos-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #a055b1;
+    }
+
+    .carrossel {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      scroll-behavior: smooth;
+      padding-bottom: 15px;
+    }
+
+    .carrossel::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .carrossel::-webkit-scrollbar-thumb {
+      background: #800040;
+      border-radius: 10px;
+    }
+
+    .cartao-modulo {
+      flex: 0 0 220px;
+      background: #160046;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #800040cc;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .cartao-modulo:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 25px #a055b1;
+    }
+
+    .cartao-modulo img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      object-fit: cover;
+      height: 130px;
+    }
+
+    .cartao-modulo p {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 0;
+      color: #f0e6ff;
+    }
+
+    /* --- BENEFÍCIOS --- */
+    .beneficios-section {
+      background: #12003b;
+      padding: 40px 20px;
+      color: #fff;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      border-radius: 14px;
+      box-shadow: 0 0 25px #800040bb;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .beneficios-section h2 {
+      color: #a055b1;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .beneficios-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-weight: 600;
+      color: #ddd;
+    }
+
+    .beneficios-section ul li {
+      margin-bottom: 12px;
+    }
+
+    .botao-comprar-beneficios {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 18px 0;
+      font-size: 1.9rem;
+      font-weight: 900;
+      background: #800040;
+      color: #fff;
+      text-align: center;
+      border-radius: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      animation: piscar 1.8s infinite;
+      box-shadow: 0 0 15px #800040cc;
+      transition: background 0.3s ease;
+    }
+
+    .botao-comprar-beneficios:hover {
+      background: #aa005d;
+    }
+
+    .preco-riscado {
+      text-align: center;
+      font-size: 1.7rem;
+      color: #a0a0a0;
+      text-decoration: line-through;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .preco-promocional {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #ffdb00;
+      margin-bottom: 25px;
+    }
+
+    @keyframes piscar {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* --- DESCRIÇÃO DO MÉTODO --- */
+    .descricao-section {
+      background: #000;
+      padding: 40px 30px;
+      color: #fff;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-radius: 14px;
+      box-shadow: 0 0 25px #800040bb;
+      line-height: 1.6;
+      font-size: 1.2rem;
+    }
+
+    /* --- SEÇÃO DE PREÇO + BOTÃO --- */
+    .preco-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px;
+      background: #000;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      border-radius: 14px;
+      box-shadow: 0 0 25px #800040bb;
+    }
+
+    .preco-texto {
+      color: #fff;
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    .botao-comprar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 20px 50px;
+      background: #800040;
+      color: #fff;
+      font-weight: 900;
+      font-size: 2rem;
+      border-radius: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      animation: piscar 1.8s infinite;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 15px #800040cc;
+    }
+
+    .botao-comprar:hover {
+      background: #aa005d;
+    }
+
+    .imagem-preco {
+      width: 320px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px #800040cc;
+      animation: zoom-suave 6s ease-in-out infinite;
+    }
+
+    @keyframes zoom-suave {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .preco-section {
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px;
+      }
+      .imagem-preco {
+        width: 250px;
+      }
+      .preco-texto {
+        font-size: 2.2rem;
+        text-align: center;
+      }
+      .botao-comprar {
+        padding: 16px 40px;
+        font-size: 1.6rem;
+      }
+    }
+
+  </style>
+</head>
+<body style="background:#080008; margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+  <!-- TOPO -->
+  <section class="topo">
+    <img src="assets/imagemdetopo.jpg" alt="Foto do Trader" class="topo-imagem" />
+    <div class="topo-texto">
+      <h1>Método Trader Inteligente</h1>
+      <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
+    </div>
+  </section>
+
+  <!-- CARROSSEL DOS MÓDULOS -->
+  <section class="modulos-section">
+    <h2>O que você vai aprender com esse Método:</h2>
+    <div class="carrossel" tabindex="0" aria-label="Carrossel dos módulos">
+      <div class="cartao-modulo">
+        <img src="assets/modulo1.jpg" alt="Módulo 1" />
+        <p>Módulo 1 - Fundamentos do Mercado</p>
+      </div>
+      <div class="cartao-modulo">
+        <img src="assets/modulo2.jpg" alt="Módulo 2" />
+        <p>Módulo 2 - Configuração da Plataforma</p>
+      </div>
+      <div class="cartao-modulo">
+        <img src="assets/modulo3.jpg" alt="Módulo 3" />
+        <p>Módulo 3 - Estratégias Exclusivas</p>
+      </div>
+      <div class="cartao-modulo">
+        <img src="assets/modulo4.jpg" alt="Módulo 4" />
+        <p>Módulo 4 - Gestão de Banca</p>
+      </div>
+      <div class="cartao-modulo">
+        <img src="assets/modulo5.jpg" alt="Módulo 5" />
+        <p>Módulo 5 - Psicologia do Trader</p>
+      </div>
+      <div class="cartao-modulo">
+        <img src="assets/modulo6.jpg" alt="Módulo 6" />
+        <p>Módulo 6 - Operações ao Vivo</p>
+      </div>
+      <!-- Adicione os demais módulos conforme sua estrutura -->
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="beneficios-section">
+    <h2>Benefícios do Curso</h2>
+    <ul>
+      <li>Aprenda com aulas práticas e objetivas</li>
+      <li>Estratégias exclusivas testadas no mercado</li>
+      <li>Gestão de banca para minimizar riscos</li>
+      <li>Psicologia do trader para controlar emoções</li>
+      <li>Suporte e acompanhamento contínuo</li>
+      <li>Material atualizado e 100% aplicável</li>
+    </ul>
+    <div class="preco-riscado">De R$689,99</div>
+    <div class="preco-promocional">Por apenas 12x de R$9,99</div>
+    <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" target="_blank" rel="noopener noreferrer" class="botao-comprar-beneficios">Comprar Agora</a>
+  </section>
+
+  <!-- DESCRIÇÃO DO MÉTODO -->
+  <section class="descricao-section">
+    <p>
+      O MTI - Método Trader Inteligente é um curso completo dividido em 10 módulos estratégicos, com 19 aulas práticas e objetivas, desenvolvidas especialmente para quem deseja dominar o mercado de opções binárias com consistência e inteligência.
+    </p>
+    <p>
+      Ao longo dos módulos, você vai aprender desde os fundamentos do mercado, configuração das plataformas, até estratégias exclusivas, gestão de banca, psicologia do trader e operações ao vivo. O conteúdo foi estruturado para te guiar passo a passo — do zero até o nível avançado — de forma clara, direta e 100% aplicável.
+    </p>
+    <p>
+      Prepare-se para transformar sua forma de operar e conquistar resultados reais no mercado!
+    </p>
+  </section>
+
+  <!-- PREÇO + BOTÃO -->
+  <section class="preco-section">
+    <div class="preco-texto">
+      <h2>Quero aprender agora</h2>
+      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" target="_blank" rel="noopener noreferrer" class="botao-comprar">Comprar Agora</a>
+    </div>
+    <img src="assets/imagemdepreco.jpg" alt="Imagem do curso" class="imagem-preco" />
+  </section>
+
+</body>
+</html>
