@@ -1,228 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Método Trader Inteligente</title>
-<style>
-  /* Reset básico */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body, html {
-    height: 100%;
-    font-family: 'Arial Black', Arial, sans-serif;
-    color: white;
-    background:
-      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-      url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-
-  .container {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    padding: 0 20px;
-    text-align: left;
-    z-index: 1;
-  }
-
-  /* Animação de entrada suave */
-  @keyframes fadeSlideIn {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .foto {
-    flex-shrink: 0;
-    width: 450px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    animation: fadeSlideIn 1s ease forwards;
-  }
-
-  .texto {
-    max-width: 550px;
-    animation: fadeSlideIn 1.4s ease forwards;
-  }
-
-  h1 {
-    font-size: 3.6rem;
-    font-weight: 900;
-    color: #3e0669;
-    text-shadow: 2px 2px 4px #000000aa;
-    margin-bottom: 25px;
-  }
-
-  p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #ddd;
-    text-shadow: 0 0 10px #000000aa;
-    margin-bottom: 30px;
-  }
-
-  .highlight {
-    font-size: 1.7rem;
-    font-weight: 900;
-    color: #fff;
-    margin-top: 20px;
-    text-shadow: 0 0 20px #ffcc00cc;
-  }
-
-  .btn-cta {
-    background: #3e0669;
-    color: white;
-    font-weight: 900;
-    font-size: 1.3rem;
-    padding: 15px 50px;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 20px #3e0669cc;
-    transition: background 0.3s ease, transform 0.3s ease;
-    user-select: none;
-  }
-
-  .btn-cta:hover {
-    background: #570a9b;
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 1000px) {
-    .container {
-      flex-direction: column;
-      height: auto;
-      padding-top: 40px;
-      text-align: center;
-    }
-    .foto {
-      width: 300px;
-      margin-bottom: 30px;
-    }
-    .texto {
-      max-width: 100%;
-    }
-  }
-
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 2.4rem;
-    }
-    p {
-      font-size: 1.1rem;
-    }
-    .highlight {
-      font-size: 1.3rem;
-    }
-    .btn-cta {
-      padding: 12px 30px;
-      font-size: 1rem;
-    }
-  }
-</style>
-</head>
-<body>
-
-<div class="container">
-  <img src="assets/sua-foto.png" alt="Foto do Arthur" class="foto" />
-  <div class="texto">
-    <h1>Método Trader Inteligente</h1>
-    <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
-    <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
-    <button class="btn-cta" onclick="location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">Quero aprender agora</button>
-  </div>
-</div>
-
-</body>
-</html>
-<section class="sessao-preco">
-  <h2>Você está a uma decisão de transformar sua jornada no mercado!</h2>
-  <p class="preco">
-    De <span class="preco-riscado">R$ 689,99</span> por apenas <span class="preco-atual">R$ 119,88</span> à vista!
-  </p>
-  <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-preco" target="_blank">
-    GARANTIR MINHA VAGA COM DESCONTO
-  </a>
-</section>
-
-<style>
-  .sessao-preco {
-    background-color: #000;
-    text-align: center;
-    padding: 70px 20px;
-    color: #fff;
-    box-shadow:
-      inset 0 0 80px #8000ffcc,
-      inset 0 0 160px #8000ff88;
-  }
-
-  .sessao-preco h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    max-width: 800px;
-    margin-inline: auto;
-  }
-
-  .preco {
-    font-size: 1.6rem;
-    margin-bottom: 30px;
-  }
-
-  .preco-riscado {
-    text-decoration: line-through;
-    color: #888;
-    margin-right: 10px;
-  }
-
-  .preco-atual {
-    color: #b084ff;
-    font-weight: bold;
-    font-size: 1.8rem;
-  }
-
-  .botao-preco {
-    background: linear-gradient(135deg, #6a00ff, #1a001f);
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding: 15px 35px;
-    border-radius: 10px;
-    text-decoration: none;
-    animation: pulsar 1.5s infinite;
-    transition: transform 0.2s ease;
-    display: inline-block;
-  }
-
-  .botao-preco:hover {
-    transform: scale(1.08);
-    background: linear-gradient(135deg, #7c1fff, #22002a);
-  }
-
-  @keyframes pulsar {
-    0% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(106, 0, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
-  }
-</style>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Métodos Trader Inteligente - Módulos</title>
@@ -230,32 +8,19 @@
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
-      background: #000000; /* preto */
-      color: #7b4fc1; /* roxo metálico claro */
+      color: #7b4fc1;
       overflow-x: hidden;
       padding: 0;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+        url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
-
-    /* --- FUNDO --- */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
-      background-size: contain; /* mantém a imagem inteira visível */
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* --- TOPO REMOVIDO --- */
 
     /* --- CARROSSEL DE MÓDULOS --- */
     .modules-section {
       max-width: 1100px;
-      margin: 200px auto 80px; /* reduzido para diminuir espaço */
+      margin: 200px auto 80px;
       padding: 0 20px;
       position: relative;
       z-index: 1;
@@ -266,8 +31,8 @@
       font-size: 2.4em;
       font-weight: 900;
       margin-bottom: 20px;
-      color: #fff; /* cor branca nítida */
-      text-shadow: 0 0 12px #000000cc; /* sombra preta forte */
+      color: #fff;
+      text-shadow: 0 0 12px #000000cc;
     }
 
     .modules-carousel {
@@ -276,30 +41,30 @@
       scroll-behavior: smooth;
       gap: 20px;
       padding-bottom: 15px;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* IE 10+ */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     .modules-carousel::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
+      display: none;
     }
 
     .module-card {
       flex: 0 0 auto;
       width: 250px;
       border-radius: 14px;
-      box-shadow: 0 0 15px #000000cc; /* sombra preta */
+      box-shadow: 0 0 15px #000000cc;
       background: #111111;
-      color: #7b4fc1; /* roxo metálico claro */
+      color: #7b4fc1;
       user-select: none;
       transition: transform 0.3s ease;
       cursor: pointer;
-      border: 2px solid #7b4fc1; /* borda roxa */
+      border: 2px solid #7b4fc1;
     }
 
     .module-card:hover {
       transform: scale(1.12);
-      box-shadow: 0 0 30px #7b4fc1cc; /* sombra roxa maior */
+      box-shadow: 0 0 30px #7b4fc1cc;
     }
 
     .module-card img {
@@ -317,7 +82,7 @@
       font-weight: 900;
       font-size: 1.2em;
       text-align: center;
-      color: #6e3ecf; /* roxo metálico claro */
+      color: #6e3ecf;
       text-shadow: 0 0 8px #000000cc;
       user-select: none;
     }
@@ -330,8 +95,6 @@
   </style>
 </head>
 <body>
-
-  <!-- TOPO REMOVIDO -->
 
   <!-- SEÇÃO MÓDULOS -->
   <section class="modules-section">
