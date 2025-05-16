@@ -1,108 +1,61 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MTI - Método Trader Inteligente</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial Black', Arial, sans-serif;
-      background: #000000;
-      color: #ffffff;
-      overflow-x: hidden;
+<!-- ✅ TOPO DO SITE / HERO SECTION -->
+<section class="hero-topo">
+  <div class="hero-conteudo">
+    <h1 class="hero-titulo">Método Trader Inteligente</h1>
+    <p class="hero-desc">Pare de operar no escuro, aprenda com quem vive do mercado!</p>
+  </div>
+</section>
+
+<style>
+  .hero-topo {
+    position: relative;
+    height: 100vh;
+    background: url('assets/imagenprincipal.png') no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-topo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7); /* escurece o fundo para dar contraste ao texto */
+    z-index: 1;
+  }
+
+  .hero-conteudo {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 90%;
+    padding: 0 20px;
+  }
+
+  .hero-titulo {
+    font-size: 3.5em;
+    font-weight: 900;
+    color: #800040;
+    text-shadow: 0 0 10px #800040cc;
+    margin: 0;
+  }
+
+  .hero-desc {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 8px #000000;
+  }
+
+  @media (max-width: 768px) {
+    .hero-titulo {
+      font-size: 2.5em;
     }
 
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
+    .hero-desc {
+      font-size: 1.1em;
     }
-
-    h2 {
-      text-align: center;
-      font-size: 2.4em;
-      color: #800040;
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px #80004088;
-    }
-
-    /* Aqui você pode adicionar estilos gerais para botões, cards, etc. */
-  </style>
-</head>
-<body>
-
-  <!-- ✅ Cabeçalho -->
-  <header style="padding: 20px; background: #111;">
-    <div style="max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
-      <h1 style="color: #800040; margin: 0;">Thurzin Trader</h1>
-      <a href="https://wa.me/seulink" target="_blank" style="color: #fff; background: #800040; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: bold;">WhatsApp</a>
-    </div>
-  </header>
-
-  <!-- ✅ Seção: Vídeo de Apresentação -->
-  <section id="video-apresentacao">
-    <h2>Apresentação do Método</h2>
-    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
-      <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
-    </div>
-  </section>
-
-  <!-- ✅ Seção: Carrossel de Módulos -->
-  <!-- Cole aqui o carrossel completo que você já montou -->
-
-  <!-- ✅ Seção: Benefícios do Método -->
-  <section id="beneficios">
-    <h2>Por que escolher o MTI?</h2>
-    <ul style="list-style: none; padding: 0; max-width: 800px; margin: auto; font-size: 1.2em;">
-      <li>✅ Estratégias comprovadas</li>
-      <li>✅ Acesso vitalício</li>
-      <li>✅ Comunidade exclusiva</li>
-      <li>✅ Suporte ao aluno</li>
-    </ul>
-  </section>
-
-  <!-- ✅ Seção: Garantia -->
-  <section id="garantia" style="background: #111;">
-    <h2>Garantia Incondicional</h2>
-    <p style="max-width: 800px; margin: auto; text-align: center; font-size: 1.1em;">
-      Você tem 7 dias para testar o curso. Se não gostar, devolvemos 100% do seu dinheiro. Sem burocracia.
-    </p>
-  </section>
-
-  <!-- ✅ Seção: Depoimentos -->
-  <section id="depoimentos">
-    <h2>Quem já está lucrando com o MTI:</h2>
-    <!-- Aqui você pode usar cards com fotos, nome e depoimento -->
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-      <div style="background:#111; padding: 20px; border-radius: 12px; max-width: 300px;">
-        <p>"O MTI mudou minha forma de operar. Resultados consistentes!"</p>
-        <strong>- João P.</strong>
-      </div>
-      <div style="background:#111; padding: 20px; border-radius: 12px; max-width: 300px;">
-        <p>"Recuperei meu investimento em menos de uma semana!"</p>
-        <strong>- Larissa M.</strong>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ Seção: FAQ / Dúvidas Frequentes -->
-  <section id="faq" style="background:#000;">
-    <h2>Dúvidas Frequentes</h2>
-    <details style="max-width:800px; margin:10px auto; background:#111; padding:15px; border-radius:10px;">
-      <summary style="cursor:pointer; font-weight: bold;">Preciso ter experiência com trading?</summary>
-      <p>Não! O curso é voltado para iniciantes e ensina do básico ao avançado.</p>
-    </details>
-    <details style="max-width:800px; margin:10px auto; background:#111; padding:15px; border-radius:10px;">
-      <summary style="cursor:pointer; font-weight: bold;">Posso acessar pelo celular?</summary>
-      <p>Sim! A plataforma é 100% responsiva para celular, tablet ou computador.</p>
-    </details>
-  </section>
-
-  <!-- ✅ Seção: Botão Final de Compra -->
-  <section style="text-align: center; padding: 60px 20px;">
-    <a href="https://seulinkdecompra.com" target="_blank" style="font-size: 1.5em; background: #800040; color: white; padding: 20px 40px; border-radius: 20px; text-decoration: none; font-weight: bold; box-shadow: 0 0 20px #80004099;">Quero começar agora!</a>
-  </section>
-
-</body>
-</html>
+  }
+</style>
