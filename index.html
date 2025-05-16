@@ -9,12 +9,13 @@
 <style>
   .topo {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* centraliza verticalmente */
+    justify-content: flex-start; /* foto do lado esquerdo */
     gap: 30px;
     padding: 40px 20px;
-    background-color: #000; /* preto */
+    background-color: #000; /* fundo preto */
   }
+
   .topo-imagem {
     width: 120px;
     height: 120px;
@@ -23,20 +24,26 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    flex-shrink: 0; /* evita que a imagem encolha */
   }
+
   .topo-imagem:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px #800040cc; /* sombra roxa vinho */
   }
+
   .topo-texto {
     color: white;
-    text-align: center;
+    text-align: left; /* texto alinhado à esquerda */
+    max-width: 600px;
   }
+
   .topo-texto h1 {
     font-size: 3em;
     font-weight: 900;
     margin: 0 0 10px 0;
   }
+
   .topo-texto p {
     font-size: 1.3em;
     margin: 0;
