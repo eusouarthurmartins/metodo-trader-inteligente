@@ -1,88 +1,83 @@
-<section class="sessao-preco-imagem">
-  <div class="conteudo-preco">
-    <img src="assets/precoimagem.jpg" alt="Imagem Oferta" class="imagem-preco" />
-    <div class="texto-preco">
-      <h2>Apenas <span class="preco-destaque">12x de R$9,99</span></h2>
-      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" target="_blank" class="botao-compra-preco">Quero aprender agora</a>
-    </div>
+<section class="preco-section">
+  <div class="preco-texto">
+    <h2>Quero aprender agora</h2>
+    <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-comprar" target="_blank" rel="noopener noreferrer">Comprar Agora</a>
   </div>
+  <img src="assets/imagemdepreco.jpg" alt="Imagem do curso" class="imagem-preco" />
 </section>
 
 <style>
-  .sessao-preco-imagem {
-    background-color: #000;
-    padding: 60px 20px;
-    color: #fff;
-  }
-
-  .conteudo-preco {
+  .preco-section {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
+    padding: 40px;
+    background: #000;
   }
 
-  .imagem-preco {
-    width: 300px;
-    border-radius: 16px;
-    box-shadow: 0 0 15px #800040cc;
+  .preco-texto {
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 700;
   }
 
-  .texto-preco {
-    max-width: 400px;
-    text-align: center;
-  }
-
-  .texto-preco h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-  }
-
-  .preco-destaque {
-    color: #ffcc00;
-  }
-
-  .botao-compra-preco {
-    background-color: #800040;
-    color: white;
-    padding: 20px 50px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    border-radius: 12px;
-    text-decoration: none;
-    animation: piscar 1.5s infinite alternate;
+  .botao-comprar {
     display: inline-block;
+    margin-top: 20px;
+    padding: 20px 50px;
+    background: #800040;
+    color: #fff;
+    font-weight: 900;
+    font-size: 2rem;
+    border-radius: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    animation: piscar 1.8s infinite;
+    transition: background 0.3s ease;
+  }
+
+  .botao-comprar:hover {
+    background: #aa005d;
   }
 
   @keyframes piscar {
-    from {
-      opacity: 1;
-      box-shadow: 0 0 15px #800040cc;
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .imagem-preco {
+    width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px #800040cc;
+    animation: zoom-suave 6s ease-in-out infinite;
+  }
+
+  @keyframes zoom-suave {
+    0%, 100% {
+      transform: scale(1);
     }
-    to {
-      opacity: 0.7;
-      box-shadow: 0 0 25px #ff0066cc;
+    50% {
+      transform: scale(1.05);
     }
   }
 
   @media (max-width: 700px) {
-    .conteudo-preco {
+    .preco-section {
       flex-direction: column;
+      gap: 25px;
+      padding: 25px;
+    }
+    .imagem-preco {
+      width: 250px;
+    }
+    .preco-texto {
+      font-size: 2.2rem;
       text-align: center;
     }
-
-    .imagem-preco {
-      width: 90%;
-    }
-
-    .texto-preco h2 {
-      font-size: 2rem;
-    }
-
-    .botao-compra-preco {
-      font-size: 1.5rem;
+    .botao-comprar {
       padding: 16px 40px;
+      font-size: 1.6rem;
     }
   }
 </style>
