@@ -9,240 +9,111 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      color: #c0c9d9; /* prata */
-      background: linear-gradient(180deg, #001f3f 0%, #6c7a89 100%);
-      overflow-x: hidden;
+      background: linear-gradient(to bottom, #001f3f, #6c7a89);
+      color: #c0c9d9;
     }
+
     .container {
-      max-width: 900px;
-      margin: 60px auto 80px auto;
-      background-color: #b0bac7;
-      padding: 35px 30px;
-      border-radius: 14px;
-      box-shadow: 0 0 20px #3a4b6d88;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
       text-align: center;
-      color: #1f2a44;
     }
-    h1, h2 {
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
       color: #4da6ff;
-      font-weight: 900;
       text-shadow: 1px 1px 5px #82b1ffcc;
     }
-    h1 {
-      font-size: 2.8em;
-      margin-bottom: 25px;
-    }
-    h2 {
-      font-size: 2.2em;
-      margin-bottom: 30px;
+
+    /* Estilo do carrossel */
+    .modulos-section {
       margin-top: 50px;
     }
-    p, ul li {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin: 14px 0;
-      color: #2b3a5a;
-    }
-    .highlight {
-      color: #4da6ff;
-      font-weight: bold;
-    }
-    ul {
-      text-align: left;
-      padding-left: 30px;
-      margin-bottom: 35px;
-      list-style: none;
-    }
-    ul li::before {
-      content: "✔️";
-      margin-right: 12px;
-      color: #4da6ff;
-    }
-    .depoimentos {
-      background-color: #174074;
-      padding: 22px 20px;
-      border-radius: 12px;
-      margin: 35px 0;
-      text-align: left;
-      box-shadow: 0 0 12px #3468b1cc;
-      color: #cbd6e8;
-    }
-    .depoimento {
-      font-style: italic;
-      margin-bottom: 18px;
-      font-size: 1.05em;
-      color: #d0dbf5;
-    }
-    .depoimento strong {
-      display: block;
-      margin-top: 5px;
-      color: #8ab9ff;
-      font-weight: 700;
-    }
-    #countdown {
-      font-size: 1.7em;
-      color: #4da6ff;
-      font-weight: 900;
-      margin: 25px 0 40px 0;
-      text-shadow: 0 0 6px #82b1ffcc;
-      animation: blink 1.5s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    .whatsapp-button {
-      display: inline-block;
-      background: #4da6ff;
-      color: white;
-      font-weight: bold;
-      padding: 16px 40px;
-      border-radius: 10px;
-      font-size: 1.2em;
-      text-decoration: none;
-      box-shadow: 0 0 15px #4da6ffbb;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-    .whatsapp-button:hover {
-      background: #82b1ff;
-      box-shadow: 0 0 25px #82b1ffdd;
-    }
-    p.offer-price {
-      color: #4da6ff;
-      font-size: 2.2em;
-      font-weight: 900;
-      margin-top: 30px;
-      text-shadow: 0 0 6px #82b1ffcc;
-    }
-    /* Carrossel dos módulos */
+
     .modulos-section h2 {
-      margin-bottom: 30px;
+      font-size: 2em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px #444;
     }
+
     .modulos-carousel {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #3a57aa99;
-      background: #0f1b3c;
-      padding: 12px 0;
-    }
-    .modulos-track {
       display: flex;
-      width: calc(140px * 20 + 16px * 19);
-      animation: slideLeft 40s linear infinite;
-      gap: 16px;
+      overflow: hidden;
+      position: relative;
     }
-    .modulos-track img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 0 15px #5185ffcc;
-      user-select: none;
-      pointer-events: none;
-      cursor: default;
-      transition: transform 0.3s ease;
+
+    .carousel-track {
+      display: flex;
+      animation: scroll 25s linear infinite;
     }
-    .modulos-track img:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 25px #639cffdd;
-      pointer-events: auto;
-      cursor: pointer;
+
+    .carousel-track img {
+      width: 250px;
+      height: auto;
+      margin: 0 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000099;
+      flex-shrink: 0;
     }
-    @keyframes slideLeft {
+
+    @keyframes scroll {
       0% {
         transform: translateX(0);
       }
       100% {
-        transform: translateX(calc(-140px * 10 - 16px * 9));
+        transform: translateX(-50%);
       }
     }
-    /* Aba dúvidas */
-    .duvidas-section {
-      margin-top: 60px;
-      text-align: left;
-      background-color: #1a2a54;
-      border-radius: 12px;
-      padding: 25px 30px;
-      color: #cbd6e8;
-      box-shadow: 0 0 18px #22458a99;
+
+    /* Repetição para loop infinito suave */
+    .carousel-track img:nth-child(n+11) {
+      display: none;
     }
-    .duvidas-section h2 {
-      margin-bottom: 18px;
-    }
-    .duvidas-section ul {
-      list-style-type: disc;
-      padding-left: 40px;
-    }
-    .duvidas-section ul li {
-      margin-bottom: 12px;
-      font-size: 1.1em;
-      color: #acc2ff;
-    }
-    /* Garantia */
-    .garantia-section {
-      margin-top: 50px;
-      background-color: #1a2a54;
-      border-radius: 12px;
-      padding: 25px 30px;
-      color: #cbd6e8;
-      box-shadow: 0 0 18px #22458a99;
-      text-align: left;
-    }
-    .garantia-section h2 {
-      margin-bottom: 18px;
-    }
-    .garantia-section p {
-      font-size: 1.1em;
-      color: #acc2ff;
-    }
-    /* Responsividade */
-    @media (max-width: 600px) {
-      .container {
-        margin: 40px 15px 60px 15px;
-        padding: 30px 20px;
-      }
-      h1 {
-        font-size: 2em;
-      }
-      h2 {
-        font-size: 1.6em;
-      }
-      p, ul li {
-        font-size: 1em;
-      }
-      #countdown {
-        font-size: 1.4em;
-      }
-      .whatsapp-button {
-        font-size: 1em;
-        padding: 14px 30px;
-      }
-      p.offer-price {
-        font-size: 1.8em;
-      }
-      .modulos-track img {
-        width: 110px;
-        height: 110px;
-      }
-      .modulos-track {
-        width: calc(110px * 20 + 12px * 19);
-        gap: 12px;
-        animation-duration: 30s;
+
+    @media (max-width: 768px) {
+      .carousel-track img {
+        width: 180px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🎉 Parabéns por adquirir o Método Trader Inteligente!</h1>
+    <h1>Bem-vindo ao Método Trader Inteligente</h1>
 
-    <p><span class="highlight">QUE BOM QUE VOCÊ CHEGOU ATÉ AQUI!</span><br />
-    O <strong>MTI</strong> é um produto completo, que você vai entender tudo sobre o mercado de opções binárias!</p>
+    <div class="modulos-section">
+      <h2>O que você vai aprender com esse Método:</h2>
+      <div class="modulos-carousel">
+        <div class="carousel-track">
+          <!-- Primeira sequência -->
+          <img src="assets/modulo1.jpg" alt="Módulo 1" />
+          <img src="assets/modulo2.jpg" alt="Módulo 2" />
+          <img src="assets/modulo3.jpg" alt="Módulo 3" />
+          <img src="assets/modulo4.jpg" alt="Módulo 4" />
+          <img src="assets/modulo5.jpg" alt="Módulo 5" />
+          <img src="assets/modulo6.jpg" alt="Módulo 6" />
+          <img src="assets/modulo7.jpg" alt="Módulo 7" />
+          <img src="assets/modulo8.jpg" alt="Módulo 8" />
+          <img src="assets/modulo9.jpg" alt="Módulo 9" />
+          <img src="assets/modulo10.jpg" alt="Módulo 10" />
 
-    <p><span class="highlight">MAS TENHO QUE TE OFERECER UMA SUPER OFERTA...</span></p>
-
-    <p>Que tal você entender técnicas de <strong>alavancagens de bancas</strong> e virar um <strong>trader profissional</strong>, até mesmo terceirizando seus serviços?<br />
-    <strong>NÃO SAIA DESSA PÁGINA PARA NÃO PERDER ESSA OPORTUNIDADE!</strong></p>
-
-    <p>Com o <strong>Código da Alavancagem</strong>, você aprende a aplicar <span class="highlight">técnicas exclusivas</span> para multiplicar seu capital com inteligência e segurança, mesmo começando
+          <!-- Segunda sequência (duplicada para scroll infinito) -->
+          <img src="assets/modulo1.jpg" alt="Módulo 1" />
+          <img src="assets/modulo2.jpg" alt="Módulo 2" />
+          <img src="assets/modulo3.jpg" alt="Módulo 3" />
+          <img src="assets/modulo4.jpg" alt="Módulo 4" />
+          <img src="assets/modulo5.jpg" alt="Módulo 5" />
+          <img src="assets/modulo6.jpg" alt="Módulo 6" />
+          <img src="assets/modulo7.jpg" alt="Módulo 7" />
+          <img src="assets/modulo8.jpg" alt="Módulo 8" />
+          <img src="assets/modulo9.jpg" alt="Módulo 9" />
+          <img src="assets/modulo10.jpg" alt="Módulo 10" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
