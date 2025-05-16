@@ -2,28 +2,38 @@
   <h2>Dúvidas Frequentes</h2>
 
   <div class="faq-item">
-    <h3>Preciso ter experiência para fazer o curso?</h3>
-    <p>Não! O MTI foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
+    <button class="faq-pergunta">Preciso ter experiência para fazer o curso?</button>
+    <div class="faq-resposta">
+      <p>Não! O MTI foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
+    </div>
   </div>
 
   <div class="faq-item">
-    <h3>O acesso ao curso é vitalício?</h3>
-    <p>Sim! Após a compra, você terá acesso vitalício a todas as aulas e futuras atualizações.</p>
+    <button class="faq-pergunta">O acesso ao curso é vitalício?</button>
+    <div class="faq-resposta">
+      <p>Sim! Após a compra, você terá acesso vitalício a todas as aulas e futuras atualizações.</p>
+    </div>
   </div>
 
   <div class="faq-item">
-    <h3>Posso acessar pelo celular?</h3>
-    <p>Sim, você pode assistir às aulas tanto pelo celular quanto pelo computador ou tablet.</p>
+    <button class="faq-pergunta">Posso acessar pelo celular?</button>
+    <div class="faq-resposta">
+      <p>Sim, você pode assistir às aulas tanto pelo celular quanto pelo computador ou tablet.</p>
+    </div>
   </div>
 
   <div class="faq-item">
-    <h3>Recebo algum suporte?</h3>
-    <p>Sim! Você terá acesso a um canal de suporte exclusivo para tirar dúvidas diretamente com nossa equipe.</p>
+    <button class="faq-pergunta">Recebo algum suporte?</button>
+    <div class="faq-resposta">
+      <p>Sim! Você terá acesso a um canal de suporte exclusivo para tirar dúvidas diretamente com nossa equipe.</p>
+    </div>
   </div>
 
   <div class="faq-item">
-    <h3>E se eu não gostar do conteúdo?</h3>
-    <p>Você conta com 7 dias de garantia incondicional. Se não curtir o curso, pode solicitar reembolso total dentro desse prazo.</p>
+    <button class="faq-pergunta">E se eu não gostar do conteúdo?</button>
+    <div class="faq-resposta">
+      <p>Você conta com 7 dias de garantia incondicional. Se não curtir o curso, pode solicitar reembolso total dentro desse prazo.</p>
+    </div>
   </div>
 </section>
 
@@ -43,22 +53,41 @@
     color: #ff0077;
   }
 
-  .faq-item {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 15px;
-  }
-
-  .faq-item h3 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+  .faq-pergunta {
+    width: 100%;
+    background: #111;
     color: #fff;
+    font-size: 1.4rem;
+    padding: 18px 20px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    border-radius: 8px;
   }
 
-  .faq-item p {
-    font-size: 1.2rem;
+  .faq-pergunta:hover {
+    background: #1e1e1e;
+  }
+
+  .faq-resposta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #1a1a1a;
+    padding: 0 20px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .faq-resposta p {
+    margin: 15px 0;
+    font-size: 1.1rem;
     color: #ccc;
-    line-height: 1.6;
+  }
+
+  .faq-item.active .faq-resposta {
+    max-height: 200px;
   }
 
   @media (max-width: 600px) {
@@ -66,12 +95,27 @@
       font-size: 2.2rem;
     }
 
-    .faq-item h3 {
-      font-size: 1.4rem;
+    .faq-pergunta {
+      font-size: 1.2rem;
+      padding: 16px;
     }
 
-    .faq-item p {
-      font-size: 1.1rem;
+    .faq-resposta p {
+      font-size: 1rem;
     }
   }
 </style>
+
+<script>
+  const items = document.querySelectorAll('.faq-item');
+
+  items.forEach(item => {
+    const pergunta = item.querySelector('.faq-pergunta');
+    pergunta.addEventListener('click', () => {
+      item.classList.toggle('active');
+      items.forEach(el => {
+        if (el !== item) el.classList.remove('active');
+      });
+    });
+  });
+</script>
