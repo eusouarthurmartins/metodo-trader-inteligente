@@ -9,111 +9,188 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #001f3f, #6c7a89);
-      color: #c0c9d9;
+      background: linear-gradient(180deg, #0c0f1a, #1a1f30);
+      color: #f0f0f0;
     }
 
     .container {
       max-width: 1200px;
-      margin: 50px auto;
-      padding: 20px;
-      text-align: center;
+      margin: auto;
+      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 2.5em;
+    h1, h2 {
+      text-align: center;
       margin-bottom: 30px;
       color: #4da6ff;
-      text-shadow: 1px 1px 5px #82b1ffcc;
     }
 
-    /* Estilo do carrossel */
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+    }
+
+    .button {
+      display: inline-block;
+      background: #4da6ff;
+      color: white;
+      font-weight: bold;
+      padding: 15px 40px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      text-decoration: none;
+      box-shadow: 0 0 15px #4da6ffbb;
+      margin: 20px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .button:hover {
+      background: #82b1ff;
+      box-shadow: 0 0 25px #82b1ffdd;
+    }
+
+    /* Módulos estilo Netflix */
     .modulos-section {
-      margin-top: 50px;
+      padding: 40px 0;
     }
 
     .modulos-section h2 {
-      font-size: 2em;
-      color: #ffffff;
       margin-bottom: 20px;
-      text-shadow: 1px 1px 5px #444;
     }
 
     .modulos-carousel {
       display: flex;
-      overflow: hidden;
-      position: relative;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding: 10px;
     }
 
-    .carousel-track {
-      display: flex;
-      animation: scroll 25s linear infinite;
-    }
-
-    .carousel-track img {
-      width: 250px;
-      height: auto;
-      margin: 0 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00000099;
-      flex-shrink: 0;
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Repetição para loop infinito suave */
-    .carousel-track img:nth-child(n+11) {
+    .modulos-carousel::-webkit-scrollbar {
       display: none;
     }
 
-    @media (max-width: 768px) {
-      .carousel-track img {
-        width: 180px;
+    .modulo {
+      flex: 0 0 auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #00000088;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .modulo img {
+      width: 100%;
+      display: block;
+    }
+
+    .modulo:hover {
+      transform: scale(1.05);
+    }
+
+    .depoimentos, .garantia, .duvidas {
+      background: #121825;
+      border-radius: 12px;
+      padding: 30px 20px;
+      margin: 50px auto;
+      max-width: 900px;
+      box-shadow: 0 0 12px #4da6ff44;
+    }
+
+    .depoimento {
+      font-style: italic;
+      margin-bottom: 15px;
+      color: #d0dbf5;
+    }
+
+    .depoimento strong {
+      display: block;
+      margin-top: 5px;
+      color: #8ab9ff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "✔️ ";
+      margin-right: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .modulo {
+        width: 220px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Bem-vindo ao Método Trader Inteligente</h1>
+    <h1>Método Trader Inteligente</h1>
+    <p>Transforme sua jornada como trader com o curso mais completo sobre opções binárias. Do zero ao avançado, aprenda estratégias reais para lucrar com segurança.</p>
 
+    <a href="https://seulink.com" class="button">🔒 Quero garantir minha vaga</a>
+
+    <!-- Seção Módulos -->
     <div class="modulos-section">
       <h2>O que você vai aprender com esse Método:</h2>
       <div class="modulos-carousel">
-        <div class="carousel-track">
-          <!-- Primeira sequência -->
-          <img src="assets/modulo1.jpg" alt="Módulo 1" />
-          <img src="assets/modulo2.jpg" alt="Módulo 2" />
-          <img src="assets/modulo3.jpg" alt="Módulo 3" />
-          <img src="assets/modulo4.jpg" alt="Módulo 4" />
-          <img src="assets/modulo5.jpg" alt="Módulo 5" />
-          <img src="assets/modulo6.jpg" alt="Módulo 6" />
-          <img src="assets/modulo7.jpg" alt="Módulo 7" />
-          <img src="assets/modulo8.jpg" alt="Módulo 8" />
-          <img src="assets/modulo9.jpg" alt="Módulo 9" />
-          <img src="assets/modulo10.jpg" alt="Módulo 10" />
-
-          <!-- Segunda sequência (duplicada para scroll infinito) -->
-          <img src="assets/modulo1.jpg" alt="Módulo 1" />
-          <img src="assets/modulo2.jpg" alt="Módulo 2" />
-          <img src="assets/modulo3.jpg" alt="Módulo 3" />
-          <img src="assets/modulo4.jpg" alt="Módulo 4" />
-          <img src="assets/modulo5.jpg" alt="Módulo 5" />
-          <img src="assets/modulo6.jpg" alt="Módulo 6" />
-          <img src="assets/modulo7.jpg" alt="Módulo 7" />
-          <img src="assets/modulo8.jpg" alt="Módulo 8" />
-          <img src="assets/modulo9.jpg" alt="Módulo 9" />
-          <img src="assets/modulo10.jpg" alt="Módulo 10" />
-        </div>
+        <div class="modulo"><img src="assets/modulo1.jpg" alt="Módulo 1"></div>
+        <div class="modulo"><img src="assets/modulo2.jpg" alt="Módulo 2"></div>
+        <div class="modulo"><img src="assets/modulo3.jpg" alt="Módulo 3"></div>
+        <div class="modulo"><img src="assets/modulo4.jpg" alt="Módulo 4"></div>
+        <div class="modulo"><img src="assets/modulo5.jpg" alt="Módulo 5"></div>
+        <div class="modulo"><img src="assets/modulo6.jpg" alt="Módulo 6"></div>
+        <div class="modulo"><img src="assets/modulo7.jpg" alt="Módulo 7"></div>
+        <div class="modulo"><img src="assets/modulo8.jpg" alt="Módulo 8"></div>
+        <div class="modulo"><img src="assets/modulo9.jpg" alt="Módulo 9"></div>
+        <div class="modulo"><img src="assets/modulo10.jpg" alt="Módulo 10"></div>
       </div>
     </div>
+
+    <!-- Seção de Depoimentos -->
+    <div class="depoimentos">
+      <h2>Depoimentos de Alunos</h2>
+      <div class="depoimento">"Esse método abriu minha mente! Hoje opero com confiança." <strong>– Thiago F.</strong></div>
+      <div class="depoimento">"Em 2 semanas consegui meus primeiros lucros com consistência." <strong>– Juliana S.</strong></div>
+      <div class="depoimento">"Muito além do que esperava. Curso direto, prático e eficiente!" <strong>– Roberto M.</strong></div>
+    </div>
+
+    <!-- Garantia -->
+    <div class="garantia">
+      <h2>Garantia de 7 Dias</h2>
+      <p>Você tem 7 dias para testar o curso. Se por qualquer motivo achar que não é pra você, é só pedir reembolso. Simples assim. Sem letras miúdas.</p>
+    </div>
+
+    <!-- Seção de Dúvidas -->
+    <div class="duvidas">
+      <h2>Ainda está com dúvidas?</h2>
+      <ul>
+        <li>O acesso é vitalício?</li>
+        <li>Consigo fazer mesmo sem experiência?</li>
+        <li>Tem suporte se eu precisar?</li>
+        <li>Posso acessar pelo celular?</li>
+      </ul>
+      <p>Sim para todas essas perguntas! 😉</p>
+    </div>
+
+    <a href="https://seulink.com" class="button">🚀 Começar agora</a>
   </div>
+
+  <footer>
+    © 2025 - Método Trader Inteligente. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
