@@ -3,90 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Métodos Trader Inteligente - Módulos</title>
+  <title>Método Trader Inteligente - Módulos</title>
   <style>
+    /* Fundo estendido com imagem inteira sem cortes */
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
       background: url('assets/fundoroxo.jpg') no-repeat center top fixed;
-      background-size: contain;
+      background-size: contain; /* mostra a imagem inteira, sem cortar */
       background-color: #12003a;
       color: #7b4fc1;
       overflow-x: hidden;
       padding: 0;
     }
 
-    /* TOPO */
-    .topo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      padding: 40px;
-      background: #000;
-      position: relative;
-      z-index: 1;
-    }
-
-    .topo-imagem {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      box-shadow: 0 0 12px #7b4fc1;
-    }
-
-    .topo-imagem:hover {
-      transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 0 20px #7b4fc1cc;
-    }
-
-    .topo-texto {
-      color: #fff;
-      text-align: center;
-      z-index: 2;
-    }
-
-    .topo-texto h1 {
-      font-size: 3.2rem;
-      margin: 0 0 10px;
-    }
-
-    .topo-texto p {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    @media (max-width: 600px) {
-      .topo {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .topo-imagem {
-        width: 120px;
-        height: 120px;
-      }
-
-      .topo-texto h1 {
-        font-size: 2.5rem;
-      }
-
-      .topo-texto p {
-        font-size: 1.1rem;
-      }
-    }
+    /* REMOVIDO topo: sem seção .topo */
 
     /* CARROSSEL DE MÓDULOS */
     .modules-section {
       max-width: 1100px;
-      margin: 40px auto 80px;
+      margin: 80px auto 80px; /* margem maior em cima para dar espaço à imagem */
       padding: 0 20px;
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.55); /* leve fundo preto transparente para leitura */
+      border-radius: 15px;
+      box-shadow: 0 0 20px #6e3ecfcc;
     }
 
     .modules-title {
@@ -96,6 +38,7 @@
       margin-bottom: 20px;
       color: #6e3ecf;
       text-shadow: 0 0 12px #000000cc;
+      user-select: none;
     }
 
     .modules-carousel {
@@ -152,15 +95,6 @@
   </style>
 </head>
 <body>
-
-  <!-- TOPO -->
-  <section class="topo">
-    <img src="assets/imagemdetopo.jpg" alt="Foto do Trader" class="topo-imagem" />
-    <div class="topo-texto">
-      <h1>Método Trader Inteligente</h1>
-      <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
-    </div>
-  </section>
 
   <!-- SEÇÃO MÓDULOS -->
   <section class="modules-section">
@@ -230,4 +164,3 @@
 
 </body>
 </html>
- 
