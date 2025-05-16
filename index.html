@@ -20,11 +20,6 @@
     padding: 60px 30px;
     color: #ffffff;
     animation: fadeIn 2s ease-in-out;
-
-    box-shadow:
-      0 0 20px 5px #7b4fc1cc,
-      inset 0 0 30px 3px #7b4fc1bb;
-    border-radius: 15px;
   }
 
   .descricao-container {
@@ -35,9 +30,15 @@
 
   .descricao-container h2 {
     font-size: 2.5rem;
-    color: #9a6ffb; /* roxo mais vibrante para melhor legibilidade */
+    color: #9a6ffb;
     margin-bottom: 25px;
-    text-shadow: 0 0 20px #9a6ffbcc;
+    text-shadow:
+      0 0 5px #9a6ffb,
+      0 0 10px #9a6ffb,
+      0 0 20px #9a6ffb,
+      0 0 40px #7b4fc1,
+      0 0 80px #7b4fc1;
+    font-weight: 900;
   }
 
   .descricao-container p {
@@ -47,7 +48,7 @@
   }
 
   .descricao-container strong {
-    color: #7b4fc1; /* mantido roxo metálico */
+    color: #ff5588;
   }
 
   @keyframes fadeIn {
