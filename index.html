@@ -25,7 +25,7 @@
     z-index: 0;
   }
 
-  /* Container com layout flex horizontal */
+  /* Container central com layout flex para imagem + texto */
   .container {
     position: relative;
     z-index: 1;
@@ -34,32 +34,30 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* alinha topo da imagem com topo do texto */
     gap: 40px;
     padding: 0 20px;
     text-align: left;
   }
 
-  /* Foto ao lado esquerdo */
+  /* Foto sem borda e maior */
   .foto {
     flex-shrink: 0;
-    width: 250px;
+    width: 320px;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #5a3ea1cc;
     object-fit: contain;
   }
 
-  /* Texto ao lado direito */
+  /* Texto ao lado da foto */
   .texto {
-    max-width: 600px;
+    max-width: 520px;
   }
 
   h1 {
     font-size: 3.8rem;
     font-weight: 900;
-    color: #5a3ea1; /* roxo escuro e nítido */
-    text-shadow: 0 0 15px #5a3ea1cc;
+    color: #602ea1; /* roxo mais escuro e nítido */
+    text-shadow: 0 0 15px #602ea1cc;
     margin-bottom: 25px;
   }
 
@@ -68,6 +66,7 @@
     font-weight: 700;
     line-height: 1.5;
     color: #ddd;
+    max-width: 700px;
     text-shadow: 0 0 10px #000000bb;
     margin-bottom: 30px;
   }
@@ -82,7 +81,7 @@
 
   /* Botão de ação */
   .btn-cta {
-    background: #5a3ea1; /* roxo escuro e nítido */
+    background: #602ea1;
     color: white;
     font-weight: 900;
     font-size: 1.3rem;
@@ -90,26 +89,26 @@
     border-radius: 40px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 0 20px #5a3ea1cc;
+    box-shadow: 0 0 20px #602ea1cc;
     transition: background 0.3s ease, transform 0.3s ease;
     user-select: none;
   }
 
   .btn-cta:hover {
-    background: #462f81;
+    background: #4a207c;
     transform: scale(1.05);
   }
 
-  /* Responsividade para mobile - empilha verticalmente */
-  @media (max-width: 800px) {
+  /* Responsividade */
+  @media (max-width: 900px) {
     .container {
       flex-direction: column;
-      text-align: center;
+      align-items: center;
       height: auto;
-      padding: 40px 20px;
+      text-align: center;
     }
     .foto {
-      width: 180px;
+      width: 280px;
       margin-bottom: 30px;
     }
     .texto {
@@ -125,7 +124,19 @@
       font-size: 1.4rem;
     }
     .btn-cta {
-      padding: 12px 40px;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 2.3rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    .highlight {
       font-size: 1.1rem;
     }
   }
@@ -147,4 +158,3 @@
 
 </body>
 </html>
- 
