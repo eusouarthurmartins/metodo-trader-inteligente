@@ -1,51 +1,68 @@
 <section class="topo">
-  <img src="imagenprincipal.png" alt="Foto do Trader" class="topo-imagem" />
+  <img src="assets/imagenprincipal.png" alt="Foto do Trader" class="topo-imagem" />
   <div class="topo-texto">
     <h1>Método Trader Inteligente</h1>
-    <p>Pare de operar no escuro, aprende com quem vive do mercado!</p>
+    <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
   </div>
 </section>
 
 <style>
   .topo {
     display: flex;
-    align-items: center; /* centraliza verticalmente */
-    justify-content: flex-start; /* foto do lado esquerdo */
+    align-items: center;
+    justify-content: center;
     gap: 30px;
-    padding: 40px 20px;
-    background-color: #000; /* fundo preto */
+    padding: 40px;
+    background: #000;
   }
 
   .topo-imagem {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
     cursor: pointer;
-    flex-shrink: 0; /* evita que a imagem encolha */
   }
 
   .topo-imagem:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #800040cc; /* sombra roxa vinho */
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 15px #800040cc;
   }
 
   .topo-texto {
-    color: white;
-    text-align: left; /* texto alinhado à esquerda */
-    max-width: 600px;
+    color: #fff;
+    text-align: center;
   }
 
   .topo-texto h1 {
-    font-size: 3em;
-    font-weight: 900;
-    margin: 0 0 10px 0;
+    font-size: 3.2rem;
+    margin: 0 0 10px;
   }
 
   .topo-texto p {
-    font-size: 1.3em;
+    font-size: 1.3rem;
+    font-weight: 600;
     margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .topo {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .topo-imagem {
+      width: 120px;
+      height: 120px;
+    }
+
+    .topo-texto h1 {
+      font-size: 2.5rem;
+    }
+
+    .topo-texto p {
+      font-size: 1.1rem;
+    }
   }
 </style>
