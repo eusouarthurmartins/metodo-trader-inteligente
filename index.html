@@ -23,8 +23,8 @@
       font-size: 2.4em;
       font-weight: 900;
       margin-bottom: 20px;
-      color: #800040; /* roxo vinho mais vibrante */
-      text-shadow: 0 0 10px #800040cc;
+      color: #800040; /* roxo vinho vibrante */
+      /* removi sombra para ficar mais legível */
     }
     .modules-carousel {
       display: flex;
@@ -34,6 +34,7 @@
       padding-bottom: 15px;
       scrollbar-width: none; /* Firefox */
       -ms-overflow-style: none;  /* IE 10+ */
+      user-select: none;
     }
     .modules-carousel::-webkit-scrollbar {
       display: none; /* Chrome, Safari */
@@ -68,8 +69,7 @@
       font-size: 1.2em;
       text-align: center;
       color: #800040;
-      text-shadow: 0 0 6px #800040cc;
-      user-select: none;
+      /* removi sombra para melhorar legibilidade */
     }
   </style>
 </head>
@@ -123,21 +123,18 @@
 
   <script>
     const carousel = document.getElementById('modules-carousel');
-    let scrollAmount = 0;
-    const scrollStep = 2;
-    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    let pos = 0;
 
-    function autoScroll() {
-      scrollAmount += scrollStep;
-      if (scrollAmount >= maxScroll) {
-        scrollAmount = 0;
+    function smoothScroll() {
+      pos += 4; // velocidade maior
+      if(pos >= carousel.scrollWidth - carousel.clientWidth) {
+        pos = 0;
       }
-      carousel.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth',
-      });
+      carousel.scrollLeft = pos;
+      requestAnimationFrame(smoothScroll);
     }
-    setInterval(autoScroll, 40);
+
+    smoothScroll();
   </script>
 
 </body>
