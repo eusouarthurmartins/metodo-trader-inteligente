@@ -188,13 +188,14 @@
       gap: 20px;
       padding-bottom: 15px;
       scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE 10+ */
     }
     .modules-carousel::-webkit-scrollbar {
       display: none; /* Chrome, Safari */
     }
     .module-card {
       flex: 0 0 auto;
-      width: 220px;
+      width: 250px;
       border-radius: 14px;
       box-shadow: 0 0 15px #d4af37cc;
       background: #111;
@@ -212,20 +213,19 @@
       border-top-left-radius: 14px;
       border-top-right-radius: 14px;
       display: block;
-      height: 140px;
+      height: 160px;
       object-fit: cover;
       filter: drop-shadow(0 0 4px #d4af37bb);
     }
     .module-caption {
       padding: 12px 15px;
       font-weight: 900;
-      font-size: 1.1em;
+      font-size: 1.2em;
       text-align: center;
       color: #ffd700;
       text-shadow: 0 0 6px #ffd700cc;
       user-select: none;
     }
-
   </style>
 </head>
 <body>
@@ -284,6 +284,10 @@
         <div class="module-card">
           <img src="assets/modulo9.jpg" alt="Módulo 9" />
           <div class="module-caption">Módulo 9</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo10.jpg" alt="Módulo 10" />
+          <div class="module-caption">Módulo 10</div>
         </div>
       </div>
     </section>
@@ -349,6 +353,25 @@
         }
       });
     });
+
+    // Rolagem automática dos módulos (carrossel Netflix)
+    const carousel = document.getElementById('modules-carousel');
+    let scrollAmount = 0;
+    const scrollStep = 2; // velocidade do scroll, maior valor = mais rápido
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    function autoScroll() {
+      scrollAmount += scrollStep;
+      if (scrollAmount >= maxScroll) {
+        scrollAmount = 0; // volta ao início
+      }
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+    // Usar setInterval para rolar a cada 40ms (ajuste para mais/menos velocidade)
+    setInterval(autoScroll, 40);
   </script>
 
 </body>
