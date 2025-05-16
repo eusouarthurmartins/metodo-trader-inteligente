@@ -135,55 +135,78 @@
     .modules-section {
       max-width: 1100px;
       margin: 0 auto 80px auto;
-      padding: 0; /* remover padding lateral */
+      padding: 0;
     }
     .modules-section h2 {
       margin-bottom: 30px;
     }
+    
+    /* Wrapper para overflow escondido e tamanho fixo */
+    .modules-carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      /* Altura ajustada pra não cortar imagens */
+      height: 200px;
+    }
+
+    /* O carrossel em si, que será animado */
     .modules-carousel {
       display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 0 10px;
       gap: 20px;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* IE 10+ */
-      -webkit-overflow-scrolling: touch;
+      animation: scroll-left 25s linear infinite;
+      user-select: none;
+      /* para garantir altura das imagens */
+      height: 200px;
     }
-    .modules-carousel::-webkit-scrollbar {
-      display: none; /* Safari e Chrome */
-    }
-    .module-card {
+    
+    /* Repetiremos os módulos para o efeito loop infinito */
+    .modules-carousel > .module-card {
       flex: 0 0 auto;
       width: 280px;
       border-radius: 18px;
       box-shadow: 0 0 22px #8A2BE2cc;
       background: #1a152c;
       color: #b9a0ff;
-      user-select: none;
-      transition: transform 0.3s ease;
       cursor: pointer;
+      transition: transform 0.3s ease;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    .module-card:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 35px #b999ffcc;
+    .modules-carousel > .module-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px #b999ffcc;
       z-index: 10;
     }
-    .module-card img {
+    .modules-carousel img {
       width: 100%;
-      height: 160px;
-      object-fit: cover;
+      max-height: 160px;
+      object-fit: contain; /* evita corte */
       border-radius: 18px 18px 0 0;
       user-select: none;
+      background: #2a2361;
     }
     .module-caption {
       padding: 15px 12px;
       font-weight: 700;
-      font-size: 1.15em;
+      font-size: 1.2em;
       text-align: center;
       color: #d1b3ff;
       text-shadow: 0 0 6px #a47affcc;
+      user-select: none;
+    }
+
+    /* Animação para o scroll */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     /* Garantia */
@@ -231,66 +254,115 @@
     </section>
 
     <section class="btn-center">
-      <a href="https://wa.me/+5522992568259" class="btn-buy">Comprar Agora - R$ 49,99</a>
-      <a href="https://hotmart.com/product-link" class="btn-buy">Comprar pelo Hotmart</a>
+      <a href="#buy" class="btn-buy">Comprar Agora</a>
+      <a href="#buy" class="btn-buy">Quero Garantia de 7 dias</a>
     </section>
 
     <section class="modules-section">
       <h2>O que você vai aprender com esse Método:</h2>
-      <div class="modules-carousel">
-        <div class="module-card">
-          <img src="assets/modulo1.jpg" alt="Módulo 1" />
-          <div class="module-caption">Módulo 1</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo2.jpg" alt="Módulo 2" />
-          <div class="module-caption">Módulo 2</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo3.jpg" alt="Módulo 3" />
-          <div class="module-caption">Módulo 3</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo4.jpg" alt="Módulo 4" />
-          <div class="module-caption">Módulo 4</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo5.jpg" alt="Módulo 5" />
-          <div class="module-caption">Módulo 5</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo6.jpg" alt="Módulo 6" />
-          <div class="module-caption">Módulo 6</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo7.jpg" alt="Módulo 7" />
-          <div class="module-caption">Módulo 7</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo8.jpg" alt="Módulo 8" />
-          <div class="module-caption">Módulo 8</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo9.jpg" alt="Módulo 9" />
-          <div class="module-caption">Módulo 9</div>
-        </div>
-        <div class="module-card">
-          <img src="assets/modulo10.jpg" alt="Módulo 10" />
-          <div class="module-caption">Bônus</div>
+      <div class="modules-carousel-wrapper" aria-label="Carrossel dos módulos do curso">
+        <div class="modules-carousel" aria-live="polite" aria-atomic="true">
+          <!-- Duplicamos os módulos para efeito loop -->
+          <div class="module-card">
+            <img src="assets/modulo1.jpg" alt="Módulo 1" />
+            <div class="module-caption">Módulo 1</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo2.jpg" alt="Módulo 2" />
+            <div class="module-caption">Módulo 2</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo3.jpg" alt="Módulo 3" />
+            <div class="module-caption">Módulo 3</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo4.jpg" alt="Módulo 4" />
+            <div class="module-caption">Módulo 4</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo5.jpg" alt="Módulo 5" />
+            <div class="module-caption">Módulo 5</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo6.jpg" alt="Módulo 6" />
+            <div class="module-caption">Módulo 6</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo7.jpg" alt="Módulo 7" />
+            <div class="module-caption">Módulo 7</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo8.jpg" alt="Módulo 8" />
+            <div class="module-caption">Módulo 8</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo9.jpg" alt="Módulo 9" />
+            <div class="module-caption">Módulo 9</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo10.jpg" alt="Módulo 10" />
+            <div class="module-caption">Módulo 10</div>
+          </div>
+
+          <!-- Repetição para loop -->
+          <div class="module-card">
+            <img src="assets/modulo1.jpg" alt="Módulo 1" />
+            <div class="module-caption">Módulo 1</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo2.jpg" alt="Módulo 2" />
+            <div class="module-caption">Módulo 2</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo3.jpg" alt="Módulo 3" />
+            <div class="module-caption">Módulo 3</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo4.jpg" alt="Módulo 4" />
+            <div class="module-caption">Módulo 4</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo5.jpg" alt="Módulo 5" />
+            <div class="module-caption">Módulo 5</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo6.jpg" alt="Módulo 6" />
+            <div class="module-caption">Módulo 6</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo7.jpg" alt="Módulo 7" />
+            <div class="module-caption">Módulo 7</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo8.jpg" alt="Módulo 8" />
+            <div class="module-caption">Módulo 8</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo9.jpg" alt="Módulo 9" />
+            <div class="module-caption">Módulo 9</div>
+          </div>
+          <div class="module-card">
+            <img src="assets/modulo10.jpg" alt="Módulo 10" />
+            <div class="module-caption">Módulo 10</div>
+          </div>
         </div>
       </div>
     </section>
 
+    <section id="buy" class="btn-center">
+      <a href="#" class="btn-buy">Comprar Agora</a>
+      <a href="#" class="btn-buy">Quero Garantia de 7 dias</a>
+    </section>
+
     <section class="guarantee-section">
-      <h2>Garantia de 7 Dias</h2>
+      <h2>Garantia de 7 dias</h2>
       <p>
-        Compre com total segurança! Se você não ficar satisfeito com o curso, tem 7 dias para pedir reembolso e devolveremos seu dinheiro sem complicações.
+        Se por qualquer motivo você não estiver satisfeito com o curso, basta solicitar o cancelamento dentro de 7 dias e receberá seu dinheiro de volta, sem complicações.
       </p>
     </section>
 
     <section class="testimonials">
-      <div class="testimonial">“Com o Método Trader Inteligente, consegui meus primeiros lucros em apenas uma semana!”<strong>– João T.</strong></div>
-      <div class="testimonial">“As técnicas são fáceis de entender e aplicáveis mesmo para quem está começando.”<strong>– Ana M.</strong></div>
+      <div class="testimonial">“O Método mudou minha vida, consegui aprender tudo rápido e lucrar!”<strong>– Ana M.</strong></div>
       <div class="testimonial">“O suporte e as aulas são excelentes, recomendo para todos.”<strong>– Carlos S.</strong></div>
     </section>
 
