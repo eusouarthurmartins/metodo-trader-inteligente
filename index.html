@@ -1,57 +1,44 @@
-<section class="header">
-  <img src="assets/imagenprincipal.png" alt="Minha Foto" class="profile-pic" />
-  <div class="header-text">
+<section class="topo">
+  <img src="imagenprincipal.png" alt="Foto do Trader" class="topo-imagem" />
+  <div class="topo-texto">
     <h1>Método Trader Inteligente</h1>
-    <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
+    <p>Pare de operar no escuro, aprende com quem vive do mercado!</p>
   </div>
 </section>
 
 <style>
-  .header {
+  .topo {
     display: flex;
     align-items: center;
-    padding: 30px 40px;
-    background: #000000; /* preto */
-    color: white;
+    justify-content: center;
     gap: 30px;
+    padding: 40px 20px;
+    background-color: #000; /* preto */
   }
-
-  .profile-pic {
+  .topo-imagem {
     width: 120px;
     height: 120px;
+    border-radius: 50%;
     object-fit: cover;
-    border-radius: 50%; /* foto redonda */
-    box-shadow: 0 0 15px #800040cc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
   }
-
-  .header-text {
-    text-align: center; /* centraliza o texto na div */
-    flex: 1;
+  .topo-imagem:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #800040cc; /* sombra roxa vinho */
   }
-
-  .header-text h1 {
+  .topo-texto {
+    color: white;
+    text-align: center;
+  }
+  .topo-texto h1 {
     font-size: 3em;
     font-weight: 900;
-    margin: 0 0 10px;
-    color: white;
-    text-shadow: 0 0 8px #800040cc;
+    margin: 0 0 10px 0;
   }
-
-  .header-text p {
+  .topo-texto p {
     font-size: 1.3em;
-    font-weight: 600;
     margin: 0;
-    color: white;
-    text-shadow: 0 0 5px #800040cc;
-  }
-  
-  @media (max-width: 600px) {
-    .header {
-      flex-direction: column;
-      text-align: center;
-    }
-    .profile-pic {
-      margin-bottom: 20px;
-    }
   }
 </style>
