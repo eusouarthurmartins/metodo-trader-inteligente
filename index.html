@@ -1,106 +1,159 @@
-<section class="beneficios">
-  <div class="beneficios-conteudo">
-    <h2>Por que escolher o Método Trader Inteligente?</h2>
-    <ul>
-      <li>✔ Estratégias que funcionam no mercado real</li>
-      <li>✔ Acesso vitalício às aulas</li>
-      <li>✔ Suporte direto com quem vive do mercado</li>
-      <li>✔ Resultados comprovados pelos alunos</li>
-    </ul>
-
-    <div class="oferta">
-      <p class="preco">
-        De <span class="riscado">R$689,99</span> por apenas <strong>12x de R$9,99</strong>
-      </p>
-      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-compra" target="_blank">Quero Começar Agora</a>
-    </div>
-  </div>
-</section>
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Método Trader Inteligente</title>
 <style>
-  .beneficios {
-    background-image: url('assets/fundo-mti.jpg');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 60px 20px;
-    text-align: center;
+  /* Reset básico */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    font-family: 'Arial Black', Arial, sans-serif;
     color: white;
-
-    /* Sombras roxas para destaque */
-    box-shadow:
-      0 0 15px 3px #7b4fc1cc,
-      0 0 30px 8px #7b4fc144;
-    border-radius: 15px;
+    background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+    background-size: cover;
   }
 
-  .beneficios h2 {
-    font-size: 2.8rem;
-    color: #fff;
-    text-shadow: 0 0 10px #7b4fc1cc; /* roxo metálico */
-    margin-bottom: 30px;
+  .overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
   }
 
-  .beneficios ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 40px;
-    font-size: 1.3rem;
-    font-weight: 600;
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 0 20px;
+    text-align: left;
   }
 
-  .beneficios ul li {
-    margin-bottom: 15px;
+  /* Animação de entrada suave */
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  .oferta .preco {
-    font-size: 1.5rem;
+  .foto {
+    flex-shrink: 0;
+    width: 450px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    animation: fadeSlideIn 1s ease forwards;
+  }
+
+  .texto {
+    max-width: 550px;
+    animation: fadeSlideIn 1.4s ease forwards;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+    font-weight: 900;
+    color: #3e0669;
+    text-shadow: 2px 2px 4px #000000aa;
     margin-bottom: 25px;
   }
 
-  .oferta .riscado {
-    text-decoration: line-through;
-    color: #aaa;
-    margin-right: 10px;
+  p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #ddd;
+    text-shadow: 0 0 10px #000000aa;
+    margin-bottom: 30px;
   }
 
-  .botao-compra {
-    background-color: #7b4fc1; /* roxo metálico */
+  .highlight {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #fff;
+    margin-top: 20px;
+    text-shadow: 0 0 20px #ffcc00cc;
+  }
+
+  .btn-cta {
+    background: #3e0669;
     color: white;
-    padding: 18px 40px;
-    font-size: 1.4rem;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    box-shadow: 0 0 15px #7b4fc1aa; /* sombra roxa */
-    animation: pulsar 1.5s infinite;
-    display: inline-block;
+    font-weight: 900;
+    font-size: 1.3rem;
+    padding: 15px 50px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px #3e0669cc;
+    transition: background 0.3s ease, transform 0.3s ease;
+    user-select: none;
   }
 
-  .botao-compra:hover {
-    background-color: #6e3ecf; /* hover roxo metálico mais escuro */
-    box-shadow: 0 0 25px #6e3ecfcc;
+  .btn-cta:hover {
+    background: #5a1a9a;
+    transform: scale(1.05);
   }
 
-  @keyframes pulsar {
-    0% { box-shadow: 0 0 10px #7b4fc1aa; }
-    50% { box-shadow: 0 0 25px #6e3ecfcc; }
-    100% { box-shadow: 0 0 10px #7b4fc1aa; }
+  @media (max-width: 1000px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+      padding-top: 40px;
+      text-align: center;
+    }
+    .foto {
+      width: 300px;
+      margin-bottom: 30px;
+    }
+    .texto {
+      max-width: 100%;
+    }
   }
 
   @media (max-width: 600px) {
-    .beneficios h2 {
-      font-size: 2rem;
+    h1 {
+      font-size: 2.4rem;
     }
-
-    .beneficios ul {
+    p {
       font-size: 1.1rem;
     }
-
-    .botao-compra {
-      width: 100%;
+    .highlight {
+      font-size: 1.3rem;
+    }
+    .btn-cta {
+      padding: 12px 30px;
+      font-size: 1rem;
     }
   }
 </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+  <img src="assets/sua-foto.png" alt="Foto do Arthur" class="foto" />
+  <div class="texto">
+    <h1>Método Trader Inteligente</h1>
+    <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
+    <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
+    <button class="btn-cta" onclick="location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">Quero aprender agora</button>
+  </div>
+</div>
+
+</body>
+</html>
