@@ -25,7 +25,7 @@
     z-index: 0;
   }
 
-  /* Container central */
+  /* Container com layout flex horizontal */
   .container {
     position: relative;
     z-index: 1;
@@ -33,11 +33,26 @@
     margin: 0 auto;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 40px;
     padding: 0 20px;
-    text-align: center;
+    text-align: left;
+  }
+
+  /* Foto ao lado esquerdo */
+  .foto {
+    flex-shrink: 0;
+    width: 250px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #5a3ea1cc;
+    object-fit: contain;
+  }
+
+  /* Texto ao lado direito */
+  .texto {
+    max-width: 600px;
   }
 
   h1 {
@@ -53,7 +68,6 @@
     font-weight: 700;
     line-height: 1.5;
     color: #ddd;
-    max-width: 700px;
     text-shadow: 0 0 10px #000000bb;
     margin-bottom: 30px;
   }
@@ -86,20 +100,33 @@
     transform: scale(1.05);
   }
 
-  /* Responsividade */
-  @media (max-width: 600px) {
+  /* Responsividade para mobile - empilha verticalmente */
+  @media (max-width: 800px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+      padding: 40px 20px;
+    }
+    .foto {
+      width: 180px;
+      margin-bottom: 30px;
+    }
+    .texto {
+      max-width: 100%;
+    }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
     }
     p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
     .highlight {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
     .btn-cta {
-      padding: 12px 30px;
-      font-size: 1rem;
+      padding: 12px 40px;
+      font-size: 1.1rem;
     }
   }
 </style>
@@ -109,10 +136,13 @@
 <div class="overlay"></div>
 
 <div class="container">
-  <h1>Método Trader Inteligente</h1>
-  <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
-  <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
-  <button class="btn-cta" onclick="location.href='#modulos'">Quero aprender agora</button>
+  <img src="assets/sua-foto.png" alt="Foto do Arthur" class="foto" />
+  <div class="texto">
+    <h1>Método Trader Inteligente</h1>
+    <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
+    <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
+    <button class="btn-cta" onclick="location.href='#modulos'">Quero aprender agora</button>
+  </div>
 </div>
 
 </body>
