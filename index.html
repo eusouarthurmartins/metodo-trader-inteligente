@@ -1,296 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      color: #c0c9d9; /* prata */
-      background: linear-gradient(180deg, #001f3f 0%, #6c7a89 100%); /* azul escuro para prata */
-      overflow-x: hidden;
-    }
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      background-color: #b0bac7; /* prata escuro */
-      padding: 35px 30px;
-      border-radius: 14px;
-      box-shadow: 0 0 20px #3a4b6d88;
-      text-align: center;
-      color: #1f2a44;
-    }
-    h1 {
-      color: #4da6ff; /* azul claro */
-      font-size: 2.6em;
-      font-weight: 900;
-      margin-bottom: 25px;
-      text-shadow: 1px 1px 5px #82b1ffcc;
-    }
-    p, ul li {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin: 14px 0;
-      color: #2b3a5a; /* azul escuro */
-    }
-    .highlight {
-      color: #4da6ff;
-      font-weight: bold;
-    }
-    ul {
-      text-align: left;
-      padding-left: 30px;
-      margin-bottom: 35px;
-      list-style: none;
-    }
-    ul li::before {
-      content: "✔️";
-      margin-right: 12px;
-      color: #4da6ff;
-    }
-    .depoimentos {
-      background-color: #174074; /* azul mais escuro */
-      padding: 22px 20px;
-      border-radius: 12px;
-      margin: 35px 0;
-      text-align: left;
-      box-shadow: 0 0 12px #3468b1cc;
-      color: #cbd6e8; /* prata clara */
-    }
-    .depoimento {
-      font-style: italic;
-      margin-bottom: 18px;
-      font-size: 1.05em;
-      color: #d0dbf5;
-    }
-    .depoimento strong {
-      display: block;
-      margin-top: 5px;
-      color: #8ab9ff;
-      font-weight: 700;
-    }
-    #countdown {
-      font-size: 1.7em;
-      color: #4da6ff;
-      font-weight: 900;
-      margin: 25px 0 40px 0;
-      text-shadow: 0 0 6px #82b1ffcc;
-      animation: blink 1.5s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    .whatsapp-button {
-      display: inline-block;
-      background: #4da6ff;
-      color: white;
-      font-weight: bold;
-      padding: 16px 40px;
-      border-radius: 10px;
-      font-size: 1.2em;
-      text-decoration: none;
-      box-shadow: 0 0 15px #4da6ffbb;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      margin-bottom: 40px;
-    }
-    .whatsapp-button:hover {
-      background: #82b1ff;
-      box-shadow: 0 0 25px #82b1ffdd;
-    }
-    p.offer-price {
-      color: #4da6ff;
-      font-size: 2.2em;
-      font-weight: 900;
-      margin-top: 30px;
-      text-shadow: 0 0 6px #82b1ffcc;
-    }
-    /* Carrossel dos módulos */
-    .modulos-section {
-      margin-bottom: 50px;
-      text-align: left;
-    }
-    .modulos-section h2 {
-      color: #4da6ff;
-      font-weight: 900;
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 5px #82b1ffcc;
-      text-align: center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Método Trader Inteligente</title>
+<style>
+  body {
+    margin:0; padding:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #001f3f 0%, #6c7a89 100%);
+    color: #c0c9d9;
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 900px;
+    margin: 60px auto;
+    background-color: #b0bac7;
+    padding: 35px 30px;
+    border-radius: 14px;
+    box-shadow: 0 0 20px #3a4b6d88;
+    text-align: center;
+    color: #1f2a44;
+  }
+  h1 {
+    color: #4da6ff;
+    font-size: 2.6em;
+    font-weight: 900;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 5px #82b1ffcc;
+  }
+  p, ul li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 14px 0;
+    color: #2b3a5a;
+  }
+  ul {
+    text-align: left;
+    padding-left: 30px;
+    margin-bottom: 35px;
+    list-style: none;
+  }
+  ul li::before {
+    content: "✔️";
+    margin-right: 12px;
+    color: #4da6ff;
+  }
+  .beneficios h2, .modulos-section h2, .garantia h3, .duvidas h3 {
+    color: #4da6ff;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px #82b1ffcc;
+    text-align: center;
+  }
+  /* Carrossel */
+  .modulos-section {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .modulos-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+    animation: scrollModules 15s linear infinite;
+  }
+  .modulos-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .modulo-card {
+    flex: 0 0 auto;
+    width: 190px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 3px solid #4da6ff;
+    box-shadow: 0 4px 18px rgba(77, 166, 255, 0.6);
+    cursor: pointer;
+    background: #dbe9ff;
+    transition: transform 0.3s ease;
+  }
+  .modulo-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(77, 166, 255, 0.9);
+  }
+  .modulo-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+  }
+  @keyframes scrollModules {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  /* Garantia */
+  .garantia {
+    background-color: #174074;
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 15px #3468b1cc;
+    color: #cbd6e8;
+    text-align: left;
+  }
+  .garantia p {
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+  /* Dúvidas */
+  .duvidas {
+    background-color: #174074;
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 15px #3468b1cc;
+    color: #cbd6e8;
+    text-align: left;
+  }
+  .duvidas details {
+    margin-bottom: 15px;
+  }
+  .duvidas summary {
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    color: #82b1ff;
+    font-size: 1.1em;
+  }
+  .duvidas p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #cbd6e8;
+  }
+  /* Depoimentos */
+  .depoimentos {
+    margin-bottom: 50px;
+    text-align: left;
+  }
+  .depoimento {
+    font-style: italic;
+    margin-bottom: 18px;
+    font-size: 1.05em;
+    color: #d0dbf5;
+  }
+  .depoimento strong {
+    display: block;
+    margin-top: 5px;
+    color: #8ab9ff;
+    font-weight: 700;
+  }
+  /* Botões de compra */
+  .buy-buttons {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .buy-buttons a {
+    background: #4da6ff;
+    color: white;
+    font-weight: bold;
+    padding: 15px 38px;
+    border-radius: 10px;
+    font-size: 1.25em;
+    text-decoration: none;
+    margin: 0 10px 15px 10px;
+    display: inline-block;
+    box-shadow: 0 0 15px #4da6ffbb;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .buy-buttons a:hover {
+    background: #82b1ff;
+    box-shadow: 0 0 25px #82b1ffdd;
+  }
+  /* Responsivo */
+  @media (max-width: 768px) {
     .modulos-carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 20px;
-      padding-bottom: 10px;
-      scrollbar-width: none; /* Firefox */
-    }
-    .modulos-carousel::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Edge */
+      animation-play-state: paused;
+      overflow-x: scroll;
     }
     .modulo-card {
-      flex: 0 0 auto;
-      width: 170px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(77, 166, 255, 0.5);
-      border: 3px solid #4da6ff;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      background: #dbe9ff;
+      width: 160px;
     }
-    .modulo-card:hover {
-      transform: scale(1.08);
-      box-shadow: 0 6px 20px rgba(77, 166, 255, 0.8);
+  }
+  @media (max-width: 480px) {
+    .container {
+      margin: 30px 10px;
+      padding: 30px 20px;
     }
-    .modulo-card img {
-      width: 100%;
-      height: 110px;
-      object-fit: cover;
-      display: block;
+    h1 {
+      font-size: 2em;
     }
-    /* Animação para o carrossel rolando automático */
-    @keyframes scrollModules {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .modulos-carousel.auto-scroll {
-      animation: scrollModules 20s linear infinite;
-    }
-    /* Garantia */
-    .garantia {
-      background-color: #174074;
-      border-radius: 12px;
-      padding: 25px 20px;
-      margin-bottom: 50px;
-      box-shadow: 0 0 15px #3468b1cc;
-      color: #cbd6e8;
-      text-align: left;
-    }
-    .garantia h3 {
-      color: #4da6ff;
-      font-weight: 900;
-      margin-bottom: 15px;
-    }
-    /* Dúvidas */
-    .duvidas {
-      background-color: #174074;
-      border-radius: 12px;
-      padding: 25px 20px;
-      margin-bottom: 50px;
-      box-shadow: 0 0 15px #3468b1cc;
-      color: #cbd6e8;
-      text-align: left;
-    }
-    .duvidas h3 {
-      color: #4da6ff;
-      font-weight: 900;
-      margin-bottom: 15px;
-    }
-    .duvidas details {
-      margin-bottom: 15px;
-    }
-    .duvidas summary {
-      font-weight: 700;
-      cursor: pointer;
-      outline: none;
-      color: #82b1ff;
-      font-size: 1.1em;
-    }
-    .duvidas p {
-      margin-top: 5px;
-      font-size: 1em;
-      color: #cbd6e8;
-    }
-    /* Benefícios */
-    .beneficios {
-      margin-bottom: 50px;
-      text-align: left;
-    }
-    .beneficios h2 {
-      color: #4da6ff;
-      font-weight: 900;
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 5px #82b1ffcc;
-      text-align: center;
-    }
-    .beneficios ul {
-      list-style: none;
-      padding-left: 0;
-      color: #2b3a5a;
-      font-size: 1.1em;
-    }
-    .beneficios ul li::before {
-      content: "✔️";
-      margin-right: 12px;
-      color: #4da6ff;
-    }
-    /* Depoimentos */
-    .depoimentos {
-      margin-bottom: 50px;
-    }
-    /* Botões compra */
-    .buy-buttons {
-      text-align: center;
-      margin-bottom: 60px;
+    .modulo-card {
+      width: 140px;
     }
     .buy-buttons a {
-      background: #4da6ff;
-      color: white;
-      font-weight: bold;
-      padding: 15px 38px;
-      border-radius: 10px;
-      font-size: 1.25em;
-      text-decoration: none;
-      margin: 0 10px 15px 10px;
-      display: inline-block;
-      box-shadow: 0 0 15px #4da6ffbb;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1em;
+      padding: 14px 28px;
     }
-    .buy-buttons a:hover {
-      background: #82b1ff;
-      box-shadow: 0 0 25px #82b1ffdd;
-    }
-    @media (max-width: 768px) {
-      .modulos-carousel.auto-scroll {
-        animation-play-state: paused;
-      }
-      .modulos-carousel {
-        overflow-x: scroll;
-      }
-      .modulo-card {
-        width: 140px;
-      }
-    }
-    @media (max-width: 480px) {
-      .container {
-        margin: 30px 10px;
-        padding: 30px 20px;
-      }
-      h1 {
-        font-size: 2em;
-      }
-      .modulo-card {
-        width: 120px;
-      }
-      .whatsapp-button, .buy-buttons a {
-        font-size: 1em;
-        padding: 14px 28px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div class="container">
 
     <h1>🎉 Parabéns por adquirir o Método Trader Inteligente!</h1>
 
-    <p><span class="highlight">QUE BOM QUE VOCÊ CHEGOU ATÉ AQUI!</span><br />
+    <p><strong>Que bom que você chegou até aqui!</strong><br />
     O <strong>MTI</strong> é um produto completo, que vai te ensinar tudo sobre o mercado de opções binárias.</p>
 
     <div class="beneficios">
@@ -304,4 +219,79 @@
       </ul>
     </div>
 
-    <
+    <div class="buy-buttons">
+      <a href="#">Comprar Agora - R$297</a>
+      <a href="#">Parcelar em até 12x</a>
+      <a href="#">Ver Conteúdo Completo</a>
+    </div>
+
+    <section class="modulos-section">
+      <h2>O que você vai aprender com esse Método:</h2>
+      <div class="modulos-carousel">
+        <div class="modulo-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /></div>
+        <div class="modulo-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /></div>
+        <div class="modulo-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /></div>
+        <div class="modulo-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /></div>
+        <div class="modulo-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /></div>
+        <div class="modulo-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /></div>
+        <div class="modulo-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /></div>
+        <div class="modulo-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /></div>
+        <div class="modulo-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /></div>
+        <div class="modulo-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /></div>
+      </div>
+    </section>
+
+    <section class="garantia">
+      <h3>Garantia de 7 dias</h3>
+      <p>Se por qualquer motivo você não ficar satisfeito com o Método Trader Inteligente, devolvemos 100% do seu investimento sem perguntas. Seu risco é zero!</p>
+    </section>
+
+    <section class="depoimentos">
+      <h2>Depoimentos de quem já fez</h2>
+      <div class="depoimento">
+        “O MTI mudou minha forma de operar! Antes eu perdia muito, agora estou conseguindo lucro consistente.” 
+        <strong>- João S.</strong>
+      </div>
+      <div class="depoimento">
+        “Recomendo o curso para quem quer aprender de verdade sobre opções binárias, o suporte é excelente.” 
+        <strong>- Maria L.</strong>
+      </div>
+      <div class="depoimento">
+        “Vale cada centavo! O conteúdo é claro, direto e muito eficiente.” 
+        <strong>- Carlos M.</strong>
+      </div>
+    </section>
+
+    <section class="duvidas">
+      <h3>Ainda está com dúvidas?</h3>
+
+      <details>
+        <summary>Qual o conteúdo do curso?</summary>
+        <p>O curso possui 10 módulos que abordam desde os conceitos básicos até estratégias avançadas de trading.</p>
+      </details>
+
+      <details>
+        <summary>Posso acessar o curso para sempre?</summary>
+        <p>Sim! Você terá acesso vitalício ao conteúdo, podendo consultar sempre que quiser.</p>
+      </details>
+
+      <details>
+        <summary>Existe algum suporte?</summary>
+        <p>Sim! Nosso time está disponível para tirar suas dúvidas e te ajudar durante sua jornada.</p>
+      </details>
+
+      <details>
+        <summary>Qual a garantia?</summary>
+        <p>Garantimos 7 dias para você testar o curso. Se não gostar, devolvemos seu dinheiro sem burocracia.</p>
+      </details>
+    </section>
+
+    <div class="buy-buttons">
+      <a href="#">Comprar Agora - R$297</a>
+      <a href="#">Parcelar em até 12x</a>
+      <a href="#">Fale Conosco</a>
+    </div>
+
+  </div>
+</body>
+</html>
