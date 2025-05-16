@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
-      background: #000;
-      color: #d4af37;
+      background: #000000; /* preto */
+      color: #6a0d4d; /* roxo vinho escuro */
       overflow-x: hidden;
       padding: 40px 0;
     }
@@ -23,8 +23,8 @@
       font-size: 2.4em;
       font-weight: 900;
       margin-bottom: 20px;
-      color: #ffd700;
-      text-shadow: 0 0 10px #ffd700cc;
+      color: #800040; /* roxo vinho mais vibrante */
+      text-shadow: 0 0 10px #800040cc;
     }
     .modules-carousel {
       display: flex;
@@ -42,16 +42,16 @@
       flex: 0 0 auto;
       width: 250px;
       border-radius: 14px;
-      box-shadow: 0 0 15px #d4af37cc;
-      background: #111;
-      color: #d4af37;
+      box-shadow: 0 0 15px #6a0d4dcc;
+      background: #111111;
+      color: #6a0d4d;
       user-select: none;
       transition: transform 0.3s ease;
       cursor: pointer;
     }
     .module-card:hover {
       transform: scale(1.12);
-      box-shadow: 0 0 30px #ffd700cc;
+      box-shadow: 0 0 30px #800040cc;
     }
     .module-card img {
       width: 100%;
@@ -60,15 +60,15 @@
       display: block;
       height: 160px;
       object-fit: cover;
-      filter: drop-shadow(0 0 4px #d4af37bb);
+      filter: drop-shadow(0 0 4px #6a0d4dbb);
     }
     .module-caption {
       padding: 12px 15px;
       font-weight: 900;
       font-size: 1.2em;
       text-align: center;
-      color: #ffd700;
-      text-shadow: 0 0 6px #ffd700cc;
+      color: #800040;
+      text-shadow: 0 0 6px #800040cc;
       user-select: none;
     }
   </style>
@@ -122,16 +122,15 @@
   </section>
 
   <script>
-    // Rolagem automática dos módulos (carrossel Netflix)
     const carousel = document.getElementById('modules-carousel');
     let scrollAmount = 0;
-    const scrollStep = 2; // velocidade do scroll, maior valor = mais rápido
+    const scrollStep = 2;
     const maxScroll = carousel.scrollWidth - carousel.clientWidth;
 
     function autoScroll() {
       scrollAmount += scrollStep;
       if (scrollAmount >= maxScroll) {
-        scrollAmount = 0; // volta ao início
+        scrollAmount = 0;
       }
       carousel.scrollTo({
         left: scrollAmount,
