@@ -1,149 +1,120 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Módulos em Carrossel</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial Black', Arial, sans-serif;
-      background: #000000; /* preto */
-      color: #6a0d4d; /* roxo vinho escuro */
-      overflow-x: hidden;
-      padding: 40px 0;
-    }
-
-    .modules-section {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .modules-title {
-      text-align: center;
-      font-size: 2.4em;
-      font-weight: 900;
-      margin-bottom: 20px;
-      color: #800040; /* roxo vinho vibrante */
-      /* removi sombra para ficar mais legível */
-    }
-    .modules-carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 20px;
-      padding-bottom: 15px;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* IE 10+ */
-      user-select: none;
-    }
-    .modules-carousel::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
-    }
-    .module-card {
-      flex: 0 0 auto;
-      width: 250px;
-      border-radius: 14px;
-      box-shadow: 0 0 15px #6a0d4dcc;
-      background: #111111;
-      color: #6a0d4d;
-      user-select: none;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .module-card:hover {
-      transform: scale(1.12);
-      box-shadow: 0 0 30px #800040cc;
-    }
-    .module-card img {
-      width: 100%;
-      border-top-left-radius: 14px;
-      border-top-right-radius: 14px;
-      display: block;
-      height: 160px;
-      object-fit: cover;
-      filter: drop-shadow(0 0 4px #6a0d4dbb);
-    }
-    .module-caption {
-      padding: 12px 15px;
-      font-weight: 900;
-      font-size: 1.2em;
-      text-align: center;
-      color: #800040;
-      /* removi sombra para melhorar legibilidade */
-    }
-  </style>
-</head>
-<body>
-
-  <section class="modules-section">
-    <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
-    <div class="modules-carousel" id="modules-carousel">
-      <div class="module-card">
-        <img src="assets/modulo1.jpg" alt="Módulo 1" />
-        <div class="module-caption">Módulo 1</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo2.jpg" alt="Módulo 2" />
-        <div class="module-caption">Módulo 2</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo3.jpg" alt="Módulo 3" />
-        <div class="module-caption">Módulo 3</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo4.jpg" alt="Módulo 4" />
-        <div class="module-caption">Módulo 4</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo5.jpg" alt="Módulo 5" />
-        <div class="module-caption">Módulo 5</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo6.jpg" alt="Módulo 6" />
-        <div class="module-caption">Módulo 6</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo7.jpg" alt="Módulo 7" />
-        <div class="module-caption">Módulo 7</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo8.jpg" alt="Módulo 8" />
-        <div class="module-caption">Módulo 8</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo9.jpg" alt="Módulo 9" />
-        <div class="module-caption">Módulo 9</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo10.jpg" alt="Módulo 10" />
-        <div class="module-caption">Módulo 10</div>
-      </div>
+<section class="modules-section">
+  <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
+  <div class="modules-carousel" id="modules-carousel">
+    <div class="module-card">
+      <img src="assets/modulo1.jpg" alt="Módulo 1" />
+      <div class="module-caption">Módulo 1</div>
     </div>
-  </section>
+    <div class="module-card">
+      <img src="assets/modulo2.jpg" alt="Módulo 2" />
+      <div class="module-caption">Módulo 2</div>
+    </div>
+    <div class="module-card">
+      <img src="assets/modulo3.jpg" alt="Módulo 3" />
+      <div class="module-caption">Módulo 3</div>
+    </div>
+    <div class="module-card">
+      <img src="assets/modulo4.jpg" alt="Módulo 4" />
+      <div class="module-caption">Módulo 4</div>
+    </div>
+    <div class="module-card">
+      <img src="assets/modulo5.jpg" alt="Módulo 5" />
+      <div class="module-caption">Módulo 5</div>
+    </div>
+    <div class="module-card">
+      <img src="assets/modulo6.jpg" alt="Módulo 6" />
+      <div class="module-caption">Módulo 6</div>
+    </div>
+    <div class="module-card">
+      <img src="assets/modulo7.jpg" alt="Módulo 7" />
+      <div class="module-caption">Módulo 7</div>
+    </div>
+    <div class="module-card">
+      <img src="assets/modulo8.jpg" alt="Módulo 8" />
+      <div class="module-caption">Módulo 8</div>
+    </div>
+    <div class="module-card">
+      <img src="assets/modulo9.jpg" alt="Módulo 9" />
+      <div class="module-caption">Módulo 9</div>
+    </div>
+    <div class="module-card">
+      <img src="assets/modulo10.jpg" alt="Módulo 10" />
+      <div class="module-caption">Módulo 10</div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const carousel = document.getElementById('modules-carousel');
-    let pos = 0;
+<style>
+  .modules-section {
+    max-width: 1100px;
+    margin: 80px auto;
+  }
 
-    function smoothScroll() {
-      pos += 4; // velocidade maior
-      if(pos >= carousel.scrollWidth - carousel.clientWidth) {
-        pos = 0;
-      }
-      carousel.scrollLeft = pos;
-      requestAnimationFrame(smoothScroll);
-    }
+  .modules-title {
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #e6b3ff; /* roxo claro */
+    text-shadow: 0 0 10px #b300b3cc;
+  }
 
-    smoothScroll();
-  </script>
+  .modules-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding-bottom: 15px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 
-</body>
-</html>
+  .modules-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .module-card {
+    flex: 0 0 auto;
+    width: 250px;
+    border-radius: 14px;
+    box-shadow: 0 0 15px #b300b3aa;
+    background: #111;
+    color: #fff;
+    user-select: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .module-card:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 30px #e6b3ffcc;
+  }
+
+  .module-card img {
+    width: 100%;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    display: block;
+    height: 160px;
+    object-fit: cover;
+    filter: drop-shadow(0 0 4px #800080aa);
+  }
+
+  .module-caption {
+    padding: 12px 15px;
+    font-weight: 900;
+    font-size: 1.2em;
+    text-align: center;
+    color: #e6b3ff;
+    text-shadow: 0 0 6px #b300b3cc;
+  }
+</style>
+
 <script>
   const carousel = document.getElementById('modules-carousel');
   let lastTimestamp = null;
   let scrollPos = 0;
-  const speed = 0.8; // pixels por milissegundo (ajusta aqui)
+  const speed = 0.8; // pixels por milissegundo (ajuste aqui)
 
   function smoothScroll(timestamp) {
     if (!lastTimestamp) lastTimestamp = timestamp;
@@ -161,4 +132,3 @@
 
   requestAnimationFrame(smoothScroll);
 </script>
-
