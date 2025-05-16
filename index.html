@@ -8,27 +8,25 @@
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
-      background: #000000; /* preto */
-      color: #7b4fc1; /* roxo metálico claro */
-      overflow-x: hidden;
-      padding: 0;
-      background-image: url('assets/fundorooxo.jpg');
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
       background-repeat: no-repeat;
       background-position: center top;
-      background-size: contain;
+      background-size: contain; /* faz a imagem caber inteira, mesmo que não cubra tudo */
       background-attachment: fixed;
+      background-color: #000000;
+      color: #7b4fc1;
+      overflow-x: hidden;
+      padding: 0;
+      min-height: 100vh;
     }
+
+    /* --- TOPO removido conforme pedido --- */
 
     /* --- CARROSSEL DE MÓDULOS --- */
     .modules-section {
       max-width: 1100px;
-      margin: 160px auto 80px; /* margem superior aumentada */
+      margin: 300px auto 80px; /* margem superior aumentada para afastar os módulos da imagem */
       padding: 0 20px;
-      position: relative;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.55);
-      border-radius: 15px;
-      box-shadow: 0 0 20px #6e3ecfcc;
     }
 
     .modules-title {
@@ -36,8 +34,8 @@
       font-size: 2.4em;
       font-weight: 900;
       margin-bottom: 20px;
-      color: #6e3ecf; /* roxo metálico mais claro */
-      text-shadow: 0 0 12px #000000cc; /* sombra preta forte */
+      color: #6e3ecf;
+      text-shadow: 0 0 12px #000000cc;
     }
 
     .modules-carousel {
@@ -46,30 +44,30 @@
       scroll-behavior: smooth;
       gap: 20px;
       padding-bottom: 15px;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* IE 10+ */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     .modules-carousel::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
+      display: none;
     }
 
     .module-card {
       flex: 0 0 auto;
       width: 250px;
       border-radius: 14px;
-      box-shadow: 0 0 15px #000000cc; /* sombra preta */
+      box-shadow: 0 0 15px #000000cc;
       background: #111111;
-      color: #7b4fc1; /* roxo metálico claro */
+      color: #7b4fc1;
       user-select: none;
       transition: transform 0.3s ease;
       cursor: pointer;
-      border: 2px solid #000000; /* borda preta */
+      border: 2px solid #7b4fc1; /* borda roxa intensa */
     }
 
     .module-card:hover {
       transform: scale(1.12);
-      box-shadow: 0 0 30px #000000cc; /* sombra preta maior */
+      box-shadow: 0 0 30px #7b4fc1cc; /* sombra roxa maior */
     }
 
     .module-card img {
@@ -80,6 +78,7 @@
       height: 160px;
       object-fit: cover;
       filter: drop-shadow(0 0 4px #7b4fc1bb);
+      border-bottom: 2px solid #7b4fc1;
     }
 
     .module-caption {
@@ -87,13 +86,15 @@
       font-weight: 900;
       font-size: 1.2em;
       text-align: center;
-      color: #6e3ecf; /* roxo metálico claro */
+      color: #6e3ecf;
       text-shadow: 0 0 8px #000000cc;
       user-select: none;
     }
   </style>
 </head>
 <body>
+
+  <!-- REMOVIDO TOPO PARA IMAGEM FICAR INTACTA -->
 
   <!-- SEÇÃO MÓDULOS -->
   <section class="modules-section">
