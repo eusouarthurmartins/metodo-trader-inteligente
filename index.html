@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Método Trader Inteligente</title>
   <style>
-    /* --- TOPO --- */
+    /* ----------------- TOPO ----------------- */
     .topo {
       display: flex;
       align-items: center;
@@ -50,152 +50,136 @@
         flex-direction: column;
         gap: 20px;
       }
+
       .topo-imagem {
         width: 120px;
         height: 120px;
       }
+
       .topo-texto h1 {
         font-size: 2.5rem;
       }
+
       .topo-texto p {
         font-size: 1.1rem;
       }
     }
 
-    /* --- CARROSSEL DOS MÓDULOS --- */
+    /* ----------------- CARROSSEL DOS MÓDULOS ----------------- */
+    /* (exemplo básico do carrossel estilo Netflix) */
     .modulos-section {
-      background: #0a002b;
-      padding: 30px 20px;
+      background: #0d001f;
+      padding: 40px 20px;
       color: #fff;
-      text-align: center;
-      font-family: Arial, sans-serif;
     }
 
     .modulos-section h2 {
       font-size: 2.8rem;
       margin-bottom: 20px;
-      color: #a055b1;
+      text-align: center;
+      font-weight: 700;
     }
 
     .carrossel {
       display: flex;
       overflow-x: auto;
-      gap: 16px;
+      gap: 20px;
       scroll-behavior: smooth;
-      padding-bottom: 15px;
+      padding-bottom: 10px;
     }
 
-    .carrossel::-webkit-scrollbar {
-      height: 10px;
-    }
-
-    .carrossel::-webkit-scrollbar-thumb {
-      background: #800040;
-      border-radius: 10px;
-    }
-
-    .cartao-modulo {
-      flex: 0 0 220px;
-      background: #160046;
+    .modulo-card {
+      min-width: 250px;
       border-radius: 15px;
-      box-shadow: 0 0 15px #800040cc;
-      padding: 15px;
-      text-align: center;
+      background: #1a0033;
+      box-shadow: 0 0 10px #700050cc;
+      flex-shrink: 0;
       cursor: pointer;
       transition: transform 0.3s ease;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
     }
 
-    .cartao-modulo:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 25px #a055b1;
+    .modulo-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #a0008dcc;
     }
 
-    .cartao-modulo img {
+    .modulo-card img {
       width: 100%;
-      border-radius: 15px;
+      border-radius: 10px;
       margin-bottom: 10px;
-      object-fit: cover;
-      height: 130px;
     }
 
-    .cartao-modulo p {
-      font-weight: 700;
-      font-size: 1.2rem;
+    .modulo-card h3 {
       margin: 0;
-      color: #f0e6ff;
+      font-size: 1.5rem;
     }
 
-    /* --- BENEFÍCIOS --- */
+    /* ----------------- BENEFÍCIOS ----------------- */
     .beneficios-section {
-      background: #12003b;
+      background: #0d001f;
       padding: 40px 20px;
       color: #fff;
-      max-width: 900px;
-      margin: 0 auto 40px;
-      border-radius: 14px;
-      box-shadow: 0 0 25px #800040bb;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      position: relative;
     }
 
     .beneficios-section h2 {
-      color: #a055b1;
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      text-align: center;
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 25px;
+      text-shadow: 0 0 15px #800040cc;
     }
 
-    .beneficios-section ul {
+    .beneficios-lista {
       list-style: none;
       padding: 0;
-      margin: 0 0 30px 0;
-      font-size: 1.2rem;
-      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
       font-weight: 600;
-      color: #ddd;
+      font-size: 1.3rem;
+      line-height: 1.6;
     }
 
-    .beneficios-section ul li {
-      margin-bottom: 12px;
+    /* sem ícones conforme pedido */
+    .beneficios-lista li {
+      margin-bottom: 15px;
     }
 
-    .botao-comprar-beneficios {
-      display: block;
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto;
-      padding: 18px 0;
-      font-size: 1.9rem;
+    .botao-beneficios {
+      display: inline-block;
+      padding: 18px 60px;
+      font-size: 2rem;
       font-weight: 900;
-      background: #800040;
       color: #fff;
-      text-align: center;
-      border-radius: 14px;
+      background: #800040;
+      border-radius: 15px;
       text-decoration: none;
-      cursor: pointer;
-      animation: piscar 1.8s infinite;
-      box-shadow: 0 0 15px #800040cc;
+      animation: piscar 1.6s infinite;
       transition: background 0.3s ease;
     }
 
-    .botao-comprar-beneficios:hover {
+    .botao-beneficios:hover {
       background: #aa005d;
     }
 
     .preco-riscado {
-      text-align: center;
-      font-size: 1.7rem;
-      color: #a0a0a0;
-      text-decoration: line-through;
-      margin-bottom: 6px;
+      font-size: 1.8rem;
       font-weight: 700;
+      color: #aaa;
+      text-decoration: line-through;
+      margin-top: 25px;
+      margin-bottom: 8px;
     }
 
     .preco-promocional {
-      text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 900;
-      color: #ffdb00;
-      margin-bottom: 25px;
+      color: #fff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ff5cffcc;
     }
 
     @keyframes piscar {
@@ -203,21 +187,27 @@
       50% { opacity: 0.7; }
     }
 
-    /* --- DESCRIÇÃO DO MÉTODO --- */
+    /* ----------------- DESCRIÇÃO DO MÉTODO ----------------- */
     .descricao-section {
       background: #000;
-      padding: 40px 30px;
       color: #fff;
+      padding: 40px 25px;
+      text-align: center;
       max-width: 900px;
-      margin: 0 auto 40px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      border-radius: 14px;
-      box-shadow: 0 0 25px #800040bb;
-      line-height: 1.6;
-      font-size: 1.2rem;
+      margin: 0 auto;
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1.7;
     }
 
-    /* --- SEÇÃO DE PREÇO + BOTÃO --- */
+    .descricao-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      text-shadow: 0 0 15px #800040cc;
+    }
+
+    /* ----------------- PREÇO + BOTÃO ----------------- */
     .preco-section {
       display: flex;
       align-items: center;
@@ -225,10 +215,6 @@
       gap: 40px;
       padding: 40px;
       background: #000;
-      max-width: 900px;
-      margin: 0 auto 40px;
-      border-radius: 14px;
-      box-shadow: 0 0 25px #800040bb;
     }
 
     .preco-texto {
@@ -250,7 +236,6 @@
       cursor: pointer;
       animation: piscar 1.8s infinite;
       transition: background 0.3s ease;
-      box-shadow: 0 0 15px #800040cc;
     }
 
     .botao-comprar:hover {
@@ -291,10 +276,9 @@
         font-size: 1.6rem;
       }
     }
-
   </style>
 </head>
-<body style="background:#080008; margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+<body>
 
   <!-- TOPO -->
   <section class="topo">
@@ -308,60 +292,47 @@
   <!-- CARROSSEL DOS MÓDULOS -->
   <section class="modulos-section">
     <h2>O que você vai aprender com esse Método:</h2>
-    <div class="carrossel" tabindex="0" aria-label="Carrossel dos módulos">
-      <div class="cartao-modulo">
+    <div class="carrossel">
+      <div class="modulo-card">
         <img src="assets/modulo1.jpg" alt="Módulo 1" />
-        <p>Módulo 1 - Fundamentos do Mercado</p>
+        <h3>Módulo 1</h3>
       </div>
-      <div class="cartao-modulo">
+      <div class="modulo-card">
         <img src="assets/modulo2.jpg" alt="Módulo 2" />
-        <p>Módulo 2 - Configuração da Plataforma</p>
+        <h3>Módulo 2</h3>
       </div>
-      <div class="cartao-modulo">
+      <div class="modulo-card">
         <img src="assets/modulo3.jpg" alt="Módulo 3" />
-        <p>Módulo 3 - Estratégias Exclusivas</p>
+        <h3>Módulo 3</h3>
       </div>
-      <div class="cartao-modulo">
+      <div class="modulo-card">
         <img src="assets/modulo4.jpg" alt="Módulo 4" />
-        <p>Módulo 4 - Gestão de Banca</p>
+        <h3>Módulo 4</h3>
       </div>
-      <div class="cartao-modulo">
-        <img src="assets/modulo5.jpg" alt="Módulo 5" />
-        <p>Módulo 5 - Psicologia do Trader</p>
-      </div>
-      <div class="cartao-modulo">
-        <img src="assets/modulo6.jpg" alt="Módulo 6" />
-        <p>Módulo 6 - Operações ao Vivo</p>
-      </div>
-      <!-- Adicione os demais módulos conforme sua estrutura -->
+      <!-- Adicione mais módulos conforme necessário -->
     </div>
   </section>
 
   <!-- BENEFÍCIOS -->
   <section class="beneficios-section">
-    <h2>Benefícios do Curso</h2>
-    <ul>
-      <li>Aprenda com aulas práticas e objetivas</li>
-      <li>Estratégias exclusivas testadas no mercado</li>
-      <li>Gestão de banca para minimizar riscos</li>
-      <li>Psicologia do trader para controlar emoções</li>
-      <li>Suporte e acompanhamento contínuo</li>
-      <li>Material atualizado e 100% aplicável</li>
+    <h2>Benefícios do Método Trader Inteligente</h2>
+    <ul class="beneficios-lista">
+      <li>Aprenda estratégias exclusivas para opções binárias</li>
+      <li>Gestão de banca e controle emocional</li>
+      <li>Operações ao vivo e passo a passo</li>
+      <li>Conteúdo prático, direto e aplicável</li>
     </ul>
     <div class="preco-riscado">De R$689,99</div>
     <div class="preco-promocional">Por apenas 12x de R$9,99</div>
-    <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" target="_blank" rel="noopener noreferrer" class="botao-comprar-beneficios">Comprar Agora</a>
+    <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-beneficios" target="_blank" rel="noopener noreferrer">Comprar Agora</a>
   </section>
 
   <!-- DESCRIÇÃO DO MÉTODO -->
   <section class="descricao-section">
+    <h2>Sobre o Método Trader Inteligente</h2>
     <p>
-      O MTI - Método Trader Inteligente é um curso completo dividido em 10 módulos estratégicos, com 19 aulas práticas e objetivas, desenvolvidas especialmente para quem deseja dominar o mercado de opções binárias com consistência e inteligência.
-    </p>
-    <p>
-      Ao longo dos módulos, você vai aprender desde os fundamentos do mercado, configuração das plataformas, até estratégias exclusivas, gestão de banca, psicologia do trader e operações ao vivo. O conteúdo foi estruturado para te guiar passo a passo — do zero até o nível avançado — de forma clara, direta e 100% aplicável.
-    </p>
-    <p>
+      O MTI - Método Trader Inteligente é um curso completo dividido em 10 módulos estratégicos, com 19 aulas práticas e objetivas, desenvolvidas especialmente para quem deseja dominar o mercado de opções binárias com consistência e inteligência.<br><br>
+      Ao longo dos módulos, você vai aprender desde os fundamentos do mercado, configuração das plataformas, até estratégias exclusivas, gestão de banca, psicologia do trader e operações ao vivo. O conteúdo foi estruturado para te guiar passo a passo — do zero até o nível avançado — de forma clara, direta e 100% aplicável.<br><br>
       Prepare-se para transformar sua forma de operar e conquistar resultados reais no mercado!
     </p>
   </section>
@@ -370,7 +341,7 @@
   <section class="preco-section">
     <div class="preco-texto">
       <h2>Quero aprender agora</h2>
-      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" target="_blank" rel="noopener noreferrer" class="botao-comprar">Comprar Agora</a>
+      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-comprar" target="_blank" rel="noopener noreferrer">Comprar Agora</a>
     </div>
     <img src="assets/imagemdepreco.jpg" alt="Imagem do curso" class="imagem-preco" />
   </section>
