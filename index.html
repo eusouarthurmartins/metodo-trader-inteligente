@@ -13,20 +13,14 @@
     height: 100%;
     font-family: 'Arial Black', Arial, sans-serif;
     color: white;
-    background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+    background:
+      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+      url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
     background-size: cover;
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    z-index: 0;
   }
 
   .container {
     position: relative;
-    z-index: 1;
     max-width: 1100px;
     margin: 0 auto;
     height: 100vh;
@@ -36,6 +30,7 @@
     gap: 60px;
     padding: 0 20px;
     text-align: left;
+    z-index: 1;
   }
 
   /* Animação de entrada suave */
@@ -104,7 +99,7 @@
   }
 
   .btn-cta:hover {
-    background: #5a1a9a;
+    background: #570a9b;
     transform: scale(1.05);
   }
 
@@ -143,8 +138,6 @@
 </head>
 <body>
 
-<div class="overlay"></div>
-
 <div class="container">
   <img src="assets/sua-foto.png" alt="Foto do Arthur" class="foto" />
   <div class="texto">
@@ -157,274 +150,3 @@
 
 </body>
 </html>
-<section class="descricao-mti fade-in">
-  <div class="descricao-container">
-    <h2>Sobre o Método Trader Inteligente</h2>
-    <p>
-      O <strong>MTI - Método Trader Inteligente</strong> é um curso completo dividido em <strong>10 módulos estratégicos</strong>, com <strong>19 aulas práticas e objetivas</strong>, desenvolvidas especialmente para quem deseja dominar o mercado de opções binárias com consistência e inteligência.
-    </p>
-    <p>
-      Ao longo dos módulos, você vai aprender desde os fundamentos do mercado, configuração das plataformas, até <strong>estratégias exclusivas</strong>, <strong>gestão de banca</strong>, <strong>psicologia do trader</strong> e <strong>operações ao vivo</strong>. O conteúdo foi estruturado para te guiar passo a passo — do zero até o nível avançado — de forma clara, direta e 100% aplicável.
-    </p>
-    <p>
-      Prepare-se para <strong>transformar sua forma de operar</strong> e conquistar <strong>resultados reais</strong> no mercado!
-    </p>
-  </div>
-</section>
-
-<style>
-  .descricao-mti {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-                url('assets/bg-mti.jpg') no-repeat center center/cover;
-    padding: 60px 30px;
-    color: #ffffff;
-    animation: fadeIn 2s ease-in-out;
-
-    box-shadow:
-      0 0 20px 5px #7b4fc1cc,
-      inset 0 0 30px 3px #7b4fc1bb;
-    border-radius: 15px;
-  }
-
-  .descricao-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .descricao-container h2 {
-    font-size: 2.5rem;
-    color: #9a6ffb; /* roxo mais vibrante para melhor legibilidade */
-    margin-bottom: 25px;
-    text-shadow: 0 0 20px #9a6ffbcc;
-  }
-
-  .descricao-container p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-
-  .descricao-container strong {
-    color: #7b4fc1; /* mantido roxo metálico */
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @media (max-width: 600px) {
-    .descricao-container h2 {
-      font-size: 2rem;
-    }
-
-    .descricao-container p {
-      font-size: 1.05rem;
-    }
-  }
-</style>
-888888888888888888888888888888888888888888888888888888888888888888888888888888
-<section class="depoimentos-auto">
-  <h2>O que estão dizendo sobre o MTI</h2>
-  <div class="depoimentos-slider">
-    <div class="depoimentos-track">
-      <!-- Repetido para efeito contínuo -->
-      <div class="depoimento">
-        <img src="assets/depo1.jpg" alt="João Silva" />
-        <h3>João Silva</h3>
-        <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo2.jpg" alt="Camila Rocha" />
-        <h3>Camila Rocha</h3>
-        <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo3.jpg" alt="Lucas Andrade" />
-        <h3>Lucas Andrade</h3>
-        <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo4.jpg" alt="Fernanda Lima" />
-        <h3>Fernanda Lima</h3>
-        <p>"Conteúdo didático e direto. Foi o melhor investimento que fiz no ano."</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo5.jpg" alt="Rafael Souza" />
-        <h3>Rafael Souza</h3>
-        <p>"Aprendi mais em 1 semana do que em meses assistindo vídeos aleatórios."</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo6.jpg" alt="Bruna Torres" />
-        <h3>Bruna Torres</h3>
-        <p>"O MTI é direto ao ponto. Já estou operando com segurança e confiança."</p>
-      </div>
-
-      <!-- Copiando os mesmos para repetir a rolagem sem travar -->
-      <div class="depoimento">
-        <img src="assets/depo1.jpg" alt="João Silva" />
-        <h3>João Silva</h3>
-        <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo2.jpg" alt="Camila Rocha" />
-        <h3>Camila Rocha</h3>
-        <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo3.jpg" alt="Lucas Andrade" />
-        <h3>Lucas Andrade</h3>
-        <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .depoimentos-auto {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-                url('assets/mti-fundo.jpg') no-repeat center center/cover;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-    overflow: hidden;
-    box-shadow:
-      inset 0 0 60px #8000ff55,
-      inset 0 0 120px #8000ff33;
-  }
-
-  .depoimentos-auto h2 {
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-  }
-
-  .depoimentos-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .depoimentos-track {
-    display: flex;
-    gap: 30px;
-    animation: scroll-left 40s linear infinite;
-  }
-
-  .depoimento {
-    flex: 0 0 280px;
-    background: #1e1e1e;
-    border-radius: 14px;
-    padding: 20px;
-    box-shadow: 0 0 10px #800040aa;
-    text-align: center;
-  }
-
-  .depoimento img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 12px;
-  }
-
-  .depoimento h3 {
-    font-size: 1.2rem;
-    color: #ff80b3;
-    margin-bottom: 8px;
-  }
-
-  .depoimento p {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (max-width: 700px) {
-    .depoimento {
-      flex: 0 0 240px;
-    }
-
-    .depoimentos-auto h2 {
-      font-size: 2rem;
-    }
-  }
-</style>
-<section class="sessao-preco">
-  <h2>Você está a uma decisão de transformar sua jornada no mercado!</h2>
-  <p class="preco">
-    De <span class="preco-riscado">R$ 689,99</span> por apenas <span class="preco-atual">R$ 119,88</span> à vista!
-  </p>
-  <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-preco" target="_blank">
-    GARANTIR MINHA VAGA COM DESCONTO
-  </a>
-</section>
-
-<style>
-  .sessao-preco {
-    background-color: #000;
-    text-align: center;
-    padding: 70px 20px;
-    color: #fff;
-    box-shadow:
-      inset 0 0 80px #8000ffcc,
-      inset 0 0 160px #8000ff88;
-  }
-
-  .sessao-preco h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    max-width: 800px;
-    margin-inline: auto;
-  }
-
-  .preco {
-    font-size: 1.6rem;
-    margin-bottom: 30px;
-  }
-
-  .preco-riscado {
-    text-decoration: line-through;
-    color: #888;
-    margin-right: 10px;
-  }
-
-  .preco-atual {
-    color: #b084ff;
-    font-weight: bold;
-    font-size: 1.8rem;
-  }
-
-  .botao-preco {
-    background: linear-gradient(135deg, #6a00ff, #1a001f);
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding: 15px 35px;
-    border-radius: 10px;
-    text-decoration: none;
-    animation: pulsar 1.5s infinite;
-    transition: transform 0.2s ease;
-    display: inline-block;
-  }
-
-  .botao-preco:hover {
-    transform: scale(1.08);
-    background: linear-gradient(135deg, #7c1fff, #22002a);
-  }
-
-  @keyframes pulsar {
-    0% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(106, 0, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
-  }
-</style>
