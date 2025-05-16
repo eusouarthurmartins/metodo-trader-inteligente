@@ -1,88 +1,62 @@
-<section class="sessao-preco-imagem">
-  <div class="conteudo-preco">
-    <img src="assets/precoimagem.jpg" alt="Imagem Oferta" class="imagem-preco" />
-    <div class="texto-preco">
-      <h2>Apenas <span class="preco-destaque">12x de R$9,99</span></h2>
-      <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" target="_blank" class="botao-compra-preco">Quero aprender agora</a>
-    </div>
+<section class="descricao-mti fade-in">
+  <div class="descricao-container">
+    <h2>Sobre o Método Trader Inteligente</h2>
+    <p>
+      O <strong>MTI - Método Trader Inteligente</strong> é um curso completo dividido em <strong>10 módulos estratégicos</strong>, com <strong>19 aulas práticas e objetivas</strong>, desenvolvidas especialmente para quem deseja dominar o mercado de opções binárias com consistência e inteligência.
+    </p>
+    <p>
+      Ao longo dos módulos, você vai aprender desde os fundamentos do mercado, configuração das plataformas, até <strong>estratégias exclusivas</strong>, <strong>gestão de banca</strong>, <strong>psicologia do trader</strong> e <strong>operações ao vivo</strong>. O conteúdo foi estruturado para te guiar passo a passo — do zero até o nível avançado — de forma clara, direta e 100% aplicável.
+    </p>
+    <p>
+      Prepare-se para <strong>transformar sua forma de operar</strong> e conquistar <strong>resultados reais</strong> no mercado!
+    </p>
   </div>
 </section>
 
 <style>
-  .sessao-preco-imagem {
-    background-color: #000;
-    padding: 60px 20px;
-    color: #fff;
+  .descricao-mti {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('assets/bg-mti.jpg') no-repeat center center/cover;
+    padding: 60px 30px;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
   }
 
-  .conteudo-preco {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .imagem-preco {
-    width: 300px;
-    border-radius: 16px;
-    box-shadow: 0 0 15px #800040cc;
-  }
-
-  .texto-preco {
-    max-width: 400px;
+  .descricao-container {
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
   }
 
-  .texto-preco h2 {
+  .descricao-container h2 {
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    color: #ff0077;
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px #ff007799;
   }
 
-  .preco-destaque {
-    color: #ffcc00;
+  .descricao-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
   }
 
-  .botao-compra-preco {
-    background-color: #800040;
-    color: white;
-    padding: 20px 50px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    border-radius: 12px;
-    text-decoration: none;
-    animation: piscar 1.5s infinite alternate;
-    display: inline-block;
+  .descricao-container strong {
+    color: #ff5588;
   }
 
-  @keyframes piscar {
-    from {
-      opacity: 1;
-      box-shadow: 0 0 15px #800040cc;
-    }
-    to {
-      opacity: 0.7;
-      box-shadow: 0 0 25px #ff0066cc;
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  @media (max-width: 700px) {
-    .conteudo-preco {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .imagem-preco {
-      width: 90%;
-    }
-
-    .texto-preco h2 {
+  @media (max-width: 600px) {
+    .descricao-container h2 {
       font-size: 2rem;
     }
 
-    .botao-compra-preco {
-      font-size: 1.5rem;
-      padding: 16px 40px;
+    .descricao-container p {
+      font-size: 1.05rem;
     }
   }
 </style>
