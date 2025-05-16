@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Método Trader Inteligente</title>
 <style>
+  /* Reset básico */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
@@ -26,7 +27,7 @@
   .container {
     position: relative;
     z-index: 1;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     height: 100vh;
     display: flex;
@@ -37,37 +38,51 @@
     text-align: left;
   }
 
+  /* Animação de entrada suave */
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .foto {
     flex-shrink: 0;
     width: 450px;
     height: auto;
     object-fit: contain;
     display: block;
+    animation: fadeSlideIn 1s ease forwards;
   }
 
   .texto {
     max-width: 550px;
+    animation: fadeSlideIn 1.4s ease forwards;
   }
 
   h1 {
     font-size: 3.6rem;
     font-weight: 900;
-    color: #8e2efc;
-    text-shadow: 2px 2px 0 #12002b;
+    color: #3e0669;
+    text-shadow: 2px 2px 4px #000000aa;
     margin-bottom: 25px;
   }
 
   p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #ddd;
-    text-shadow: 0 0 10px #000000bb;
-    margin-bottom: 25px;
+    text-shadow: 0 0 10px #000000aa;
+    margin-bottom: 30px;
   }
 
   .highlight {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 900;
     color: #fff;
     margin-top: 20px;
@@ -78,21 +93,18 @@
     background: #632f9a;
     color: white;
     font-weight: 900;
-    font-size: 1.2rem;
-    padding: 15px 45px;
+    font-size: 1.3rem;
+    padding: 15px 50px;
     border-radius: 40px;
-    border: 3px solid #12002b;
+    border: none;
     cursor: pointer;
-    box-shadow: 0 0 15px #12002b;
+    box-shadow: 0 0 20px #632f9acc;
     transition: background 0.3s ease, transform 0.3s ease;
     user-select: none;
-    margin-top: 30px;
-    align-self: flex-start;
   }
 
   .btn-cta:hover {
     background: #7b4fc1;
-    box-shadow: 0 0 25px #30005f;
     transform: scale(1.05);
   }
 
@@ -100,30 +112,22 @@
     .container {
       flex-direction: column;
       height: auto;
-      padding-top: 80px;
+      padding-top: 40px;
       text-align: center;
     }
-
     .foto {
       width: 300px;
       margin-bottom: 30px;
     }
-
     .texto {
       max-width: 100%;
-    }
-
-    h1 {
-      font-size: 2.7rem;
-      text-align: center;
-    }
-
-    .btn-cta {
-      align-self: center;
     }
   }
 
   @media (max-width: 600px) {
+    h1 {
+      font-size: 2.4rem;
+    }
     p {
       font-size: 1.1rem;
     }
