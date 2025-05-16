@@ -1,237 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Métodos Trader Inteligente - Módulos</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial Black', Arial, sans-serif;
-      background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
-      background-size: contain;
-      color: #7b4fc1;
-      overflow-x: hidden;
-      padding: 60px 0 0; /* espaço para o header fixo */
-      height: 100vh;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Método Trader Inteligente</title>
+<style>
+  /* Reset básico */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: white;
+    background: url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
 
-    /* --- CABEÇALHO FIXO --- */
-    .site-header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #0a001a; /* preto arroxeado */
-      border-bottom: 2px solid #7b4fc1;
-      z-index: 999;
-      box-shadow: 0 2px 8px #000000aa;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  /* Fundo com camada escura para melhor leitura */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+  }
 
-    .container {
-      max-width: 1100px;
-      width: 100%;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+  /* Container central */
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+  }
 
-    .logo {
-      font-weight: 900;
-      font-size: 1.8rem;
-      color: #7b4fc1;
-      user-select: none;
-      cursor: default;
-    }
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #7b4fc1;
+    text-shadow: 0 0 15px #7b4fc1cc;
+    margin-bottom: 25px;
+  }
 
-    .nav-menu {
-      display: flex;
-      gap: 25px;
-    }
+  p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #ddd;
+    max-width: 700px;
+    text-shadow: 0 0 10px #000000bb;
+    margin-bottom: 30px;
+  }
 
-    .nav-link {
-      color: #ddd;
-      text-decoration: none;
-      font-weight: 600;
+  .highlight {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #fff;
+    margin-top: 20px;
+    text-shadow: 0 0 20px #ffcc00cc;
+  }
+
+  /* Botão de ação */
+  .btn-cta {
+    background: #7b4fc1;
+    color: white;
+    font-weight: 900;
+    font-size: 1.3rem;
+    padding: 15px 50px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px #7b4fc1cc;
+    transition: background 0.3s ease, transform 0.3s ease;
+    user-select: none;
+  }
+
+  .btn-cta:hover {
+    background: #632f9a;
+    transform: scale(1.05);
+  }
+
+  /* Responsividade */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+    .highlight {
+      font-size: 1.3rem;
+    }
+    .btn-cta {
+      padding: 12px 30px;
       font-size: 1rem;
-      transition: color 0.3s ease;
     }
-
-    .nav-link:hover {
-      color: #7b4fc1;
-      text-shadow: 0 0 8px #7b4fc1;
-    }
-
-    @media (max-width: 600px) {
-      .nav-menu {
-        gap: 15px;
-      }
-      .logo {
-        font-size: 1.5rem;
-      }
-      .nav-link {
-        font-size: 0.9rem;
-      }
-    }
-
-    /* --- SEÇÃO MÓDULOS --- */
-    .modules-section {
-      max-width: 1100px;
-      margin: 80px auto 60px;
-      padding: 0 20px;
-      background: rgba(17, 17, 17, 0.9); /* fundo preto semi-transparente para leitura */
-      border-radius: 14px;
-      box-sizing: border-box;
-      border: 3px solid #7b4fc1; /* borda roxa intensa */
-    }
-
-    .modules-title {
-      text-align: center;
-      font-size: 2.4em;
-      font-weight: 900;
-      margin-bottom: 20px;
-      color: #fff; /* branco bem nítido */
-      text-shadow: 0 0 12px #000000cc;
-    }
-
-    .modules-carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 20px;
-      padding-bottom: 15px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    .modules-carousel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .module-card {
-      flex: 0 0 auto;
-      width: 250px;
-      border-radius: 14px;
-      box-shadow: 0 0 15px #000000cc;
-      background: #111111;
-      color: #7b4fc1;
-      user-select: none;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      border: 2px solid #000000;
-    }
-
-    .module-card:hover {
-      transform: scale(1.12);
-      box-shadow: 0 0 30px #000000cc;
-    }
-
-    .module-card img {
-      width: 100%;
-      border-top-left-radius: 14px;
-      border-top-right-radius: 14px;
-      display: block;
-      height: 160px;
-      object-fit: cover;
-      filter: drop-shadow(0 0 4px #7b4fc1bb);
-    }
-
-    .module-caption {
-      padding: 12px 15px;
-      font-weight: 900;
-      font-size: 1.2em;
-      text-align: center;
-      color: #6e3ecf;
-      text-shadow: 0 0 8px #000000cc;
-      user-select: none;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
-  <header class="site-header">
-    <div class="container">
-      <div class="logo">MTI</div>
-      <nav class="nav-menu">
-        <a href="#modulos" class="nav-link">Módulos</a>
-        <a href="#beneficios" class="nav-link">Benefícios</a>
-        <a href="#depoimentos" class="nav-link">Depoimentos</a>
-        <a href="#contato" class="nav-link">Contato</a>
-      </nav>
-    </div>
-  </header>
+<div class="overlay"></div>
 
-  <!-- SEÇÃO MÓDULOS -->
-  <section class="modules-section" id="modulos">
-    <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
-    <div class="modules-carousel" id="modules-carousel">
-      <div class="module-card">
-        <img src="assets/modulo1.jpg" alt="Módulo 1" />
-        <div class="module-caption">Módulo 1</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo2.jpg" alt="Módulo 2" />
-        <div class="module-caption">Módulo 2</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo3.jpg" alt="Módulo 3" />
-        <div class="module-caption">Módulo 3</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo4.jpg" alt="Módulo 4" />
-        <div class="module-caption">Módulo 4</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo5.jpg" alt="Módulo 5" />
-        <div class="module-caption">Módulo 5</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo6.jpg" alt="Módulo 6" />
-        <div class="module-caption">Módulo 6</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo7.jpg" alt="Módulo 7" />
-        <div class="module-caption">Módulo 7</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo8.jpg" alt="Módulo 8" />
-        <div class="module-caption">Módulo 8</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo9.jpg" alt="Módulo 9" />
-        <div class="module-caption">Módulo 9</div>
-      </div>
-      <div class="module-card">
-        <img src="assets/modulo10.jpg" alt="Módulo 10" />
-        <div class="module-caption">Módulo 10</div>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const carousel = document.getElementById('modules-carousel');
-    let scrollAmount = 0;
-    const scrollStep = 2;
-    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-
-    function autoScroll() {
-      scrollAmount += scrollStep;
-      if (scrollAmount >= maxScroll) {
-        scrollAmount = 0;
-      }
-      carousel.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-    setInterval(autoScroll, 40);
-  </script>
+<div class="container">
+  <h1>Método Trader Inteligente</h1>
+  <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
+  <p class="highlight">Só quem pode impedir seu progresso, é você mesmo!</p>
+  <button class="btn-cta" onclick="location.href='#modulos'">Quero aprender agora</button>
+</div>
 
 </body>
 </html>
