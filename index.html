@@ -9,229 +9,240 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0a0f23, #1a243a);
-      color: #ddd;
+      color: #c0c9d9; /* prata */
+      background: linear-gradient(180deg, #001f3f 0%, #6c7a89 100%);
       overflow-x: hidden;
     }
     .container {
-      max-width: 960px;
-      margin: 40px auto;
-      background: #111a33;
-      border-radius: 12px;
-      padding: 30px 20px 50px 20px;
-      box-shadow: 0 0 30px #2a3d66cc;
-    }
-    h1, h2, h3 {
-      color: #69a3ff;
+      max-width: 900px;
+      margin: 60px auto 80px auto;
+      background-color: #b0bac7;
+      padding: 35px 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 20px #3a4b6d88;
       text-align: center;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px #4d7ccc;
+      color: #1f2a44;
     }
-    p {
+    h1, h2 {
+      color: #4da6ff;
+      font-weight: 900;
+      text-shadow: 1px 1px 5px #82b1ffcc;
+    }
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 25px;
+    }
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      margin-top: 50px;
+    }
+    p, ul li {
       font-size: 1.1em;
-      line-height: 1.5;
-      max-width: 850px;
-      margin: 0 auto 25px auto;
-      color: #cfd9f0;
+      line-height: 1.6;
+      margin: 14px 0;
+      color: #2b3a5a;
     }
     .highlight {
-      color: #79b1ff;
-      font-weight: 700;
+      color: #4da6ff;
+      font-weight: bold;
     }
-    .button {
-      display: inline-block;
-      background: #4484ff;
-      color: white;
-      font-weight: 700;
-      padding: 15px 35px;
-      border-radius: 10px;
-      font-size: 1.3em;
-      text-decoration: none;
-      margin: 20px auto 40px auto;
-      box-shadow: 0 0 15px #2f5edfcc;
-      transition: background 0.3s ease;
-      text-align: center;
-      cursor: pointer;
-      user-select: none;
-      display: block;
-      width: fit-content;
+    ul {
+      text-align: left;
+      padding-left: 30px;
+      margin-bottom: 35px;
+      list-style: none;
     }
-    .button:hover {
-      background: #2a63f4;
-      box-shadow: 0 0 25px #2a63f4dd;
+    ul li::before {
+      content: "✔️";
+      margin-right: 12px;
+      color: #4da6ff;
     }
-    /* Módulos */
-    .modulos-section {
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-    .modulos-section h2 {
-      margin-bottom: 30px;
-    }
-    .modulos-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-    .modulos-container img {
-      width: 90px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #4a79e1cc;
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-    .modulos-container img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px #639cffdd;
-    }
-    /* Benefícios */
-    .beneficios-list {
-      max-width: 850px;
-      margin: 0 auto 40px auto;
-      padding-left: 20px;
-      color: #a8bbff;
-    }
-    .beneficios-list li {
-      margin-bottom: 10px;
-      font-size: 1.15em;
-      line-height: 1.4;
-    }
-    /* Depoimentos */
     .depoimentos {
-      background: #1e2b52;
-      border-radius: 14px;
-      padding: 25px 25px;
-      max-width: 850px;
-      margin: 0 auto 40px auto;
-      box-shadow: 0 0 20px #3a4f9ecc;
+      background-color: #174074;
+      padding: 22px 20px;
+      border-radius: 12px;
+      margin: 35px 0;
+      text-align: left;
+      box-shadow: 0 0 12px #3468b1cc;
+      color: #cbd6e8;
     }
     .depoimento {
       font-style: italic;
-      margin-bottom: 22px;
-      font-size: 1.1em;
-      color: #c4d0f0;
+      margin-bottom: 18px;
+      font-size: 1.05em;
+      color: #d0dbf5;
     }
     .depoimento strong {
       display: block;
-      margin-top: 8px;
-      color: #84aaff;
+      margin-top: 5px;
+      color: #8ab9ff;
       font-weight: 700;
     }
-    /* Dúvidas */
+    #countdown {
+      font-size: 1.7em;
+      color: #4da6ff;
+      font-weight: 900;
+      margin: 25px 0 40px 0;
+      text-shadow: 0 0 6px #82b1ffcc;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .whatsapp-button {
+      display: inline-block;
+      background: #4da6ff;
+      color: white;
+      font-weight: bold;
+      padding: 16px 40px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      text-decoration: none;
+      box-shadow: 0 0 15px #4da6ffbb;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .whatsapp-button:hover {
+      background: #82b1ff;
+      box-shadow: 0 0 25px #82b1ffdd;
+    }
+    p.offer-price {
+      color: #4da6ff;
+      font-size: 2.2em;
+      font-weight: 900;
+      margin-top: 30px;
+      text-shadow: 0 0 6px #82b1ffcc;
+    }
+    /* Carrossel dos módulos */
+    .modulos-section h2 {
+      margin-bottom: 30px;
+    }
+    .modulos-carousel {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #3a57aa99;
+      background: #0f1b3c;
+      padding: 12px 0;
+    }
+    .modulos-track {
+      display: flex;
+      width: calc(140px * 20 + 16px * 19);
+      animation: slideLeft 40s linear infinite;
+      gap: 16px;
+    }
+    .modulos-track img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 0 15px #5185ffcc;
+      user-select: none;
+      pointer-events: none;
+      cursor: default;
+      transition: transform 0.3s ease;
+    }
+    .modulos-track img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 25px #639cffdd;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-140px * 10 - 16px * 9));
+      }
+    }
+    /* Aba dúvidas */
     .duvidas-section {
-      max-width: 850px;
-      margin: 0 auto 40px auto;
+      margin-top: 60px;
+      text-align: left;
+      background-color: #1a2a54;
+      border-radius: 12px;
+      padding: 25px 30px;
+      color: #cbd6e8;
+      box-shadow: 0 0 18px #22458a99;
     }
-    .duvidas-section h3 {
-      margin-bottom: 20px;
-      color: #86aaff;
+    .duvidas-section h2 {
+      margin-bottom: 18px;
     }
-    .duvida-item {
-      margin-bottom: 15px;
-      background: #273c71;
-      padding: 15px 18px;
-      border-radius: 8px;
-      box-shadow: 0 0 12px #3653a7cc;
-      color: #d4e0ff;
-      font-size: 1.05em;
+    .duvidas-section ul {
+      list-style-type: disc;
+      padding-left: 40px;
+    }
+    .duvidas-section ul li {
+      margin-bottom: 12px;
+      font-size: 1.1em;
+      color: #acc2ff;
     }
     /* Garantia */
     .garantia-section {
-      max-width: 850px;
-      margin: 0 auto 40px auto;
-      background: #1a274f;
-      padding: 25px 25px;
-      border-radius: 14px;
-      box-shadow: 0 0 20px #4a6ed3cc;
-      color: #b4c1f7;
-      font-size: 1.1em;
-      text-align: center;
+      margin-top: 50px;
+      background-color: #1a2a54;
+      border-radius: 12px;
+      padding: 25px 30px;
+      color: #cbd6e8;
+      box-shadow: 0 0 18px #22458a99;
+      text-align: left;
     }
-    .garantia-section strong {
-      color: #7db7ff;
+    .garantia-section h2 {
+      margin-bottom: 18px;
+    }
+    .garantia-section p {
+      font-size: 1.1em;
+      color: #acc2ff;
     }
     /* Responsividade */
-    @media (max-width: 720px) {
-      .modulos-container {
-        gap: 12px;
+    @media (max-width: 600px) {
+      .container {
+        margin: 40px 15px 60px 15px;
+        padding: 30px 20px;
       }
-      .modulos-container img {
-        width: 70px;
-        height: 70px;
+      h1 {
+        font-size: 2em;
       }
-      .button {
-        font-size: 1.1em;
-        padding: 13px 28px;
+      h2 {
+        font-size: 1.6em;
       }
-    }
-    @media (max-width: 420px) {
-      .modulos-container img {
-        width: 55px;
-        height: 55px;
-      }
-      p, li, .duvida-item {
+      p, ul li {
         font-size: 1em;
+      }
+      #countdown {
+        font-size: 1.4em;
+      }
+      .whatsapp-button {
+        font-size: 1em;
+        padding: 14px 30px;
+      }
+      p.offer-price {
+        font-size: 1.8em;
+      }
+      .modulos-track img {
+        width: 110px;
+        height: 110px;
+      }
+      .modulos-track {
+        width: calc(110px * 20 + 12px * 19);
+        gap: 12px;
+        animation-duration: 30s;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Método Trader Inteligente</h1>
-    <p class="highlight">O melhor curso para você aprender a operar opções binárias com inteligência e resultados reais.</p>
+    <h1>🎉 Parabéns por adquirir o Método Trader Inteligente!</h1>
 
-    <h2>Benefícios do MTI</h2>
-    <ul class="beneficios-list">
-      <li>✅ Aprenda estratégias testadas e comprovadas.</li>
-      <li>✅ Entenda o mercado e como alavancar seu capital.</li>
-      <li>✅ Suporte contínuo e acesso vitalício.</li>
-      <li>✅ Conteúdo 100% atualizado para 2025.</li>
-      <li>✅ Transforme conhecimento em lucro real.</li>
-    </ul>
+    <p><span class="highlight">QUE BOM QUE VOCÊ CHEGOU ATÉ AQUI!</span><br />
+    O <strong>MTI</strong> é um produto completo, que você vai entender tudo sobre o mercado de opções binárias!</p>
 
-    <a href="https://wa.me/+5522992568259" class="button" target="_blank" rel="noopener noreferrer">📲 Comprar Agora pelo WhatsApp</a>
+    <p><span class="highlight">MAS TENHO QUE TE OFERECER UMA SUPER OFERTA...</span></p>
 
-    <section class="modulos-section">
-      <h2>O que você vai aprender com esse Método:</h2>
-      <div class="modulos-container">
-        <img src="assets/modulo1.jpg" alt="Módulo 1" />
-        <img src="assets/modulo2.jpg" alt="Módulo 2" />
-        <img src="assets/modulo3.jpg" alt="Módulo 3" />
-        <img src="assets/modulo4.jpg" alt="Módulo 4" />
-        <img src="assets/modulo5.jpg" alt="Módulo 5" />
-        <img src="assets/modulo6.jpg" alt="Módulo 6" />
-        <img src="assets/modulo7.jpg" alt="Módulo 7" />
-        <img src="assets/modulo8.jpg" alt="Módulo 8" />
-        <img src="assets/modulo9.jpg" alt="Módulo 9" />
-        <img src="assets/modulo10.jpg" alt="Módulo 10" />
-      </div>
-    </section>
+    <p>Que tal você entender técnicas de <strong>alavancagens de bancas</strong> e virar um <strong>trader profissional</strong>, até mesmo terceirizando seus serviços?<br />
+    <strong>NÃO SAIA DESSA PÁGINA PARA NÃO PERDER ESSA OPORTUNIDADE!</strong></p>
 
-    <section class="depoimentos">
-      <h2>Depoimentos de quem já comprou</h2>
-      <div class="depoimento">“Esse curso mudou a minha forma de operar e meus resultados dispararam!”<strong>– Ana S.</strong></div>
-      <div class="depoimento">“O suporte é excelente e o conteúdo é super didático.”<strong>– Pedro L.</strong></div>
-      <div class="depoimento">“Recomendo para quem quer sair do básico e operar com segurança.”<strong>– Carla M.</strong></div>
-    </section>
-
-    <section class="duvidas-section">
-      <h3>Ainda está com dúvidas?</h3>
-      <div class="duvida-item"><strong>O curso é indicado para iniciantes?</strong> Sim! O MTI é feito para quem está começando do zero.</div>
-      <div class="duvida-item"><strong>Quanto tempo tenho acesso ao curso?</strong> Você terá acesso vitalício, podendo assistir quando quiser.</div>
-      <div class="duvida-item"><strong>Tem garantia?</strong> Sim! 7 dias para pedir reembolso se não estiver satisfeito.</div>
-      <div class="duvida-item"><strong>Preciso de experiência prévia?</strong> Não, o curso é para todos os níveis.</div>
-    </section>
-
-    <section class="garantia-section">
-      <h3>Garantia de 7 dias</h3>
-      <p>Se dentro de 7 dias você não estiver satisfeito com o conteúdo, devolvemos seu dinheiro integralmente. Sem perguntas.</p>
-      <p><strong>Você não corre risco nenhum!</strong></p>
-    </section>
-
-    <a href="https://wa.me/+5522992568259" class="button" target="_blank" rel="noopener noreferrer">📲 Quero Comprar Agora!</a>
-  </div>
-</body>
-</html>
+    <p>Com o <strong>Código da Alavancagem</strong>, você aprende a aplicar <span class="highlight">técnicas exclusivas</span> para multiplicar seu capital com inteligência e segurança, mesmo começando
