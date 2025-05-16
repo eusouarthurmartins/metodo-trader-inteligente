@@ -139,3 +139,26 @@
 
 </body>
 </html>
+<script>
+  const carousel = document.getElementById('modules-carousel');
+  let lastTimestamp = null;
+  let scrollPos = 0;
+  const speed = 0.8; // pixels por milissegundo (ajusta aqui)
+
+  function smoothScroll(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const delta = timestamp - lastTimestamp;
+    lastTimestamp = timestamp;
+
+    scrollPos += speed * delta;
+    if (scrollPos >= carousel.scrollWidth - carousel.clientWidth) {
+      scrollPos = 0;
+    }
+    carousel.scrollLeft = scrollPos;
+
+    requestAnimationFrame(smoothScroll);
+  }
+
+  requestAnimationFrame(smoothScroll);
+</script>
+
