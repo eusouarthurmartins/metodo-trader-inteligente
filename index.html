@@ -3,30 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente - Módulos</title>
+  <title>Métodos Trader Inteligente - Módulos</title>
   <style>
-    /* Fundo estendido com imagem inteira sem cortes */
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
-      background: url('assets/fundoroxo.jpg') no-repeat center top fixed;
-      background-size: contain; /* mostra a imagem inteira, sem cortar */
-      background-color: #12003a;
-      color: #7b4fc1;
+      background: #000000; /* preto */
+      color: #7b4fc1; /* roxo metálico claro */
       overflow-x: hidden;
       padding: 0;
+      background-image: url('assets/fundorooxo.jpg');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: contain;
+      background-attachment: fixed;
     }
 
-    /* REMOVIDO topo: sem seção .topo */
-
-    /* CARROSSEL DE MÓDULOS */
+    /* --- CARROSSEL DE MÓDULOS --- */
     .modules-section {
       max-width: 1100px;
-      margin: 80px auto 80px; /* margem maior em cima para dar espaço à imagem */
+      margin: 160px auto 80px; /* margem superior aumentada */
       padding: 0 20px;
       position: relative;
       z-index: 1;
-      background: rgba(0, 0, 0, 0.55); /* leve fundo preto transparente para leitura */
+      background: rgba(0, 0, 0, 0.55);
       border-radius: 15px;
       box-shadow: 0 0 20px #6e3ecfcc;
     }
@@ -36,9 +36,8 @@
       font-size: 2.4em;
       font-weight: 900;
       margin-bottom: 20px;
-      color: #6e3ecf;
-      text-shadow: 0 0 12px #000000cc;
-      user-select: none;
+      color: #6e3ecf; /* roxo metálico mais claro */
+      text-shadow: 0 0 12px #000000cc; /* sombra preta forte */
     }
 
     .modules-carousel {
@@ -47,30 +46,30 @@
       scroll-behavior: smooth;
       gap: 20px;
       padding-bottom: 15px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE 10+ */
     }
 
     .modules-carousel::-webkit-scrollbar {
-      display: none;
+      display: none; /* Chrome, Safari */
     }
 
     .module-card {
       flex: 0 0 auto;
       width: 250px;
       border-radius: 14px;
-      box-shadow: 0 0 15px #000000cc;
+      box-shadow: 0 0 15px #000000cc; /* sombra preta */
       background: #111111;
-      color: #7b4fc1;
+      color: #7b4fc1; /* roxo metálico claro */
       user-select: none;
       transition: transform 0.3s ease;
       cursor: pointer;
-      border: 2px solid #000000;
+      border: 2px solid #000000; /* borda preta */
     }
 
     .module-card:hover {
       transform: scale(1.12);
-      box-shadow: 0 0 30px #000000cc;
+      box-shadow: 0 0 30px #000000cc; /* sombra preta maior */
     }
 
     .module-card img {
@@ -88,7 +87,7 @@
       font-weight: 900;
       font-size: 1.2em;
       text-align: center;
-      color: #6e3ecf;
+      color: #6e3ecf; /* roxo metálico claro */
       text-shadow: 0 0 8px #000000cc;
       user-select: none;
     }
