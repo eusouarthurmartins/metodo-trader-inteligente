@@ -4,17 +4,32 @@
     <div class="depoimento">
       <img src="assets/depo1.jpg" alt="Depoimento 1" />
       <h3>João Silva</h3>
-      <p>“O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!”</p>
+      <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
     </div>
     <div class="depoimento">
       <img src="assets/depo2.jpg" alt="Depoimento 2" />
       <h3>Camila Rocha</h3>
-      <p>“Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!”</p>
+      <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
     </div>
     <div class="depoimento">
       <img src="assets/depo3.jpg" alt="Depoimento 3" />
       <h3>Lucas Andrade</h3>
-      <p>“Já estou vendo resultados reais. Esse curso é completo de verdade!”</p>
+      <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
+    </div>
+    <div class="depoimento">
+      <img src="assets/depo4.jpg" alt="Depoimento 4" />
+      <h3>Fernanda Lima</h3>
+      <p>"Conteúdo didático e direto. Foi o melhor investimento que fiz no ano."</p>
+    </div>
+    <div class="depoimento">
+      <img src="assets/depo5.jpg" alt="Depoimento 5" />
+      <h3>Rafael Souza</h3>
+      <p>"Aprendi mais em 1 semana do que em meses assistindo vídeos aleatórios."</p>
+    </div>
+    <div class="depoimento">
+      <img src="assets/depo6.jpg" alt="Depoimento 6" />
+      <h3>Bruna Torres</h3>
+      <p>"O MTI é direto ao ponto. Já estou operando com segurança e confiança."</p>
     </div>
   </div>
 </section>
@@ -37,8 +52,14 @@
     display: flex;
     gap: 30px;
     overflow-x: auto;
-    padding-bottom: 10px;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+
+  .depoimentos-carrossel::-webkit-scrollbar {
+    display: none;
   }
 
   .depoimento {
@@ -50,6 +71,11 @@
     scroll-snap-align: start;
     box-shadow: 0 0 15px #80004055;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .depoimento:hover {
+    transform: scale(1.05);
   }
 
   .depoimento img {
@@ -75,6 +101,7 @@
     .depoimentos h2 {
       font-size: 2.2rem;
     }
+
     .depoimento {
       min-width: 240px;
     }
