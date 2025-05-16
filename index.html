@@ -1,194 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Método Trader Inteligente</title>
-<style>
-  /* Reset básico */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body, html {
-    height: 100%;
-    font-family: 'Arial Black', Arial, sans-serif;
-    color: white;
-    background:
-      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-      url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-
-  .container {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    padding: 0 20px;
-    text-align: left;
-    z-index: 1;
-  }
-
-  /* Animação de entrada suave */
-  @keyframes fadeSlideIn {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Método Trader Inteligente</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    body, html {
+      height: 100%;
+      font-family: 'Arial Black', Arial, sans-serif;
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
-  }
 
-  .foto {
-    flex-shrink: 0;
-    width: 450px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    animation: fadeSlideIn 1s ease forwards;
-  }
-
-  .texto {
-    max-width: 550px;
-    animation: fadeSlideIn 1.4s ease forwards;
-  }
-
-  h1 {
-    font-size: 3.6rem;
-    font-weight: 900;
-    color: #3e0669;
-    text-shadow: 2px 2px 4px #000000aa;
-    margin-bottom: 25px;
-  }
-
-  p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #ddd;
-    text-shadow: 0 0 10px #000000aa;
-    margin-bottom: 30px;
-  }
-
-  .highlight {
-    font-size: 1.7rem;
-    font-weight: 900;
-    color: #fff;
-    margin-top: 20px;
-    text-shadow: 0 0 20px #ffcc00cc;
-  }
-
-  /* Preço pulsando */
-  .preco {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #d6a800;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    animation: pulse 1.5s infinite;
-  }
-
-  .preco small {
-    font-size: 1.4rem;
-    color: #ccc;
-    text-decoration: line-through;
-    margin-right: 15px;
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      text-shadow:
-        0 0 6px #d6a800cc,
-        0 0 12px #d6a800cc,
-        0 0 18px #ffcc00cc;
-    }
-    50% {
-      text-shadow:
-        0 0 12px #ffdd33ff,
-        0 0 24px #ffdd33ff,
-        0 0 36px #ffd700ff;
-    }
-  }
-
-  .btn-cta {
-    background: #3e0669;
-    color: white;
-    font-weight: 900;
-    font-size: 1.3rem;
-    padding: 15px 50px;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 20px #3e0669cc;
-    transition: background 0.3s ease, transform 0.3s ease;
-    user-select: none;
-  }
-
-  .btn-cta:hover {
-    background: #570a9b;
-    transform: scale(1.05);
-  }
-
-  /* Selo compra segura */
-  .selo-compra-segura {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #1a001f;
-    padding: 8px 15px;
-    border-radius: 30px;
-    box-shadow: 0 0 8px #6a00ffcc;
-    max-width: 220px;
-    margin-top: 15px;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #d6a800;
-    user-select: none;
-  }
-
-  .selo-compra-segura img {
-    width: 32px;
-    height: 32px;
-  }
-
-  @media (max-width: 1000px) {
     .container {
-      flex-direction: column;
-      height: auto;
-      padding-top: 40px;
-      text-align: center;
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      padding: 0 20px;
+      text-align: left;
+      z-index: 1;
     }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .foto {
-      width: 300px;
+      flex-shrink: 0;
+      width: 450px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      animation: fadeSlideIn 1s ease forwards;
+    }
+
+    .texto {
+      max-width: 550px;
+      animation: fadeSlideIn 1.4s ease forwards;
+    }
+
+    h1 {
+      font-size: 3.6rem;
+      font-weight: 900;
+      color: #3e0669;
+      text-shadow: 2px 2px 4px #000000aa;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #ddd;
+      text-shadow: 0 0 10px #000000aa;
       margin-bottom: 30px;
     }
-    .texto {
-      max-width: 100%;
-    }
-  }
 
-  @media (max-width: 600px) {
-    h1 {
+    .preco-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .preco-antigo {
+      font-size: 1.6rem;
+      color: #bbb;
+      text-decoration: line-through;
+      margin-bottom: 5px;
+    }
+
+    .preco-novo {
       font-size: 2.4rem;
+      font-weight: 900;
+      color: #FFD700;
+      animation: pulsar 1.6s infinite;
+      text-shadow: 0 0 10px #FFD700aa;
     }
-    p {
-      font-size: 1.1rem;
+
+    @keyframes pulsar {
+      0% { transform: scale(1); text-shadow: 0 0 10px #FFD700aa; }
+      50% { transform: scale(1.07); text-shadow: 0 0 20px #FFD700cc; }
+      100% { transform: scale(1); text-shadow: 0 0 10px #FFD700aa; }
     }
-    .preco {
-      font-size: 2rem;
-    }
+
     .btn-cta {
-      padding: 12px 30px;
-      font-size: 1rem;
+      background: #3e0669;
+      color: white;
+      font-weight: 900;
+      font-size: 1.3rem;
+      padding: 15px 50px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 20px #3e0669cc;
+      transition: background 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      display: block;
+      margin: 0 auto;
     }
-  }
-</style>
+
+    .btn-cta:hover {
+      background: #570a9b;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 1000px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+        padding-top: 40px;
+        text-align: center;
+      }
+      .foto {
+        width: 300px;
+        margin-bottom: 30px;
+      }
+      .texto {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+      .preco-antigo {
+        font-size: 1.2rem;
+      }
+      .preco-novo {
+        font-size: 1.7rem;
+      }
+      .btn-cta {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -198,21 +165,18 @@
     <h1>Método Trader Inteligente</h1>
     <p>Olá, sou o Arthur, criador do MTI. Meu objetivo é te libertar das crenças limitantes e mostrar que é possível conquistar sua liberdade financeira. Com meu método, você pode obter resultados reais no mercado de opções binárias e trabalhar no conforto da sua casa. Lembre-se: ninguém pode tirar de você o conhecimento adquirido.</p>
 
-    <div class="preco">
-      <small>R$689,99</small> por apenas 12x de R$9,99
+    <div class="preco-container">
+      <div class="preco-antigo">DE R$689,99</div>
+      <div class="preco-novo">POR APENAS 12X DE R$9,99</div>
     </div>
 
     <button class="btn-cta" onclick="location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">Quero aprender agora</button>
-
-    <div class="selo-compra-segura">
-      <img src="https://i.imgur.com/kG8rK3t.png" alt="Compra Segura" />
-      <span>Compra 100% segura</span>
-    </div>
   </div>
 </div>
 
 </body>
 </html>
+
 
 
 
