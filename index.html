@@ -1,292 +1,355 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Método Trader Inteligente</title>
   <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #121212;
-      color: #e0e0e0;
       margin: 0;
-      padding: 0;
+      font-family: 'Arial Black', Arial, sans-serif;
+      background: #000; /* preto */
+      color: #d4af37; /* dourado */
+      overflow-x: hidden;
     }
-    header {
-      background: #2a2a72;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 3px 10px #000000cc;
-    }
-    header h1 {
-      margin: 0;
-      font-weight: 900;
-      font-size: 2.5rem;
-      color: #4da6ff;
-      text-shadow: 2px 2px 8px #3a73c4aa;
-    }
-    main {
-      max-width: 960px;
-      margin: 40px auto;
+
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
       padding: 0 20px;
     }
-    section {
-      margin-bottom: 60px;
-    }
-    h2 {
-      color: #4da6ff;
-      font-weight: 900;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 5px #82b1ffcc;
-    }
-    p {
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-    .btn-comprar {
-      display: inline-block;
-      background: #4da6ff;
-      color: #121212;
-      padding: 15px 30px;
-      margin: 10px 10px 0 0;
-      border-radius: 30px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 0 10px #4da6ffcc;
-      transition: background 0.3s ease;
-    }
-    .btn-comprar:hover {
-      background: #2e72d9;
-      color: #fff;
-      box-shadow: 0 0 15px #2e72d9cc;
-    }
-    /* Depoimentos */
-    .depoimentos-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .depoimento-card {
-      background: #222244;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #4da6ffaa;
-      padding: 20px;
-      max-width: 280px;
-      flex: 1 1 280px;
-      font-style: italic;
-      position: relative;
-    }
-    .depoimento-card::before {
-      content: "“";
-      font-size: 3rem;
-      color: #4da6ff;
-      position: absolute;
-      top: 10px;
-      left: 15px;
-      opacity: 0.2;
-      font-weight: 900;
-    }
-    .depoimento-autor {
-      margin-top: 15px;
-      font-weight: 700;
-      font-style: normal;
-      text-align: right;
-      color: #82b1ff;
-    }
-    /* FAQ */
-    .faq-item {
+
+    h1 {
+      font-size: 3.2em;
+      text-align: center;
       margin-bottom: 15px;
+      text-shadow: 0 0 12px #d4af37cc;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 1.3em;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      line-height: 1.5;
+      color: #f0e6b8;
+      text-shadow: 0 0 8px #a8861bcc;
+    }
+
+    /* BOTÕES DE COMPRA */
+    .btn-buy {
+      display: inline-block;
+      background: #d4af37;
+      color: #000;
+      font-weight: 700;
+      padding: 16px 50px;
+      border-radius: 40px;
+      font-size: 1.3em;
+      margin: 15px 12px;
+      box-shadow: 0 0 20px #d4af37aa;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      user-select: none;
+    }
+    .btn-buy:hover {
+      background: #b8922a;
+      box-shadow: 0 0 30px #b8922acc;
+    }
+    .btn-container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    /* DEPOIMENTOS */
+    .testimonials {
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+      padding: 20px 30px;
+      background: #1a1a1a;
+      border-radius: 14px;
+      box-shadow: 0 0 20px #d4af3722;
+      color: #f0e6b8;
+      font-style: italic;
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    .testimonial-item {
+      margin-bottom: 28px;
+      position: relative;
+      padding-left: 25px;
+    }
+    .testimonial-item::before {
+      content: "❝";
+      font-size: 3em;
+      color: #d4af37cc;
+      position: absolute;
+      left: 0;
+      top: -10px;
+    }
+    .testimonial-item strong {
+      display: block;
+      margin-top: 10px;
+      font-weight: 900;
+      font-style: normal;
+      color: #ffd700;
+      text-shadow: 0 0 6px #ffd700cc;
+    }
+
+    /* DÚVIDAS */
+    .faq {
+      max-width: 900px;
+      margin: 0 auto 70px auto;
+      background: #1a1a1a;
+      padding: 25px 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 20px #d4af3722;
+      color: #f0e6b8;
+    }
+    .faq h2 {
+      margin-top: 0;
+      color: #ffd700;
+      text-shadow: 0 0 8px #ffd700cc;
+    }
+    .faq-item {
+      margin-bottom: 20px;
     }
     .faq-question {
-      font-weight: 700;
+      font-weight: 900;
       cursor: pointer;
-      background: #2a2a72;
-      padding: 10px 15px;
-      border-radius: 10px;
-      user-select: none;
-      box-shadow: 0 0 8px #4da6ffcc;
-      transition: background 0.3s ease;
+      position: relative;
+      padding-right: 25px;
+      font-size: 1.1em;
     }
-    .faq-question:hover {
-      background: #3a3a8a;
-    }
-    .faq-answer {
-      margin-top: 8px;
-      padding-left: 15px;
-      display: none;
-      color: #ccc;
-      font-weight: 400;
-    }
-    /* Garantia */
-    .garantia {
-      background: #223344;
-      padding: 25px 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 12px #4da6ffbb;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-    /* Seção módulos - reutilizando estilo do carrossel */
-    .modulos-section {
-      text-align: center;
-    }
-    .modulos-carousel {
-      display: flex;
-      overflow-x: hidden;
-      gap: 25px;
-      padding-bottom: 10px;
-      animation: scrollModules 10s linear infinite;
-      justify-content: flex-start;
-      cursor: grab;
-      user-select: none;
-    }
-    .modulo-card {
-      flex: 0 0 auto;
-      width: 220px;
-      border-radius: 20px;
-      border: 4px solid #4da6ff;
-      box-shadow: 0 0 20px #4da6ffaa;
-      overflow: hidden;
-      background: #dbe9ff;
+    .faq-question::after {
+      content: "▼";
+      position: absolute;
+      right: 0;
+      top: 2px;
+      color: #d4af37cc;
       transition: transform 0.3s ease;
     }
-    .modulo-card img {
+    .faq-question.active::after {
+      transform: rotate(-180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      margin-top: 8px;
+      font-style: normal;
+      font-weight: 400;
+      color: #f0e6b8;
+    }
+    .faq-answer.open {
+      max-height: 500px;
+    }
+
+    /* GARANTIA */
+    .guarantee {
+      max-width: 900px;
+      margin: 0 auto 70px auto;
+      background: #1a1a1a;
+      padding: 30px 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 20px #d4af3722;
+      text-align: center;
+      font-size: 1.2em;
+      color: #f0e6b8;
+    }
+    .guarantee strong {
+      color: #ffd700;
+      font-size: 1.5em;
+      text-shadow: 0 0 6px #ffd700cc;
+    }
+
+    /* MÓDULOS CARROSSEL ESTILO NETFLIX */
+    .modules-section {
+      max-width: 1100px;
+      margin: 0 auto 80px auto;
+    }
+    .modules-title {
+      text-align: center;
+      font-size: 2.4em;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: #ffd700;
+      text-shadow: 0 0 10px #ffd700cc;
+    }
+    .modules-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding-bottom: 15px;
+      scrollbar-width: none; /* Firefox */
+    }
+    .modules-carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+    .module-card {
+      flex: 0 0 auto;
+      width: 220px;
+      border-radius: 14px;
+      box-shadow: 0 0 15px #d4af37cc;
+      background: #111;
+      color: #d4af37;
+      user-select: none;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .module-card:hover {
+      transform: scale(1.12);
+      box-shadow: 0 0 30px #ffd700cc;
+    }
+    .module-card img {
       width: 100%;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+      display: block;
       height: 140px;
       object-fit: cover;
-      display: block;
+      filter: drop-shadow(0 0 4px #d4af37bb);
     }
-    .modulo-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #4da6ff;
+    .module-caption {
+      padding: 12px 15px;
+      font-weight: 900;
+      font-size: 1.1em;
+      text-align: center;
+      color: #ffd700;
+      text-shadow: 0 0 6px #ffd700cc;
+      user-select: none;
     }
-    @keyframes scrollModules {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-    /* Responsividade */
-    @media (max-width: 600px) {
-      .modulos-carousel {
-        animation: none;
-        overflow-x: auto;
-        padding-bottom: 20px;
-      }
-      .modulos-carousel::-webkit-scrollbar {
-        height: 6px;
-      }
-      .modulos-carousel::-webkit-scrollbar-thumb {
-        background: #4da6ff;
-        border-radius: 3px;
-      }
-    }
+
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Método Trader Inteligente</h1>
-</header>
+  <div class="container">
 
-<main>
-  <!-- Descrição -->
-  <section>
-    <h2>Transforme sua forma de operar no mercado financeiro</h2>
-    <p>
-      O Método Trader Inteligente é um curso completo que vai te ensinar estratégias comprovadas para operar de forma eficiente e lucrativa no mercado de opções binárias e Forex. Aprenda desde o básico até técnicas avançadas para dominar sua mente, controlar riscos e aumentar seus ganhos.
+    <h1>Método Trader Inteligente</h1>
+
+    <p class="description">
+      O Método Trader Inteligente é um treinamento completo para quem quer dominar o mercado de opções binárias,
+      aprender técnicas profissionais, e acelerar seus resultados financeiros de forma segura e consistente.
     </p>
-    <p>
-      Com aulas práticas, exemplos reais e suporte dedicado, você estará preparado para operar com segurança e confiança.
-    </p>
-    <a href="https://linkdecompra.com" target="_blank" class="btn-comprar">Comprar Agora</a>
-    <a href="https://linkdecompra.com" target="_blank" class="btn-comprar">Garantia 7 Dias</a>
-  </section>
 
-  <!-- Módulos -->
-  <section class="modulos-section">
-    <h2>O que você vai aprender com esse Método:</h2>
-    <div class="modulos-carousel">
-      <div class="modulo-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /></div>
-      <div class="modulo-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /></div>
-      <div class="modulo-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /></div>
-      <div class="modulo-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /></div>
-      <div class="modulo-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /></div>
-      <div class="modulo-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /></div>
-      <div class="modulo-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /></div>
-      <div class="modulo-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /></div>
-      <div class="modulo-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /></div>
-      <div class="modulo-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /></div>
+    <div class="btn-container">
+      <a href="#" class="btn-buy">Comprar Agora - R$ 197,00</a>
+      <a href="#" class="btn-buy">Garantia de 7 dias</a>
+      <a href="#" class="btn-buy">Fale com o Suporte</a>
     </div>
-  </section>
 
-  <!-- Depoimentos -->
-  <section>
-    <h2>Depoimentos de quem já fez</h2>
-    <div class="depoimentos-list">
-      <div class="depoimento-card">
-        <p>O Método mudou minha visão do mercado, agora opero com mais disciplina e estou tendo resultados incríveis!</p>
-        <div class="depoimento-autor">— Carlos M.</div>
+    <!-- MÓDULOS -->
+    <section class="modules-section">
+      <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
+      <div class="modules-carousel" id="modules-carousel">
+        <div class="module-card">
+          <img src="assets/modulo1.jpg" alt="Módulo 1" />
+          <div class="module-caption">Módulo 1</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo2.jpg" alt="Módulo 2" />
+          <div class="module-caption">Módulo 2</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo3.jpg" alt="Módulo 3" />
+          <div class="module-caption">Módulo 3</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo4.jpg" alt="Módulo 4" />
+          <div class="module-caption">Módulo 4</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo5.jpg" alt="Módulo 5" />
+          <div class="module-caption">Módulo 5</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo6.jpg" alt="Módulo 6" />
+          <div class="module-caption">Módulo 6</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo7.jpg" alt="Módulo 7" />
+          <div class="module-caption">Módulo 7</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo8.jpg" alt="Módulo 8" />
+          <div class="module-caption">Módulo 8</div>
+        </div>
+        <div class="module-card">
+          <img src="assets/modulo9.jpg" alt="Módulo 9" />
+          <div class="module-caption">Módulo 9</div>
+        </div>
       </div>
-      <div class="depoimento-card">
-        <p>Eu já havia tentado outros cursos, mas esse foi o único que realmente fez diferença no meu desempenho.</p>
-        <div class="depoimento-autor">— Ana P.</div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="testimonials">
+      <div class="testimonial-item">
+        “Com o Método Trader Inteligente, consegui aprender tudo de forma prática e já estou operando com mais segurança!”
+        <strong>— João Silva</strong>
       </div>
-      <div class="depoimento-card">
-        <p>A metodologia é clara e o suporte é excelente. Recomendo para todos que querem começar ou evoluir.</p>
-        <div class="depoimento-autor">— João S.</div>
+      <div class="testimonial-item">
+        “O suporte é incrível e o método realmente funciona. Recomendo para todos que querem crescer no mercado.”
+        <strong>— Maria Oliveira</strong>
       </div>
-    </div>
-  </section>
+      <div class="testimonial-item">
+        “Antes eu tinha medo de operar, mas com esse curso minha visão mudou totalmente. Vale muito a pena!”
+        <strong>— Carlos Pereira</strong>
+      </div>
+    </section>
 
-  <!-- Dúvidas (FAQ) -->
-  <section>
-    <h2>Ainda está com dúvidas?</h2>
+    <!-- GARANTIA -->
+    <section class="guarantee">
+      <strong>Garantia Incondicional de 7 dias</strong><br />
+      Se dentro de 7 dias você não estiver satisfeito com o Método Trader Inteligente, devolvemos seu dinheiro sem burocracia.
+    </section>
 
-    <div class="faq-item">
-      <div class="faq-question">O curso é indicado para iniciantes?</div>
-      <div class="faq-answer">Sim! O curso é estruturado para quem está começando, mas também oferece conteúdos avançados.</div>
-    </div>
+    <!-- DÚVIDAS -->
+    <section class="faq">
+      <h2>Ainda está com dúvidas?</h2>
 
-    <div class="faq-item">
-      <div class="faq-question">Qual a duração do curso?</div>
-      <div class="faq-answer">São 9 módulos completos que você pode acessar no seu ritmo, sem pressa.</div>
-    </div>
+      <div class="faq-item">
+        <div class="faq-question">O curso é indicado para iniciantes?</div>
+        <div class="faq-answer">Sim! O curso foi desenvolvido para pessoas que estão começando do zero.</div>
+      </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Existe garantia de satisfação?</div>
-      <div class="faq-answer">Sim, oferecemos garantia total de 7 dias. Se não gostar, devolvemos seu dinheiro sem burocracia.</div>
-    </div>
-  </section>
+      <div class="faq-item">
+        <div class="faq-question">Preciso ter conhecimento prévio em investimentos?</div>
+        <div class="faq-answer">Não é necessário. O curso cobre tudo desde o básico até avançado.</div>
+      </div>
 
-  <!-- Garantia -->
-  <section>
-    <div class="garantia">
-      <h2>Garantia de 7 dias</h2>
-      <p>
-        Compre com segurança! Você tem 7 dias para testar o Método Trader Inteligente. Se não estiver satisfeito, devolvemos 100% do seu investimento, sem perguntas.
-      </p>
-    </div>
-  </section>
-</main>
+      <div class="faq-item">
+        <div class="faq-question">Qual a duração do curso?</div>
+        <div class="faq-answer">Você terá acesso vitalício ao conteúdo, podendo estudar no seu ritmo.</div>
+      </div>
 
-<script>
-  // Script simples para abrir/fechar respostas no FAQ
-  const questions = document.querySelectorAll('.faq-question');
-  questions.forEach(question => {
-    question.addEventListener('click', () => {
-      const answer = question.nextElementSibling;
-      if(answer.style.display === 'block') {
-        answer.style.display = 'none';
-      } else {
-        answer.style.display = 'block';
-      }
+    </section>
+
+  </div>
+
+  <script>
+    // Script para abrir/fechar FAQ
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach((q) => {
+      q.addEventListener('click', () => {
+        const isActive = q.classList.contains('active');
+        questions.forEach((item) => {
+          item.classList.remove('active');
+          item.nextElementSibling.classList.remove('open');
+        });
+        if (!isActive) {
+          q.classList.add('active');
+          q.nextElementSibling.classList.add('open');
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
