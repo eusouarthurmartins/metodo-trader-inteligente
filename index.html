@@ -11,67 +11,55 @@
 </footer>
 
 <style>
-  /* Roxo salvo e aprovado */
-  :root {
-    --roxo-intenso: #6a00ff;
-    --roxo-sombra-intensa: rgba(106, 0, 255, 0.85);
-  }
-
   .compra-final {
-    background: #000; /* fundo preto puro */
+    background: #000;
     text-align: center;
     padding: 60px 20px;
     color: #fff;
-    border-radius: 15px;
-    box-shadow:
-      0 0 30px 8px var(--roxo-sombra-intensa);
   }
 
   .compra-final h2 {
-    font-size: 2.6rem;
-    color: var(--roxo-intenso);
+    font-size: 2.4rem;
+    color: #fff;
     margin-bottom: 20px;
-    font-weight: 700;
-    text-shadow: 0 0 10px var(--roxo-sombra-intensa);
   }
 
   .compra-final p {
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 30px;
-    color: #ddd;
+    color: #fff;
   }
 
   .botao-compra-final {
-    background: linear-gradient(135deg, var(--roxo-intenso), #3f00b2);
+    background: linear-gradient(135deg, #6a00ff, #1a001f);
     color: #fff;
     font-size: 1.4rem;
-    font-weight: 700;
-    padding: 16px 40px;
-    border-radius: 12px;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 10px;
     text-decoration: none;
+    animation: pulsar 1.5s infinite;
+    transition: transform 0.2s ease;
     display: inline-block;
-    box-shadow: 0 6px 15px var(--roxo-sombra-intensa);
-    transition: transform 0.25s ease, box-shadow 0.3s ease;
   }
 
   .botao-compra-final:hover {
     transform: scale(1.08);
-    box-shadow:
-      0 0 25px 15px var(--roxo-sombra-intensa);
-    color: #fff;
+    background: linear-gradient(135deg, #7c1fff, #22002a);
   }
 
-  .botao-compra-final:active {
-    transform: scale(0.98);
+  @keyframes pulsar {
+    0% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(106, 0, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
   }
 
   .rodape {
     background-color: #111;
-    color: #aaa;
+    color: #fff;
     text-align: center;
     padding: 20px 10px;
     font-size: 0.95rem;
-    user-select: none;
   }
 </style>
