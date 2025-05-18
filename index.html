@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Método Trader Inteligente</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -47,18 +48,18 @@
 
     .preco {
       margin-top: 30px;
-      font-size: 3rem; /* maior */
+      font-size: 3rem;
       font-weight: bold;
-      color: #ffcc00; /* dourado */
+      color: #ffcc00;
       animation: pulse-dourado 2s infinite;
     }
 
     .preco s {
-      color: #d4af37; /* dourado sólido sem transparência */
+      color: #d4af37;
       margin-right: 10px;
       font-size: 2rem;
       vertical-align: middle;
-      text-decoration-thickness: 3px; /* riscado mais grosso */
+      text-decoration-thickness: 3px;
       text-decoration-color: #d4af37;
     }
 
@@ -85,8 +86,33 @@
       margin-top: 20px;
       font-size: 1.3rem;
       font-weight: 600;
-      color: #ffd700cc; /* dourado clarinho */
+      color: #ffd700cc;
       text-shadow: 0 0 5px #000000cc;
+    }
+
+    .suporte-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #1ebea5;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 15px 25px;
+      margin-top: 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .suporte-link i {
+      font-size: 1.8rem;
+    }
+
+    .suporte-link:hover {
+      background: #128c7e;
+      transform: scale(1.05);
     }
 
     @keyframes pulse {
@@ -158,6 +184,15 @@
       .frase-baixo {
         font-size: 1rem;
       }
+
+      .suporte-link {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+
+      .suporte-link i {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -182,6 +217,10 @@
     <div class="frase-baixo">
       Você está a um clique da sua liberdade financeira
     </div>
+
+    <a class="suporte-link" href="https://wa.me/SEUNUMEROAQUI" target="_blank">
+      <i class="fas fa-headset"></i> Falar com Suporte
+    </a>
   </div>
 
 </body>
