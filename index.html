@@ -1,116 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente - Início</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <style>
-    /* Reset simples */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #121212; /* fundo escuro, mas pode mudar */
-      color: #f5f5f5;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      text-align: center;
-    }
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thurzinflix</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Fundo com imagem */
+  body {
+    background: url('assets/sua-foto.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Overlay escuro pra dar contraste */
+  body::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+  }
+  
+  /* Conteúdo centralizado */
+  .content {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    text-shadow: 0 0 15px #ffcc00;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  p {
+    font-size: 1.8rem;
+    max-width: 700px;
+    line-height: 1.5;
+    text-shadow: 0 0 10px #000000aa;
+  }
+  
+  @media(max-width: 768px) {
     h1 {
       font-size: 3rem;
-      color: #8000ff;
-      text-shadow: 0 0 10px #a64dff;
-      margin-bottom: 20px;
     }
-
-    p.subtitle {
+    
+    p {
       font-size: 1.2rem;
-      margin-bottom: 40px;
-      color: #d0c0ffcc;
     }
-
-    iframe {
-      width: 100%;
-      max-width: 720px;
-      height: 405px; /* 16:9 */
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #8000ff88;
-      margin-bottom: 40px;
-    }
-
-    .btn-primary {
-      background-color: #8000ff;
-      color: white;
-      border: none;
-      padding: 15px 40px;
-      font-size: 1.3rem;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 0 15px #8000ff;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      text-decoration: none;
-      display: inline-block;
-      font-weight: 700;
-    }
-
-    .btn-primary:hover {
-      background-color: #a64dff;
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #a64dff;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      iframe {
-        height: 200px;
-      }
-
-      .btn-primary {
-        font-size: 1.1rem;
-        padding: 12px 30px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <h1>Método Trader Inteligente</h1>
-  <p class="subtitle">Transforme sua forma de operar e alcance a liberdade financeira.</p>
-
-  <iframe src="https://www.youtube.com/embed/gaHYTomw-Yw?rel=0&modestbranding=1" allowfullscreen></iframe>
-
-  <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="btn-primary" target="_blank" rel="noopener">
-    Quero aprender agora!
-  </a>
-
-  <footer>
-    &copy; 2025 Método Trader Inteligente - Todos os direitos reservados
-  </footer>
+  <div class="content">
+    <h1>Thurzinflix</h1>
+    <p>Aprenda a lucrar no mercado financeiro e faça seus primeiros R$ 10.000,00 com um método validado há mais de 4 anos.</p>
+  </div>
 
 </body>
 </html>
-
 
 
 parou aqui  ----------------------------------------
