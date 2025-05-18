@@ -23,6 +23,22 @@
       padding: 60px 20px;
     }
 
+    /* Novo título baulado Thurzinflix */
+    h1.baulado {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: #ffcc00;
+      /* Contorno (stroke) e sombra para efeito baulado */
+      -webkit-text-stroke: 2px #5a3e00;
+      text-shadow:
+        2px 2px 4px #5a3e00,
+        0 0 10px #ffcc00,
+        0 0 20px #ffcc00;
+      animation: fadeSlideIn 1s ease forwards;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     h1.titulo {
       font-size: 3.2rem;
       font-weight: 900;
@@ -161,6 +177,10 @@
     }
 
     @media (max-width: 600px) {
+      h1.baulado {
+        font-size: 2.5rem;
+      }
+
       h1.titulo {
         font-size: 2.2rem;
       }
@@ -202,6 +222,7 @@
   </a>
 
   <div class="container">
+    <h1 class="baulado">Thurzinflix</h1>
     <h1 class="titulo">Método Trader Inteligente</h1>
 
     <div class="video-pulsando">
@@ -224,7 +245,6 @@
 
 </body>
 </html>
-
 
 
 <!DOCTYPE html>
