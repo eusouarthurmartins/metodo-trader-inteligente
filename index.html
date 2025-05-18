@@ -10,29 +10,25 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background: #1a1400;
       color: white;
     }
 
-    .intro {
-      background: #000;
-      padding: 40px 20px 30px;
+    .topo-frase {
+      background: #1a1400;
+      padding: 30px 20px 10px;
       text-align: center;
-    }
-
-    .intro h2 {
       font-size: 1.6rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 0 0 5px #000;
     }
 
     .container {
       max-width: 900px;
       margin: 0 auto;
       text-align: center;
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
 
     h1.titulo {
@@ -103,10 +99,10 @@
       text-shadow: 0 0 5px #000000cc;
     }
 
-    /* Ícone WhatsApp flutuante */
-    .icone-suporte {
+    /* Ícone flutuante WhatsApp */
+    .icone-whatsapp {
       position: fixed;
-      bottom: 20px;
+      top: 20px;
       right: 20px;
       background: #25D366;
       color: white;
@@ -123,7 +119,7 @@
       transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    .icone-suporte:hover {
+    .icone-whatsapp:hover {
       transform: scale(1.1);
       background: #128C7E;
     }
@@ -173,12 +169,12 @@
     }
 
     @media (max-width: 600px) {
-      h1.titulo {
-        font-size: 2.2rem;
+      .topo-frase {
+        font-size: 1.2rem;
       }
 
-      .intro h2 {
-        font-size: 1.2rem;
+      h1.titulo {
+        font-size: 2.2rem;
       }
 
       iframe {
@@ -202,7 +198,7 @@
         font-size: 1rem;
       }
 
-      .icone-suporte {
+      .icone-whatsapp {
         width: 50px;
         height: 50px;
         font-size: 1.5rem;
@@ -212,15 +208,15 @@
 </head>
 <body>
 
-  <!-- Botão WhatsApp Fixo -->
-  <a class="icone-suporte" href="https://wa.me/5522992568259" target="_blank" title="Falar com Suporte">
+  <!-- Ícone WhatsApp Flutuante -->
+  <a class="icone-whatsapp" href="https://wa.me/5522992568259" target="_blank" title="Falar no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Seção superior com fundo preto e frase -->
-  <section class="intro">
-    <h2>Lucre no mercado financeiro com um método validado há 4 anos!</h2>
-  </section>
+  <!-- Frase do Topo -->
+  <div class="topo-frase">
+    Lucre no mercado financeiro com um método validado há 4 anos!
+  </div>
 
   <!-- Conteúdo principal -->
   <div class="container">
@@ -246,6 +242,7 @@
 
 </body>
 </html>
+
 
 
 <!DOCTYPE html>
