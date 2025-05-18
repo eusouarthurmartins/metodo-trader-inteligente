@@ -23,20 +23,17 @@
       padding: 60px 20px;
     }
 
-    /* Novo título baulado Thurzinflix */
     h1.baulado {
       font-size: 4rem;
       font-weight: 900;
       margin-bottom: 10px;
-      color: #ffcc00;
-      /* Contorno (stroke) e sombra para efeito baulado */
-      -webkit-text-stroke: 2px #5a3e00;
+      color: #fff;
       text-shadow:
-        2px 2px 4px #5a3e00,
-        0 0 10px #ffcc00,
-        0 0 20px #ffcc00;
+        -3px -3px 0 #8000ff,
+        3px -3px 0 #8000ff,
+        -3px 3px 0 #8000ff,
+        3px 3px 0 #8000ff;
       animation: fadeSlideIn 1s ease forwards;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     h1.titulo {
@@ -178,7 +175,7 @@
 
     @media (max-width: 600px) {
       h1.baulado {
-        font-size: 2.5rem;
+        font-size: 3rem;
       }
 
       h1.titulo {
@@ -217,8 +214,8 @@
 <body>
 
   <!-- Ícone WhatsApp Fixo -->
-  <a class="icone-suporte" href="https://wa.me/5522992568259" target="_blank" title="Falar com Suporte">
-    <i class="fas fa-headset"></i>
+  <a class="icone-suporte" href="https://wa.me/5522992568259" target="_blank" title="Fale comigo no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
   </a>
 
   <div class="container">
