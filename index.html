@@ -49,11 +49,12 @@
       margin-top: 30px;
       font-size: 2.2rem;
       font-weight: bold;
-      animation: pulse-roxo 2s infinite;
+      animation: pulse-dourado 2s infinite;
+      color: #ffcc00; /* dourado */
     }
 
     .preco s {
-      color: #bbb;
+      color: #d4af37cc; /* dourado claro translúcido */
       margin-right: 10px;
       font-size: 1.5rem;
     }
@@ -96,6 +97,19 @@
       50% {
         transform: scale(1.05);
         text-shadow: 0 0 25px #a64dff;
+      }
+    }
+
+    @keyframes pulse-dourado {
+      0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #ffcc00cc;
+        color: #ffcc00;
+      }
+      50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 25px #ffd700ff;
+        color: #ffd700;
       }
     }
 
