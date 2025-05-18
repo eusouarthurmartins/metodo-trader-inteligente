@@ -16,43 +16,25 @@
       color: white;
     }
 
-    /* Cabeçalho fixo */
-    header {
+    /* Título fixo no canto superior esquerdo */
+    .thurzinflix-canto {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      background: rgba(0, 0, 0, 0.75);
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
-      z-index: 1000;
-    }
-
-    header h1 {
-      color: #ffd700;
-      font-size: 1.8rem;
+      top: 20px;
+      left: 20px;
+      font-size: 2.5rem;
       font-weight: 900;
-      margin: 0;
-      text-shadow: 0 0 6px #d4af37;
+      color: #ffd700;
+      text-shadow: 0 0 10px #d4af37, 0 0 20px #ffd700cc;
+      z-index: 1000;
+      user-select: none;
+      cursor: default;
     }
 
     .container {
       max-width: 900px;
-      margin: 80px auto 0 auto; /* margem topo para não ficar atrás do header */
+      margin: 80px auto 0 auto; /* margem superior para não ficar atrás do título fixo */
       text-align: center;
       padding: 20px;
-    }
-
-    h1.titulo-principal {
-      font-size: 4rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-      color: #ffd700; /* dourado */
-      text-shadow: 0 0 10px #d4af37, 0 0 20px #ffd700cc;
-      animation: fadeSlideIn 1s ease forwards;
     }
 
     h1.titulo {
@@ -193,12 +175,12 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.4rem;
+      .thurzinflix-canto {
+        font-size: 1.8rem;
+        top: 15px;
+        left: 15px;
       }
-      h1.titulo-principal {
-        font-size: 3rem;
-      }
+
       h1.titulo {
         font-size: 2.2rem;
       }
@@ -234,18 +216,15 @@
 </head>
 <body>
 
-  <!-- Cabeçalho fixo -->
-  <header>
-    <h1>Thurzinflix</h1>
-  </header>
+  <!-- Título fixo no canto superior esquerdo -->
+  <div class="thurzinflix-canto">Thurzinflix</div>
 
-  <!-- Ícone WhatsApp Fixo -->
+  <!-- Ícone WhatsApp Fixo no canto superior direito -->
   <a class="icone-whatsapp" href="https://wa.me/5522992568259" target="_blank" title="Fale no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <div class="container">
-    <h1 class="titulo-principal">Thurzinflix</h1>
     <h1 class="titulo">Método Trader Inteligente</h1>
 
     <div class="video-pulsando">
@@ -268,6 +247,7 @@
 
 </body>
 </html>
+
 
 
 <!DOCTYPE html>
