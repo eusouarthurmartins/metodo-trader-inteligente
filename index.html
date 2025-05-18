@@ -47,17 +47,19 @@
 
     .preco {
       margin-top: 30px;
-      font-size: 2.2rem;
+      font-size: 3rem; /* maior */
       font-weight: bold;
-      animation: pulse-dourado 2s infinite;
       color: #ffcc00; /* dourado */
+      animation: pulse-dourado 2s infinite;
     }
 
     .preco s {
-      color: #d4af37cc; /* dourado claro translúcido */
+      color: #d4af37; /* dourado sólido sem transparência */
       margin-right: 10px;
-      font-size: 1.5rem;
+      font-size: 2rem;
       vertical-align: middle;
+      text-decoration-thickness: 3px; /* riscado mais grosso */
+      text-decoration-color: #d4af37;
     }
 
     .botao {
@@ -104,12 +106,11 @@
     @keyframes pulse-dourado {
       0%, 100% {
         transform: scale(1);
-        text-shadow: 0 0 10px #ffcc00cc;
+        /* removido text-shadow para não embaçar */
         color: #ffcc00;
       }
       50% {
         transform: scale(1.05);
-        text-shadow: 0 0 25px #ffd700ff;
         color: #ffd700;
       }
     }
@@ -135,11 +136,11 @@
       }
 
       .preco {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
       }
 
       .preco s {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
 
       .botao {
