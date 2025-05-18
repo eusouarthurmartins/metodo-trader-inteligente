@@ -81,6 +81,14 @@
       background: #a64dff;
     }
 
+    .frase-baixo {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ffd700cc; /* dourado clarinho */
+      text-shadow: 0 0 5px #000000cc;
+    }
+
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
@@ -106,7 +114,6 @@
     @keyframes pulse-dourado {
       0%, 100% {
         transform: scale(1);
-        /* removido text-shadow para não embaçar */
         color: #ffcc00;
       }
       50% {
@@ -147,6 +154,10 @@
         font-size: 1rem;
         padding: 12px 25px;
       }
+
+      .frase-baixo {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -161,16 +172,21 @@
     </div>
 
     <div class="preco">
-      De <s>R$689,99</s> por apenas 12x de R$9,99
+      <s>R$689,99</s> por apenas 12x de R$9,99
     </div>
 
     <button class="botao" onclick="window.location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">
       Quero aprender o Método agora
     </button>
+
+    <div class="frase-baixo">
+      Você está a um clique da sua liberdade financeira
+    </div>
   </div>
 
 </body>
 </html>
+
 
 
 
