@@ -90,29 +90,29 @@
       text-shadow: 0 0 5px #000000cc;
     }
 
-    .suporte-link {
-      display: inline-flex;
+    /* Ícone fixo canto superior direito */
+    .icone-suporte {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      background: #1ebea5;
-      color: white;
-      font-size: 1.3rem;
-      font-weight: bold;
-      padding: 15px 25px;
-      margin-top: 40px;
-      border-radius: 50px;
       text-decoration: none;
-      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 0 15px #000000aa;
+      z-index: 999;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    .suporte-link i {
-      font-size: 1.8rem;
-    }
-
-    .suporte-link:hover {
-      background: #128c7e;
-      transform: scale(1.05);
+    .icone-suporte:hover {
+      transform: scale(1.1);
+      background: #128C7E;
     }
 
     @keyframes pulse {
@@ -185,18 +185,20 @@
         font-size: 1rem;
       }
 
-      .suporte-link {
-        font-size: 1rem;
-        padding: 12px 20px;
-      }
-
-      .suporte-link i {
+      .icone-suporte {
+        width: 50px;
+        height: 50px;
         font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- Ícone WhatsApp Fixo -->
+  <a class="icone-suporte" href="https://wa.me/5522992568259" target="_blank" title="Falar com Suporte">
+    <i class="fas fa-headset"></i>
+  </a>
 
   <div class="container">
     <h1 class="titulo">Método Trader Inteligente</h1>
@@ -217,10 +219,6 @@
     <div class="frase-baixo">
       Você está a um clique da sua liberdade financeira
     </div>
-
-    <a class="suporte-link" href="https://wa.me/SEUNUMEROAQUI" target="_blank">
-      <i class="fas fa-headset"></i> Falar com Suporte
-    </a>
   </div>
 
 </body>
