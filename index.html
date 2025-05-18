@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(rgba(20, 30, 50, 0.85), rgba(20, 30, 50, 0.85)), url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+      background: linear-gradient(rgba(20, 30, 50, 0.3), rgba(20, 30, 50, 0.3)), url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
@@ -26,18 +26,18 @@
       font-size: 3.2rem;
       font-weight: 900;
       margin-bottom: 30px;
-      color: #eaeaea;
-      text-shadow: 2px 2px 8px #0a52adcc;
+      color: #fff;
+      text-shadow: 2px 2px 8px #8000ff99;
       animation: fadeSlideIn 1s ease forwards;
     }
 
     .video-pulsando {
-      border: 5px solid #0a52ad; /* azul escuro */
+      border: 5px solid #8000ff;
       border-radius: 20px;
       overflow: hidden;
       animation: pulse 2s infinite;
       max-width: 100%;
-      box-shadow: 0 0 20px #0a52ad88;
+      box-shadow: 0 0 20px #8000ff88;
     }
 
     iframe {
@@ -50,22 +50,22 @@
       margin-top: 30px;
       font-size: 3rem;
       font-weight: bold;
-      color: #ffd700; /* amarelo vivo */
+      color: #ffcc00;
       animation: pulse-dourado 2s infinite;
     }
 
     .preco s {
-      color: #ffcc00;
+      color: #d4af37;
       margin-right: 10px;
       font-size: 2rem;
       vertical-align: middle;
       text-decoration-thickness: 3px;
-      text-decoration-color: #ffcc00;
+      text-decoration-color: #d4af37;
     }
 
     .botao {
       margin-top: 20px;
-      background: #0a52ad; /* azul escuro */
+      background: #8000ff;
       color: white;
       border: none;
       padding: 15px 35px;
@@ -73,13 +73,13 @@
       font-size: 1.2rem;
       font-weight: bold;
       cursor: pointer;
-      animation: pulse-azul 2s infinite;
+      animation: pulse-roxo 2s infinite;
       transition: transform 0.3s ease;
     }
 
     .botao:hover {
       transform: scale(1.05);
-      background: #1a7ade;
+      background: #a64dff;
     }
 
     .frase-baixo {
@@ -118,33 +118,33 @@
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
-        box-shadow: 0 0 15px #0a52ad;
+        box-shadow: 0 0 15px #8000ff;
       }
       50% {
         transform: scale(1.03);
-        box-shadow: 0 0 30px #0a52ad;
+        box-shadow: 0 0 30px #8000ff;
       }
     }
 
-    @keyframes pulse-azul {
+    @keyframes pulse-roxo {
       0%, 100% {
         transform: scale(1);
-        text-shadow: 0 0 10px #0a52ad;
+        text-shadow: 0 0 10px #8000ff;
       }
       50% {
         transform: scale(1.05);
-        text-shadow: 0 0 25px #1a7ade;
+        text-shadow: 0 0 25px #a64dff;
       }
     }
 
     @keyframes pulse-dourado {
       0%, 100% {
         transform: scale(1);
-        color: #ffd700;
+        color: #ffcc00;
       }
       50% {
         transform: scale(1.05);
-        color: #ffea00;
+        color: #ffd700;
       }
     }
 
@@ -223,7 +223,6 @@
 
 </body>
 </html>
-
 
 
 
