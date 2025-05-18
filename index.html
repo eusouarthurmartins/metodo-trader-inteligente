@@ -133,6 +133,7 @@
     margin: 50px auto;
     padding: 0 20px;
     text-align: center;
+    animation: pulse 3s infinite;
   }
 
   .video-section h2 {
@@ -142,30 +143,13 @@
     text-shadow: 0 0 10px #000000aa;
   }
 
-  .video-wrapper.pulsando {
-    animation: pulseVideo 2.5s infinite;
-    display: inline-block;
-    border-radius: 20px;
-  }
-
-  .video-wrapper iframe {
+  .video-section iframe {
     width: 100%;
     max-width: 100%;
     height: 500px;
     border: none;
     border-radius: 20px;
     box-shadow: 0 0 20px #00000099;
-  }
-
-  @keyframes pulseVideo {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 0 10px #ffcc00cc;
-    }
-    50% {
-      transform: scale(1.02);
-      box-shadow: 0 0 20px #ffcc00ff;
-    }
   }
 
   @media (max-width: 1000px) {
@@ -182,7 +166,7 @@
     .texto {
       max-width: 100%;
     }
-    .video-wrapper iframe {
+    .video-section iframe {
       height: 300px;
     }
   }
@@ -230,13 +214,13 @@
 <!-- Bloco com vídeo -->
 <div class="video-section">
   <h2>Assista esse vídeo antes de começar sua jornada no MTI!</h2>
-  <div class="video-wrapper pulsando">
-    <iframe src="https://www.youtube.com/embed/gaHYTomw-Yw" title="Vídeo MTI" allowfullscreen></iframe>
-  </div>
+  <iframe src="https://www.youtube.com/embed/gaHYTomw-Yw?rel=0&modestbranding=1&showinfo=0&controls=1"
+          title="Vídeo MTI" allowfullscreen></iframe>
 </div>
 
 </body>
 </html>
+
 
 
 
