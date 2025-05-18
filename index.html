@@ -23,16 +23,12 @@
       padding: 60px 20px;
     }
 
-    h1.baulado {
+    h1.titulo-principal {
       font-size: 4rem;
       font-weight: 900;
       margin-bottom: 10px;
-      color: #fff;
-      text-shadow:
-        -3px -3px 0 #8000ff,
-        3px -3px 0 #8000ff,
-        -3px 3px 0 #8000ff,
-        3px 3px 0 #8000ff;
+      color: #ffd700; /* dourado */
+      text-shadow: 0 0 10px #d4af37, 0 0 20px #ffd700cc;
       animation: fadeSlideIn 1s ease forwards;
     }
 
@@ -105,13 +101,13 @@
     }
 
     /* Ícone fixo canto superior direito */
-    .icone-suporte {
+    .icone-whatsapp {
       position: fixed;
       top: 20px;
       right: 20px;
       background: #25D366;
       color: white;
-      font-size: 2rem;
+      font-size: 2.5rem;
       width: 60px;
       height: 60px;
       border-radius: 50%;
@@ -124,7 +120,7 @@
       transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    .icone-suporte:hover {
+    .icone-whatsapp:hover {
       transform: scale(1.1);
       background: #128C7E;
     }
@@ -174,10 +170,9 @@
     }
 
     @media (max-width: 600px) {
-      h1.baulado {
+      h1.titulo-principal {
         font-size: 3rem;
       }
-
       h1.titulo {
         font-size: 2.2rem;
       }
@@ -203,10 +198,10 @@
         font-size: 1rem;
       }
 
-      .icone-suporte {
+      .icone-whatsapp {
         width: 50px;
         height: 50px;
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
     }
   </style>
@@ -214,12 +209,12 @@
 <body>
 
   <!-- Ícone WhatsApp Fixo -->
-  <a class="icone-suporte" href="https://wa.me/5522992568259" target="_blank" title="Fale comigo no WhatsApp">
+  <a class="icone-whatsapp" href="https://wa.me/5522992568259" target="_blank" title="Fale no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <div class="container">
-    <h1 class="baulado">Thurzinflix</h1>
+    <h1 class="titulo-principal">Thurzinflix</h1>
     <h1 class="titulo">Método Trader Inteligente</h1>
 
     <div class="video-pulsando">
@@ -242,6 +237,7 @@
 
 </body>
 </html>
+
 
 
 <!DOCTYPE html>
