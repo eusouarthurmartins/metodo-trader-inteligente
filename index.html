@@ -16,23 +16,9 @@
       color: white;
     }
 
-    /* Título fixo no canto superior esquerdo */
-    .thurzinflix-canto {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: #ffd700;
-      text-shadow: 0 0 10px #d4af37, 0 0 20px #ffd700cc;
-      z-index: 1000;
-      user-select: none;
-      cursor: default;
-    }
-
     .container {
       max-width: 900px;
-      margin: 80px auto 0 auto; /* margem superior para não ficar atrás do título fixo */
+      margin: 80px auto 0 auto; /* margem superior para espaçamento */
       text-align: center;
       padding: 20px;
     }
@@ -175,12 +161,6 @@
     }
 
     @media (max-width: 600px) {
-      .thurzinflix-canto {
-        font-size: 1.8rem;
-        top: 15px;
-        left: 15px;
-      }
-
       h1.titulo {
         font-size: 2.2rem;
       }
@@ -216,9 +196,6 @@
 </head>
 <body>
 
-  <!-- Título fixo no canto superior esquerdo -->
-  <div class="thurzinflix-canto">Thurzinflix</div>
-
   <!-- Ícone WhatsApp Fixo no canto superior direito -->
   <a class="icone-whatsapp" href="https://wa.me/5522992568259" target="_blank" title="Fale no WhatsApp">
     <i class="fab fa-whatsapp"></i>
@@ -247,6 +224,7 @@
 
 </body>
 </html>
+
 
 
 
