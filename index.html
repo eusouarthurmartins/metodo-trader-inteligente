@@ -21,6 +21,15 @@
       padding: 60px 20px;
     }
 
+    h1.titulo {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin-bottom: 30px;
+      color: #fff;
+      text-shadow: 2px 2px 8px #8000ff99;
+      animation: fadeSlideIn 1s ease forwards;
+    }
+
     .video-pulsando {
       border: 5px solid #8000ff;
       border-radius: 20px;
@@ -38,10 +47,15 @@
 
     .preco {
       margin-top: 30px;
-      font-size: 2.5rem;
-      color: #ffffff;
+      font-size: 2.2rem;
       font-weight: bold;
       animation: pulse-roxo 2s infinite;
+    }
+
+    .preco s {
+      color: #bbb;
+      margin-right: 10px;
+      font-size: 1.5rem;
     }
 
     .botao {
@@ -85,13 +99,32 @@
       }
     }
 
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 600px) {
+      h1.titulo {
+        font-size: 2.2rem;
+      }
+
       iframe {
         height: 220px;
       }
 
       .preco {
-        font-size: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .preco s {
+        font-size: 1.2rem;
       }
 
       .botao {
@@ -104,12 +137,14 @@
 <body>
 
   <div class="container">
+    <h1 class="titulo">Método Trader Inteligente</h1>
+
     <div class="video-pulsando">
       <iframe src="https://www.youtube.com/embed/gaHYTomw-Yw?rel=0&modestbranding=1&controls=1&showinfo=0"
               title="Método Trader Inteligente" allowfullscreen></iframe>
     </div>
 
-    <div class="preco">DE R$689,99 POR 12x de R$9,99</div>
+    <div class="preco"><s>R$497</s> POR R$97</div>
 
     <button class="botao" onclick="window.location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">
       Quero aprender o Método agora
@@ -118,7 +153,6 @@
 
 </body>
 </html>
-
 
 
 
