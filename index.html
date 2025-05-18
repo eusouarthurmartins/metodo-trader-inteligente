@@ -3,40 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente</title>
+  <title>Thurzinflix</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: #0d001a;
-      color: #ffffff;
+      background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
 
-    .topo-frase {
-      background: #000;
-      padding: 30px 20px 10px;
+    .topo-frase-container {
+      background-color: #000000;
       text-align: center;
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #FFD700;
-      text-shadow: 0 0 5px #000;
+      padding: 30px 20px 20px;
+      color: #d4af37; /* dourado */
+      font-weight: 700;
+      font-size: 1.7rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .topo-frase-container img.topo-imagem {
+      max-width: 120px;
+      width: 100%;
+      height: auto;
+      user-select: none;
     }
 
     .container {
       max-width: 900px;
       margin: 0 auto;
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px 20px 60px;
+      color: white;
     }
 
     h1.titulo {
       font-size: 3.2rem;
       font-weight: 900;
       margin-bottom: 30px;
-      color: #ffffff;
-      text-shadow: 2px 2px 8px #8000ff;
+      color: white;
+      text-shadow: 2px 2px 6px #4b0082cc; /* roxo escuro com transparência */
       animation: fadeSlideIn 1s ease forwards;
     }
 
@@ -59,17 +71,17 @@
       margin-top: 30px;
       font-size: 3rem;
       font-weight: bold;
-      color: #FFD700;
-      animation: pulse-roxo 2s infinite;
+      color: #d4af37; /* dourado */
+      animation: pulse-dourado 2s infinite;
     }
 
     .preco s {
-      color: #d4af37;
+      color: #b99739;
       margin-right: 10px;
       font-size: 2rem;
       vertical-align: middle;
       text-decoration-thickness: 3px;
-      text-decoration-color: #d4af37;
+      text-decoration-color: #b99739;
     }
 
     .botao {
@@ -95,11 +107,12 @@
       margin-top: 20px;
       font-size: 1.3rem;
       font-weight: 600;
-      color: #ffffff;
+      color: white;
       text-shadow: 0 0 5px #000000cc;
     }
 
-    .icone-whatsapp {
+    /* Ícone fixo canto superior direito */
+    .icone-suporte {
       position: fixed;
       top: 20px;
       right: 20px;
@@ -118,7 +131,7 @@
       transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    .icone-whatsapp:hover {
+    .icone-suporte:hover {
       transform: scale(1.1);
       background: #128C7E;
     }
@@ -145,6 +158,17 @@
       }
     }
 
+    @keyframes pulse-dourado {
+      0%, 100% {
+        transform: scale(1);
+        color: #d4af37;
+      }
+      50% {
+        transform: scale(1.05);
+        color: #ffd700;
+      }
+    }
+
     @keyframes fadeSlideIn {
       from {
         opacity: 0;
@@ -157,8 +181,14 @@
     }
 
     @media (max-width: 600px) {
-      .topo-frase {
-        font-size: 1.2rem;
+      .topo-frase-container {
+        font-size: 1.4rem;
+        padding: 20px 15px 15px;
+        gap: 8px;
+      }
+
+      .topo-frase-container img.topo-imagem {
+        max-width: 90px;
       }
 
       h1.titulo {
@@ -186,7 +216,7 @@
         font-size: 1rem;
       }
 
-      .icone-whatsapp {
+      .icone-suporte {
         width: 50px;
         height: 50px;
         font-size: 1.5rem;
@@ -196,17 +226,16 @@
 </head>
 <body>
 
-  <!-- Ícone WhatsApp Flutuante -->
-  <a class="icone-whatsapp" href="https://wa.me/5522992568259" target="_blank" title="Falar no WhatsApp">
+  <!-- Ícone WhatsApp Fixo -->
+  <a class="icone-suporte" href="https://wa.me/5522992568259" target="_blank" title="Falar com Suporte">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Frase do Topo -->
-  <div class="topo-frase">
+  <div class="topo-frase-container">
+    <img src="assets/imagem-do-topo3.png" alt="Imagem topo" class="topo-imagem" />
     Lucre no mercado financeiro com um método validado há 4 anos!
   </div>
 
-  <!-- Conteúdo principal -->
   <div class="container">
     <h1 class="titulo">Método Trader Inteligente</h1>
 
