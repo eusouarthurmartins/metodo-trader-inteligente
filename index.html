@@ -1266,24 +1266,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site com Pop-up</title>
+  <title>Pop-up de Cupom</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
-      color: #fff;
-    }
-
-    header {
-      padding: 40px;
-      text-align: center;
-      background-color: #111;
-    }
-
-    main {
-      padding: 40px;
-      text-align: center;
     }
 
     /* Animações */
@@ -1309,7 +1297,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: #111;
-      padding: 30px;
+      padding: 30px 20px;
       border: 2px solid gold;
       border-radius: 12px;
       box-shadow: 0 0 25px gold;
@@ -1321,10 +1309,15 @@
       animation: zoomIn 0.5s ease forwards;
     }
 
+    #popup h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
     #popup a {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
+      margin-top: 15px;
+      padding: 10px 18px;
       background: gold;
       border: none;
       border-radius: 8px;
@@ -1332,6 +1325,17 @@
       font-weight: bold;
       text-decoration: none;
       color: #000;
+    }
+
+    #popup .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
     }
 
     #popup-overlay {
@@ -1348,30 +1352,19 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Método Trader Inteligente</h1>
-    <p>Domine o mercado com estratégias profissionais</p>
-  </header>
-
-  <main>
-    <p>Conteúdo principal do seu site aqui...</p>
-    <p>Você pode colocar seus gráficos, módulos e botões normalmente.</p>
-  </main>
 
   <!-- POP-UP -->
   <div id="popup-overlay"></div>
   <div id="popup">
-    <h2>🔥 Oferta Especial!</h2>
-    <p>Cadastre-se agora para garantir seu acesso exclusivo!</p>
+    <button class="close-btn" onclick="fecharPopup()">×</button>
+    <h2>Cadastre-se agora para receber cupons de descontos exclusivos</h2>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX52WUFyuW0Wkod82dhvsAB3eD7EMVowo1Ghs03XZl_hZnwg/viewform?usp=header" target="_blank">Quero Me Cadastrar</a>
   </div>
 
   <script>
     function abrirPopup() {
-      const popup = document.getElementById('popup');
-      const overlay = document.getElementById('popup-overlay');
-      popup.style.display = 'block';
-      overlay.style.display = 'block';
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('popup-overlay').style.display = 'block';
     }
 
     function fecharPopup() {
@@ -1380,11 +1373,9 @@
     }
 
     window.onload = function () {
-      setTimeout(abrirPopup, 3000); // Abre o pop-up após 3 segundos
+      setTimeout(abrirPopup, 10000); // Abre o pop-up após 10 segundos (10000 ms)
     };
 
-    // Fecha o pop-up ao clicar no fundo escuro
-    document.getElementById('popup-overlay').onclick = fecharPopup;
-  </script>
-</body>
-</html>
+    // Fechar ao clicar fora do pop-up
+    document.getElementById('
+
