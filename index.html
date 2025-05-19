@@ -8,90 +8,83 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0d001a;
+      background: #0a0014;
       color: #fff;
     }
 
-    .hero {
-      background: linear-gradient(135deg, #1b0033, #33004d);
-      padding: 80px 20px;
+    .top-section {
       display: flex;
-      align-items: center;
+      flex-direction: row;
+      height: 100vh;
+      background: linear-gradient(90deg, #0a0014 50%, #1a002d 50%);
+    }
+
+    .top-image {
+      flex: 1;
+      background: url('assets/suafoto.jpg') center/cover no-repeat;
+    }
+
+    .top-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 0 25px #80008088;
-      transition: transform 0.4s ease;
-    }
-
-    .hero img:hover {
-      transform: scale(1.1);
-    }
-
-    .hero-texto {
-      max-width: 600px;
+      align-items: center;
+      padding: 40px;
       text-align: center;
-      animation: fadeIn 1.5s ease-out;
+      animation: fadeInRight 1.5s ease-out;
     }
 
-    .hero-texto h1 {
-      font-size: 3.5rem;
+    .top-content h1 {
+      font-size: 3rem;
       color: gold;
-      text-shadow: 0 0 10px gold;
+      text-shadow: 0 0 15px gold;
       margin-bottom: 20px;
     }
 
-    .hero-texto p {
+    .top-content p {
       font-size: 1.3rem;
-      color: #e0e0e0;
+      color: #eee;
       margin-bottom: 30px;
     }
 
     .botao {
-      padding: 15px 30px;
-      font-size: 1.2rem;
       background: gold;
-      color: #1b0033;
-      border: none;
+      color: #1a002d;
+      padding: 15px 30px;
+      font-size: 1.1rem;
       border-radius: 8px;
       font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 0 10px gold;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 0 15px gold;
     }
 
     .botao:hover {
-      background: #ffd700;
+      background: #ffe066;
       transform: scale(1.05);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     @media (max-width: 768px) {
-      .hero {
+      .top-section {
         flex-direction: column;
+        height: auto;
       }
 
-      .hero img {
-        width: 140px;
-        height: 140px;
+      .top-image {
+        height: 300px;
       }
 
-      .hero-texto h1 {
-        font-size: 2.5rem;
+      .top-content h1 {
+        font-size: 2.2rem;
       }
 
-      .hero-texto p {
+      .top-content p {
         font-size: 1.1rem;
       }
     }
@@ -99,17 +92,18 @@
 </head>
 <body>
 
-  <section class="hero">
-    <img src="assets/imagemdetopo.jpg" alt="Thurzin Trader" />
-    <div class="hero-texto">
+  <section class="top-section">
+    <div class="top-image"></div>
+    <div class="top-content">
       <h1>Método Trader Inteligente</h1>
-      <p>Pare de operar no escuro. Aprenda com quem vive do mercado!</p>
-      <a href="#curso"><button class="botao">Quero aprender agora!</button></a>
+      <p>Pare de operar no escuro, aprenda com quem vive do mercado</p>
+      <a href="#comprar" class="botao">Quero aprender agora</a>
     </div>
   </section>
 
 </body>
 </html>
+
 
 
 
