@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Método Trader Inteligente</title>
   <style>
     * {
@@ -11,49 +11,47 @@
       box-sizing: border-box;
     }
 
-    body, html {
-      height: 100%;
+    body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #0a0014;
+      color: white;
     }
 
-    .container {
+    .hero {
       display: flex;
       height: 100vh;
       width: 100%;
     }
 
-    .left {
+    .hero .image-side {
       flex: 1;
       background: url('assets/suafoto.jpg') center center / cover no-repeat;
     }
 
-    .right {
+    .hero .content-side {
       flex: 1;
       background: linear-gradient(135deg, #1a002d, #0a0014);
-      color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
       padding: 60px;
     }
 
-    .right h1 {
+    .content-side h1 {
       font-size: 3.5rem;
       color: gold;
+      text-shadow: 0 0 10px gold;
       margin-bottom: 20px;
-      text-shadow: 0 0 15px gold;
     }
 
-    .right p {
+    .content-side p {
       font-size: 1.4rem;
       color: #e0e0e0;
       margin-bottom: 40px;
       max-width: 500px;
     }
 
-    .botao {
+    .content-side .botao {
       background: gold;
       color: #1a002d;
       padding: 15px 30px;
@@ -63,55 +61,80 @@
       text-decoration: none;
       box-shadow: 0 0 15px gold;
       transition: all 0.3s ease;
+      width: fit-content;
     }
 
-    .botao:hover {
+    .content-side .botao:hover {
       background: #ffe066;
       transform: scale(1.05);
     }
 
+    /* Responsivo */
     @media (max-width: 768px) {
-      .container {
+      .hero {
         flex-direction: column;
       }
 
-      .left, .right {
+      .hero .image-side,
+      .hero .content-side {
         flex: none;
-        height: 50vh;
         width: 100%;
-      }
-
-      .right {
-        align-items: center;
+        height: 50vh;
         text-align: center;
-        padding: 30px;
+        align-items: center;
+        justify-content: center;
       }
 
-      .right h1 {
+      .content-side h1 {
         font-size: 2.5rem;
       }
 
-      .right p {
+      .content-side p {
         font-size: 1.1rem;
       }
+
+      .content-side .botao {
+        margin: 0 auto;
+      }
+    }
+
+    /* Sessão abaixo (exemplo) */
+    .resto-do-site {
+      padding: 80px 40px;
+      background-color: #0a0014;
+      text-align: center;
+    }
+
+    .resto-do-site h2 {
+      font-size: 2rem;
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    .resto-do-site p {
+      font-size: 1.2rem;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="left"></div>
-    <div class="right">
+  <section class="hero">
+    <div class="image-side"></div>
+    <div class="content-side">
       <h1>Método Trader Inteligente</h1>
       <p>Pare de operar no escuro, aprenda com quem vive do mercado</p>
       <a href="#comprar" class="botao">Quero aprender agora</a>
     </div>
-  </div>
+  </section>
+
+  <section class="resto-do-site">
+    <h2>Seção seguinte do site</h2>
+    <p>Aqui continua sua landing page com benefícios, módulos, depoimentos, etc.</p>
+  </section>
 
 </body>
 </html>
-
-
 
 
 
