@@ -5,59 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Método Trader Inteligente</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background: #0a0014;
-      color: #fff;
+      background-color: #0a0014;
     }
 
-    .top-section {
+    .container {
       display: flex;
-      flex-direction: row;
       height: 100vh;
-      background: linear-gradient(90deg, #0a0014 50%, #1a002d 50%);
+      width: 100%;
     }
 
-    .top-image {
+    .left {
       flex: 1;
-      background: url('assets/suafoto.jpg') center/cover no-repeat;
+      background: url('assets/suafoto.jpg') center center / cover no-repeat;
     }
 
-    .top-content {
+    .right {
       flex: 1;
+      background: linear-gradient(135deg, #1a002d, #0a0014);
+      color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      padding: 40px;
-      text-align: center;
-      animation: fadeInRight 1.5s ease-out;
+      align-items: flex-start;
+      padding: 60px;
     }
 
-    .top-content h1 {
-      font-size: 3rem;
+    .right h1 {
+      font-size: 3.5rem;
       color: gold;
-      text-shadow: 0 0 15px gold;
       margin-bottom: 20px;
+      text-shadow: 0 0 15px gold;
     }
 
-    .top-content p {
-      font-size: 1.3rem;
-      color: #eee;
-      margin-bottom: 30px;
+    .right p {
+      font-size: 1.4rem;
+      color: #e0e0e0;
+      margin-bottom: 40px;
+      max-width: 500px;
     }
 
     .botao {
       background: gold;
       color: #1a002d;
       padding: 15px 30px;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
-      transition: 0.3s;
       box-shadow: 0 0 15px gold;
+      transition: all 0.3s ease;
     }
 
     .botao:hover {
@@ -65,26 +70,28 @@
       transform: scale(1.05);
     }
 
-    @keyframes fadeInRight {
-      from { opacity: 0; transform: translateX(40px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
     @media (max-width: 768px) {
-      .top-section {
+      .container {
         flex-direction: column;
-        height: auto;
       }
 
-      .top-image {
-        height: 300px;
+      .left, .right {
+        flex: none;
+        height: 50vh;
+        width: 100%;
       }
 
-      .top-content h1 {
-        font-size: 2.2rem;
+      .right {
+        align-items: center;
+        text-align: center;
+        padding: 30px;
       }
 
-      .top-content p {
+      .right h1 {
+        font-size: 2.5rem;
+      }
+
+      .right p {
         font-size: 1.1rem;
       }
     }
@@ -92,17 +99,18 @@
 </head>
 <body>
 
-  <section class="top-section">
-    <div class="top-image"></div>
-    <div class="top-content">
+  <div class="container">
+    <div class="left"></div>
+    <div class="right">
       <h1>Método Trader Inteligente</h1>
       <p>Pare de operar no escuro, aprenda com quem vive do mercado</p>
       <a href="#comprar" class="botao">Quero aprender agora</a>
     </div>
-  </section>
+  </div>
 
 </body>
 </html>
+
 
 
 
