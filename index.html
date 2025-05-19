@@ -31,6 +31,15 @@
       position: relative;
     }
 
+    /* Overlay escurecido sobre a imagem */
+    .image-side::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4); /* ajuste a opacidade aqui */
+      z-index: 1;
+    }
+
     /* Sombra suave na transição do lado direito da foto */
     .image-side::after {
       content: '';
@@ -185,6 +194,7 @@
 </body>
 </html>
 
+--------------------------------------------------------------------------------------------------------
 
 <!DOCTYPE html>
 <html lang="pt-br">
