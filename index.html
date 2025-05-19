@@ -1,132 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site com Pop-up</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
 
-    header {
-      padding: 40px;
-      text-align: center;
-      background-color: #111;
-    }
-
-    main {
-      padding: 40px;
-      text-align: center;
-    }
-
-    /* Animações */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes zoomIn {
-      from {
-        transform: translate(-50%, -50%) scale(0.7);
-        opacity: 0;
-      }
-      to {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-    }
-
-    #popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #111;
-      padding: 30px;
-      border: 2px solid gold;
-      border-radius: 12px;
-      box-shadow: 0 0 25px gold;
-      z-index: 9999;
-      display: none;
-      color: white;
-      text-align: center;
-      max-width: 320px;
-      animation: zoomIn 0.5s ease forwards;
-    }
-
-    #popup a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: gold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-      color: #000;
-    }
-
-    #popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 9998;
-      display: none;
-      animation: fadeIn 0.3s ease forwards;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Método Trader Inteligente</h1>
-    <p>Domine o mercado com estratégias profissionais</p>
-  </header>
-
-  <main>
-    <p>Conteúdo principal do seu site aqui...</p>
-    <p>Você pode colocar seus gráficos, módulos e botões normalmente.</p>
-  </main>
-
-  <!-- POP-UP -->
-  <div id="popup-overlay"></div>
-  <div id="popup">
-    <h2>🔥 Oferta Especial!</h2>
-    <p>Cadastre-se agora para garantir seu acesso exclusivo!</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX52WUFyuW0Wkod82dhvsAB3eD7EMVowo1Ghs03XZl_hZnwg/viewform?usp=header" target="_blank">Quero Me Cadastrar</a>
-  </div>
-
-  <script>
-    function abrirPopup() {
-      const popup = document.getElementById('popup');
-      const overlay = document.getElementById('popup-overlay');
-      popup.style.display = 'block';
-      overlay.style.display = 'block';
-    }
-
-    function fecharPopup() {
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('popup-overlay').style.display = 'none';
-    }
-
-    window.onload = function () {
-      setTimeout(abrirPopup, 3000); // Abre o pop-up após 3 segundos
-    };
-
-    // Fecha o pop-up ao clicar no fundo escuro
-    document.getElementById('popup-overlay').onclick = fecharPopup;
-  </script>
-</body>
-</html>
-
----------------------------------------------------
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1388,4 +1260,131 @@
     font-size: 0.95rem;
   }
 </style>
+---------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site com Pop-up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
 
+    header {
+      padding: 40px;
+      text-align: center;
+      background-color: #111;
+    }
+
+    main {
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    #popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      padding: 30px;
+      border: 2px solid gold;
+      border-radius: 12px;
+      box-shadow: 0 0 25px gold;
+      z-index: 9999;
+      display: none;
+      color: white;
+      text-align: center;
+      max-width: 320px;
+      animation: zoomIn 0.5s ease forwards;
+    }
+
+    #popup a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: gold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      color: #000;
+    }
+
+    #popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 9998;
+      display: none;
+      animation: fadeIn 0.3s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Método Trader Inteligente</h1>
+    <p>Domine o mercado com estratégias profissionais</p>
+  </header>
+
+  <main>
+    <p>Conteúdo principal do seu site aqui...</p>
+    <p>Você pode colocar seus gráficos, módulos e botões normalmente.</p>
+  </main>
+
+  <!-- POP-UP -->
+  <div id="popup-overlay"></div>
+  <div id="popup">
+    <h2>🔥 Oferta Especial!</h2>
+    <p>Cadastre-se agora para garantir seu acesso exclusivo!</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX52WUFyuW0Wkod82dhvsAB3eD7EMVowo1Ghs03XZl_hZnwg/viewform?usp=header" target="_blank">Quero Me Cadastrar</a>
+  </div>
+
+  <script>
+    function abrirPopup() {
+      const popup = document.getElementById('popup');
+      const overlay = document.getElementById('popup-overlay');
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+    }
+
+    function fecharPopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('popup-overlay').style.display = 'none';
+    }
+
+    window.onload = function () {
+      setTimeout(abrirPopup, 3000); // Abre o pop-up após 3 segundos
+    };
+
+    // Fecha o pop-up ao clicar no fundo escuro
+    document.getElementById('popup-overlay').onclick = fecharPopup;
+  </script>
+</body>
+</html>
