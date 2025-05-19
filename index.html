@@ -1,4 +1,4 @@
-
+0
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1266,6 +1266,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Pop-up Spoiler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       margin: 0;
@@ -1338,6 +1339,24 @@
       text-decoration: underline;
       cursor: pointer;
     }
+
+    /* Responsivo para celular */
+    @media (max-width: 600px) {
+      #popup {
+        width: 85%;
+        padding: 20px 10px;
+        font-size: 15px;
+      }
+
+      #popup a {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      #popup button {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1369,5 +1388,6 @@
   </script>
 </body>
 </html>
+
 
 
