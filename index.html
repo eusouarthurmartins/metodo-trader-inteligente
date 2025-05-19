@@ -1265,120 +1265,109 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pop-up de Cupom</title>
+  <title>Pop-up Spoiler</title>
   <style>
     body {
       margin: 0;
+      background: #000;
       font-family: Arial, sans-serif;
-      background-color: #000;
     }
 
-    /* Animações */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes zoomIn {
-      from {
-        transform: translate(-50%, -50%) scale(0.7);
-        opacity: 0;
-      }
-      to {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
+    #popup, #popup-overlay {
+      display: none;
+      position: fixed;
+      z-index: 9999;
     }
 
     #popup {
-      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       background: #111;
+      color: white;
       padding: 30px 20px;
       border: 2px solid gold;
       border-radius: 12px;
-      box-shadow: 0 0 25px gold;
-      z-index: 9999;
-      display: none;
-      color: white;
       text-align: center;
+      box-shadow: 0 0 25px gold;
+      animation: pulse 1.5s infinite;
       max-width: 320px;
-      animation: zoomIn 0.5s ease forwards;
     }
 
-    #popup h2 {
-      margin-top: 0;
-      font-size: 1.2rem;
-    }
-
-    #popup a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      background: gold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-      color: #000;
-    }
-
-    #popup .close-btn {
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      background: none;
-      border: none;
-      font-size: 20px;
-      color: #fff;
-      cursor: pointer;
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px gold;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        box-shadow: 0 0 25px gold;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px gold;
+      }
     }
 
     #popup-overlay {
-      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
       background: rgba(0, 0, 0, 0.7);
       z-index: 9998;
-      display: none;
-      animation: fadeIn 0.3s ease forwards;
+    }
+
+    #popup a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    #popup button {
+      margin-top: 10px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 14px;
+      text-decoration: underline;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <!-- POP-UP -->
-  <div id="popup-overlay"></div>
+  <div id="popup-overlay" onclick="fecharPopup()"></div>
   <div id="popup">
-    <button class="close-btn" onclick="fecharPopup()">×</button>
-    <h2>Cadastre-se agora para receber cupons de descontos exclusivos</h2>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX52WUFyuW0Wkod82dhvsAB3eD7EMVowo1Ghs03XZl_hZnwg/viewform?usp=header" target="_blank">Quero Me Cadastrar</a>
+    <p>Quer um spoiler do nosso conteúdo 100% grátis?</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScsxFi7YTPRPPfDzkT_jHHZtjNcCX904I5bzz41T7Bw7_T9pA/viewform?usp=header" target="_blank">
+      Quero ver agora
+    </a>
+    <br>
+    <button onclick="fecharPopup()">Fechar</button>
   </div>
 
   <script>
     function abrirPopup() {
-      document.getElementById('popup').style.display = 'block';
-      document.getElementById('popup-overlay').style.display = 'block';
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("popup-overlay").style.display = "block";
     }
 
     function fecharPopup() {
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('popup-overlay').style.display = 'none';
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("popup-overlay").style.display = "none";
     }
 
-    window.onload = function () {
-      setTimeout(abrirPopup, 10000); // Abre o pop-up após 10 segundos (10000 ms)
+    window.onload = () => {
+      setTimeout(abrirPopup, 15000); // 15 segundos
     };
-
-    // Fechar ao clicar fora do pop-up
-    document.getElementById('popup-overlay').onclick = fecharPopup;
   </script>
 </body>
 </html>
+
 
