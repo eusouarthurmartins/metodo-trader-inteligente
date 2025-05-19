@@ -30,11 +30,21 @@
 
     .hero .content-side {
       flex: 1;
-      background: linear-gradient(135deg, #1a002d, #0a0014);
+      position: relative;
+      background: url('https://cdn.pixabay.com/photo/2013/07/18/10/56/space-164681_1280.jpg') center center / cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 60px;
+      z-index: 1;
+    }
+
+    .content-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6); /* Overlay escuro */
+      z-index: -1;
     }
 
     .content-side h1 {
@@ -69,7 +79,6 @@
       transform: scale(1.05);
     }
 
-    /* Responsivo */
     @media (max-width: 768px) {
       .hero {
         flex-direction: column;
@@ -97,24 +106,6 @@
         margin: 0 auto;
       }
     }
-
-    /* Sessão abaixo (exemplo) */
-    .resto-do-site {
-      padding: 80px 40px;
-      background-color: #0a0014;
-      text-align: center;
-    }
-
-    .resto-do-site h2 {
-      font-size: 2rem;
-      color: gold;
-      margin-bottom: 20px;
-    }
-
-    .resto-do-site p {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
   </style>
 </head>
 <body>
@@ -124,12 +115,7 @@
     <div class="content-side">
       <h1>Método Trader Inteligente</h1>
       <p>Pare de operar no escuro, aprenda com quem vive do mercado</p>
-      <a href="#comprar" class="botao">Quero aprender agora</a>
-    </div>
-  </section>
-
-</body>
-</html>
+      <a href="#comprar" class="botao">Quero
 
 
 
