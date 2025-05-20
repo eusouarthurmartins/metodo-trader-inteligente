@@ -1,5 +1,6 @@
 <section class="hero">
   <div class="banner">
+    <div class="overlay"></div>  <!-- overlay adicionada -->
     <div class="smoke"></div>
     <img src="assets/banner-exemplo.jpg" alt="Banner Completo" class="banner-img" />
     <div class="content">
@@ -34,8 +35,17 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    /* sombra suave embaixo da imagem */
     box-shadow: 0 40px 60px -20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Overlay: camada semi-transparente sobre a imagem */
+  .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* preto com 50% de transparência */
+    z-index: 2;
   }
 
   .smoke {
@@ -48,7 +58,7 @@
       radial-gradient(circle at 80% 40%, rgba(0,0,0,0.7), transparent 55%);
     animation: smokeMove 20s linear infinite;
     mix-blend-mode: multiply;
-    z-index: 5;
+    z-index: 3;
   }
 
   @keyframes smokeMove {
