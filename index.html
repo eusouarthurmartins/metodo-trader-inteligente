@@ -865,135 +865,86 @@
 
 
 -------------------------------------------------------------------------------------------------- esse pra cima
-<section class="depoimentos-auto">
-  <h2>O que estão dizendo sobre o MTI</h2>
-  <div class="depoimentos-slider">
-    <div class="depoimentos-track">
-      <!-- Repetido para efeito contínuo -->
-      <div class="depoimento">
-        <img src="assets/depo1.jpg" alt="João Silva" />
-        <h3>João Silva</h3>
-        <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo2.jpg" alt="Camila Rocha" />
-        <h3>Camila Rocha</h3>
-        <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo3.jpg" alt="Lucas Andrade" />
-        <h3>Lucas Andrade</h3>
-        <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo4.jpg" alt="Fernanda Lima" />
-        <h3>Fernanda Lima</h3>
-        <p>"Conteúdo didático e direto. Foi o melhor investimento que fiz no ano."</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo5.jpg" alt="Rafael Souza" />
-        <h3>Rafael Souza</h3>
-        <p>"Aprendi mais em 1 semana do que em meses assistindo vídeos aleatórios."</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo6.jpg" alt="Bruna Torres" />
-        <h3>Bruna Torres</h3>
-        <p>"O MTI é direto ao ponto. Já estou operando com segurança e confiança."</p>
-      </div>
-
-      <!-- Copiando os mesmos para repetir a rolagem sem travar -->
-      <div class="depoimento">
-        <img src="assets/depo1.jpg" alt="João Silva" />
-        <h3>João Silva</h3>
-        <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo2.jpg" alt="Camila Rocha" />
-        <h3>Camila Rocha</h3>
-        <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo3.jpg" alt="Lucas Andrade" />
-        <h3>Lucas Andrade</h3>
-        <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
-      </div>
-    </div>
+</style>
+<section class="garantia-section">
+  <img src="assets/garantia1.png" alt="Selo de Garantia" class="garantia-imagem" />
+  <div class="garantia-texto">
+    <h2>Garantia Incondicional de 7 Dias</h2>
+    <p>
+      Ao se inscrever no <strong>Método Trader Inteligente</strong>, você tem 7 dias completos para acessar o conteúdo, assistir às aulas e aplicar os ensinamentos.
+      <br /><br />
+      Se por qualquer motivo você sentir que o curso não é para você, basta solicitar o reembolso dentro desse prazo — sem perguntas, sem burocracia. O risco é todo nosso!
+    </p>
   </div>
 </section>
 
 <style>
-  .depoimentos-auto {
-    background: #000; /* fundo preto */
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .depoimentos-auto h2 {
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-  }
-
-  .depoimentos-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .depoimentos-track {
+  .garantia-section {
     display: flex;
-    gap: 30px;
-    animation: scroll-left 20s linear infinite;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 30px;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+                url('assets/mti-fundo.jpg') no-repeat center center/cover;
+    color: #fff;
+    box-shadow:
+      inset 0 0 60px #8000ff55,
+      inset 0 0 120px #8000ff33;
   }
 
-  .depoimento {
-    flex: 0 0 280px;
-    background: #1e1e1e;
-    border-radius: 14px;
-    padding: 20px;
-    box-shadow: none; /* sem sombra */
-    text-align: center;
+  .garantia-imagem {
+    width: 180px;
+    animation: pulse 2s infinite;
   }
 
-  .depoimento img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 12px;
+  .garantia-texto {
+    max-width: 600px;
+    text-align: left;
   }
 
-  .depoimento h3 {
+  .garantia-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #8000ff;
+    text-shadow: 0 0 6px #8000ff88;
+  }
+
+  .garantia-texto p {
     font-size: 1.2rem;
-    color: #fff; /* letra branca */
-    margin-bottom: 8px;
+    line-height: 1.6;
   }
 
-  .depoimento p {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
     }
-    100% {
-      transform: translateX(-50%);
+    50% {
+      transform: scale(1.05);
     }
   }
 
   @media (max-width: 700px) {
-    .depoimento {
-      flex: 0 0 240px;
+    .garantia-section {
+      flex-direction: column;
+      text-align: center;
     }
 
-    .depoimentos-auto h2 {
+    .garantia-texto h2 {
       font-size: 2rem;
+    }
+
+    .garantia-texto p {
+      font-size: 1rem;
+    }
+
+    .garantia-imagem {
+      width: 140px;
     }
   }
 </style>
+
 
 ------------------------------------------------------------
 <section class="cta-botao">
@@ -1054,7 +1005,7 @@
       font-size: 2rem;
     }
   }
-</style>
+</style> 
 ---------------------------------------------------------------------------***************************************
 <section class="faq-transparente">
   <h2>Dúvidas Frequentes</h2>
