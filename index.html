@@ -616,8 +616,6 @@
 </html>
 
   ------------------------------------------------------------------------------------------------------------------------------------------------
-</body>
-</html>
 <section class="descricao-mti fade-in">
   <div class="descricao-container">
     <h2>Sobre o Método Trader Inteligente</h2>
@@ -635,8 +633,7 @@
 
 <style>
   .descricao-mti {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-                url('assets/bg-mti.jpg') no-repeat center center/cover;
+    background: #000 url('https://cdn.pixabay.com/photo/2013/07/18/10/56/stars-163335_1280.jpg') no-repeat center center/cover;
     padding: 60px 30px;
     color: #ffffff;
     animation: fadeIn 2s ease-in-out;
@@ -645,19 +642,23 @@
       0 0 20px 5px #7b4fc1cc,
       inset 0 0 30px 3px #7b4fc1bb;
     border-radius: 15px;
+    position: relative;
+    overflow: hidden;
   }
 
   .descricao-container {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+    z-index: 2;
+    position: relative;
   }
 
   .descricao-container h2 {
     font-size: 2.5rem;
-    color: #9a6ffb; /* roxo mais vibrante para melhor legibilidade */
+    color: #ffffff;
     margin-bottom: 25px;
-    text-shadow: 0 0 20px #9a6ffbcc;
+    text-shadow: 0 0 10px #9a6ffb, 0 0 20px #9a6ffbcc;
   }
 
   .descricao-container p {
@@ -667,7 +668,7 @@
   }
 
   .descricao-container strong {
-    color: #7b4fc1; /* mantido roxo metálico */
+    color: #bb86fc;
   }
 
   @keyframes fadeIn {
@@ -685,62 +686,8 @@
     }
   }
 </style>
-<section class="depoimentos-auto">
-  <h2>O que estão dizendo sobre o MTI</h2>
-  <div class="depoimentos-slider">
-    <div class="depoimentos-track">
-      <!-- Repetido para efeito contínuo -->
-      <div class="depoimento">
-        <img src="assets/depo1.jpg" alt="João Silva" />
-        <h3>João Silva</h3>
-        <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo2.jpg" alt="Camila Rocha" />
-        <h3>Camila Rocha</h3>
-        <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo3.jpg" alt="Lucas Andrade" />
-        <h3>Lucas Andrade</h3>
-        <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo4.jpg" alt="Fernanda Lima" />
-        <h3>Fernanda Lima</h3>
-        <p>"Conteúdo didático e direto. Foi o melhor investimento que fiz no ano."</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo5.jpg" alt="Rafael Souza" />
-        <h3>Rafael Souza</h3>
-        <p>"Aprendi mais em 1 semana do que em meses assistindo vídeos aleatórios."</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo6.jpg" alt="Bruna Torres" />
-        <h3>Bruna Torres</h3>
-        <p>"O MTI é direto ao ponto. Já estou operando com segurança e confiança."</p>
-      </div>
 
-      <!-- Copiando os mesmos para repetir a rolagem sem travar -->
-      <div class="depoimento">
-        <img src="assets/depo1.jpg" alt="João Silva" />
-        <h3>João Silva</h3>
-        <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo2.jpg" alt="Camila Rocha" />
-        <h3>Camila Rocha</h3>
-        <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="assets/depo3.jpg" alt="Lucas Andrade" />
-        <h3>Lucas Andrade</h3>
-        <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 <style>
   .depoimentos-auto {
     background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
