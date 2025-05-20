@@ -1,172 +1,3 @@
-<section class="hero">
-  <div class="banner">
-    <div class="smoke"></div>
-    <img src="assets/banner-exemplo.jpg" alt="Banner Completo" class="banner-img" />
-    <div class="content">
-      <div class="title-container">
-        <img src="assets/diamante.png" alt="Moeda Flutuante" class="coin" />
-        <h1>Método Trader Inteligente</h1>
-      </div>
-      <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
-      <button onclick="window.location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">
-        Quero conhecer o método
-      </button>
-    </div>
-  </div>
-</section>
-
-<style>
-  .hero {
-    position: relative;
-    width: 100%;
-    height: 1000px; /* altura aumentada para 900px */
-    overflow: hidden;
-  }
-
-  .banner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Overlay só na parte inferior para transição suave */
-  .banner::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    pointer-events: none;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    z-index: 4;
-  }
-
-  .banner-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .smoke {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(0,0,0,0.6), transparent 50%),
-      radial-gradient(circle at 50% 60%, rgba(50,50,50,0.5), transparent 60%),
-      radial-gradient(circle at 80% 40%, rgba(0,0,0,0.7), transparent 55%);
-    animation: smokeMove 20s linear infinite;
-    mix-blend-mode: multiply;
-    z-index: 5;
-  }
-
-  @keyframes smokeMove {
-    0% {
-      background-position: 20% 30%, 50% 60%, 80% 40%;
-    }
-    100% {
-      background-position: 25% 35%, 55% 65%, 85% 45%;
-    }
-  }
-
-  .content {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    color: white;
-    max-width: 450px;
-    z-index: 10;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  }
-
-  .title-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-  }
-
-  .coin {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 8px #5200a3cc);
-    animation: floatCoin 4s ease-in-out infinite;
-    z-index: 12;
-  }
-
-  .content h1 {
-    font-size: 3rem;
-    margin: 0;
-  }
-
-  .content p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    font-weight: 500;
-  }
-
-  button {
-    padding: 18px 50px;
-    font-size: 1.3rem;
-    background-color: #5200a3;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 0 15px #5200a3cc;
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #3a0070;
-  }
-
-  @keyframes floatCoin {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .content {
-      left: 5%;
-      max-width: 90%;
-      text-align: center;
-    }
-
-    .title-container {
-      justify-content: center;
-    }
-
-    .coin {
-      width: 50px;
-      height: 50px;
-    }
-
-    .content h1 {
-      font-size: 2.2rem;
-    }
-
-    .content p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 16px 40px;
-      font-size: 1.1rem;
-    }
-  }
-</style>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -175,6 +6,7 @@
   <title>Método Trader Inteligente</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
+    /* Reset básico */
     body {
       margin: 0;
       padding: 0;
@@ -183,6 +15,125 @@
       color: #ffffff;
     }
 
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 1000px;
+      overflow: hidden;
+    }
+
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      z-index: 4;
+    }
+
+    .banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .smoke {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.6), transparent 50%),
+        radial-gradient(circle at 50% 60%, rgba(50, 50, 50, 0.5), transparent 60%),
+        radial-gradient(circle at 80% 40%, rgba(0, 0, 0, 0.7), transparent 55%);
+      animation: smokeMove 20s linear infinite;
+      mix-blend-mode: multiply;
+      z-index: 5;
+    }
+
+    @keyframes smokeMove {
+      0% {
+        background-position: 20% 30%, 50% 60%, 80% 40%;
+      }
+      100% {
+        background-position: 25% 35%, 55% 65%, 85% 45%;
+      }
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      color: white;
+      max-width: 450px;
+      z-index: 10;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .coin {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px #5200a3cc);
+      animation: floatCoin 4s ease-in-out infinite;
+      z-index: 12;
+    }
+
+    @keyframes floatCoin {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .content p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    .content button {
+      padding: 18px 50px;
+      font-size: 1.3rem;
+      background-color: #5200a3;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px #5200a3cc;
+      transition: background-color 0.3s ease;
+    }
+
+    .content button:hover {
+      background-color: #3a0070;
+    }
+
+    /* TOPO / FRASE DE CHAMADA */
     .topo-frase {
       background: #000;
       padding: 30px 20px 10px;
@@ -193,6 +144,7 @@
       text-shadow: 0 0 5px #000;
     }
 
+    /* CONTAINER PRINCIPAL */
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -268,6 +220,7 @@
       text-shadow: 0 0 5px #000000cc;
     }
 
+    /* ÍCONE WHATSAPP */
     .icone-whatsapp {
       position: fixed;
       top: 20px;
@@ -292,6 +245,7 @@
       background: #128C7E;
     }
 
+    /* ANIMAÇÕES */
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
@@ -325,7 +279,37 @@
       }
     }
 
-    @media (max-width: 600px) {
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .content {
+        left: 5%;
+        max-width: 90%;
+        text-align: center;
+      }
+
+      .title-container {
+        justify-content: center;
+      }
+
+      .coin {
+        width: 50px;
+        height: 50px;
+      }
+
+      .content h1 {
+        font-size: 2.2rem;
+      }
+
+      .content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+
+      .content button {
+        padding: 16px 40px;
+        font-size: 1.1rem;
+      }
+
       .topo-frase {
         font-size: 1.2rem;
       }
@@ -370,33 +354,47 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <!-- Seção Hero com imagem e texto -->
+  <section class="hero">
+    <div class="banner">
+      <div class="smoke"></div>
+      <img src="assets/banner-exemplo.jpg" alt="Banner Completo" class="banner-img" />
+      <div class="content">
+        <div class="title-container">
+          <img src="assets/diamante.png" alt="Moeda Flutuante" class="coin" />
+          <h1>Método Trader Inteligente</h1>
+        </div>
+        <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
+        <button onclick="window.location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">
+          Quero conhecer o método
+        </button>
+      </div>
+    </div>
+  </section>
 
-  <!-- Conteúdo principal -->
+  <!-- Frase de chamada -->
+  <div class="topo-frase">
+    O método que tem transformado iniciantes em traders lucrativos!
+  </div>
+
+  <!-- Seção com vídeo -->
   <div class="container">
-    <h1 class="titulo">Método Trader Inteligente</h1>
-
+    <h1 class="titulo">Veja com seus próprios olhos</h1>
     <div class="video-pulsando">
-      <iframe src="https://www.youtube.com/embed/gaHYTomw-Yw?rel=0&modestbranding=1&controls=1&showinfo=0"
-              title="Método Trader Inteligente" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" allowfullscreen></iframe>
     </div>
-
-    <div class="preco">
-      <s>R$689,99</s> por apenas 12x de R$19,99
-    </div>
-
+    <div class="preco"><s>R$497</s> R$97,00</div>
     <button class="botao" onclick="window.location.href='https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10'">
-      Quero aprender o Método agora
+      Garantir acesso com desconto
     </button>
-
-    <div class="frase-baixo">
-      Você está a um clique da sua liberdade financeira
-    </div>
+    <div class="frase-baixo">Aproveite enquanto ainda está disponível!</div>
   </div>
 
 </body>
 </html>
 
 
+-------------
 
 <!DOCTYPE html>
 <html lang="pt-br">
