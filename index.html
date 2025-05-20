@@ -166,7 +166,7 @@
     }
   }
 </style>
-
+--------------------------------------------------------
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -397,7 +397,7 @@
 </body>
 </html>
 
-
+---------------------------------------------------------------
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -587,7 +587,7 @@
   </script>
 </body>
 </html>
-
+------------------------------------------------------------------------------------------
 
 </body>
 </html>
@@ -657,7 +657,9 @@
       font-size: 1.05rem;
     }
   }
+  
 </style>
+-----------------------------------------------------------------------------------------------------
 <section class="depoimentos-auto">
   <h2>O que estão dizendo sobre o MTI</h2>
   <div class="depoimentos-slider">
@@ -791,6 +793,8 @@
     }
   }
 </style>
+
+-------------------------------------------------------------------------------------------
 <section class="sessao-preco">
   <h2>Você está a uma decisão de transformar sua jornada no mercado!</h2>
   <p class="preco">
@@ -862,6 +866,9 @@
     100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
   }
 </style>
+
+
+--------------------------------------------------------------------------------------------------
 <section class="garantia-section">
   <img src="assets/garantia1.png" alt="Selo de Garantia" class="garantia-imagem" />
   <div class="garantia-texto">
@@ -940,6 +947,7 @@
     }
   }
 </style>
+------------------------------------------------------------
 <section class="cta-botao">
   <h2 class="cta-texto">Garanta já o seu acesso com desconto exclusivo:</h2>
   <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao-acesso" target="_blank" rel="noopener noreferrer">
@@ -999,10 +1007,11 @@
     }
   }
 </style>
-
+---------------------------------------------------------------------------
 <section class="faq-transparente">
   <h2>Dúvidas Frequentes</h2>
   <p class="faq-sub">Clique nas perguntas abaixo para revelar as respostas</p>
+
   <div class="faq-item">
     <button class="faq-pergunta">
       <span>Preciso ter experiência para fazer o curso?</span>
@@ -1125,7 +1134,7 @@
   }
 
   .faq-item.active .faq-resposta {
-    max-height: 300px;
+    max-height: 500px; /* melhor para telas maiores */
   }
 
   .faq-item.active .seta {
@@ -1152,6 +1161,7 @@
 </style>
 
 <script>
+  // Script funcional para abrir/fechar uma FAQ por vez
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach(item => {
@@ -1173,26 +1183,7 @@
 </script>
 
 
-<script>
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const pergunta = item.querySelector('.faq-pergunta');
-    const seta = item.querySelector('.seta');
-
-    pergunta.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      faqItems.forEach(el => {
-        el.classList.remove('active');
-        el.querySelector('.seta').textContent = '↓';
-      });
-      if (!isActive) {
-        item.classList.add('active');
-        seta.textContent = '↑';
-      }
-    });
-  });
-</script>
+---------------------------------------------------------------------
 <section class="compra-final">
   <h2>Pronto para mudar sua forma de operar?</h2>
   <p>Garanta seu acesso agora ao <strong>Método Trader Inteligente</strong> e entre para o time dos vencedores!</p>
