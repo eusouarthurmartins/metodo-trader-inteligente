@@ -1,3 +1,99 @@
+<section class="intro-thurzin">
+  <div class="intro-content">
+    <img src="assets/moeda-flutuante.png" alt="Moeda Flutuante" class="moeda" />
+    <div class="texto">
+      <h1>Thurzin Trader</h1>
+      <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
+      <a href="#metodo" class="botao">Quero conhecer o método</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro-thurzin {
+    background: #000;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .moeda {
+    width: 180px;
+    height: auto;
+    animation: flutuar 3s ease-in-out infinite;
+  }
+
+  .texto {
+    color: white;
+    text-align: left;
+    max-width: 600px;
+  }
+
+  .texto h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .texto p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+
+  .botao {
+    background-color: #7b4fc1;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+  }
+
+  .botao:hover {
+    background-color: #9a6ffb;
+    transform: scale(1.05);
+  }
+
+  @keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @media (max-width: 768px) {
+    .intro-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .texto {
+      text-align: center;
+    }
+
+    .texto h1 {
+      font-size: 2.4rem;
+    }
+
+    .texto p {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+
+
+
+
+--------------------------------------------------------------testando a cima------------------------------------
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
