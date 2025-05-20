@@ -424,34 +424,32 @@
 </body>
 </html>
 
----------------------------------------------------------------------------------------------------------------------
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente - Módulos</title>
+  <title>Métodos Trader Inteligente - Módulos</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
       color: #7b4fc1;
       overflow-x: hidden;
+      padding: 0;
       background:
         linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
         url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
       background-size: cover;
     }
 
+    /* --- CARROSSEL DE MÓDULOS --- */
     .modules-section {
-      width: 100%;
-      margin: 200px 0 80px 0;
-      padding: 0;
+      max-width: 1100px;
+      margin: 200px auto 80px;
+      padding: 0 20px;
       position: relative;
       z-index: 1;
     }
@@ -465,17 +463,12 @@
       text-shadow: 0 0 12px #000000cc;
     }
 
-    .modules-wrapper {
-      position: relative;
-      width: 100%;
-    }
-
     .modules-carousel {
       display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
       gap: 20px;
-      padding: 20px 60px;
+      padding-bottom: 15px;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
@@ -489,7 +482,7 @@
       width: 250px;
       border-radius: 14px;
       box-shadow: 0 0 15px #000000cc;
-      background: #111;
+      background: #111111;
       color: #7b4fc1;
       user-select: none;
       transition: transform 0.3s ease;
@@ -519,103 +512,86 @@
       text-align: center;
       color: #6e3ecf;
       text-shadow: 0 0 8px #000000cc;
-    }
-
-    .nav-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.7);
-      border: none;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 2;
-      padding: 10px 15px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .nav-button:hover {
-      background-color: rgba(123, 79, 193, 0.9);
-    }
-
-    .nav-left {
-      left: 10px;
-    }
-
-    .nav-right {
-      right: 10px;
+      user-select: none;
     }
 
     @media (max-width: 600px) {
       .modules-section {
         margin-top: 120px;
       }
-
-      .module-card {
-        width: 200px;
-      }
-
-      .nav-button {
-        font-size: 1.5rem;
-      }
     }
   </style>
 </head>
 <body>
 
+  <!-- SEÇÃO MÓDULOS -->
   <section class="modules-section">
     <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
-    <div class="modules-wrapper">
-      <button class="nav-button nav-left" onclick="scrollCarousel(-1)">&#10094;</button>
-      <div class="modules-carousel" id="modules-carousel">
-        <!-- MÓDULOS -->
-        <div class="module-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /><div class="module-caption">Módulo 1</div></div>
-        <div class="module-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /><div class="module-caption">Módulo 2</div></div>
-        <div class="module-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /><div class="module-caption">Módulo 3</div></div>
-        <div class="module-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /><div class="module-caption">Módulo 4</div></div>
-        <div class="module-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /><div class="module-caption">Módulo 5</div></div>
-        <div class="module-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /><div class="module-caption">Módulo 6</div></div>
-        <div class="module-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /><div class="module-caption">Módulo 7</div></div>
-        <div class="module-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /><div class="module-caption">Módulo 8</div></div>
-        <div class="module-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /><div class="module-caption">Módulo 9</div></div>
-        <div class="module-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /><div class="module-caption">Módulo 10</div></div>
+    <div class="modules-carousel" id="modules-carousel">
+      <div class="module-card">
+        <img src="assets/modulo1.jpg" alt="Módulo 1" />
+        <div class="module-caption">Módulo 1</div>
       </div>
-      <button class="nav-button nav-right" onclick="scrollCarousel(1)">&#10095;</button>
+      <div class="module-card">
+        <img src="assets/modulo2.jpg" alt="Módulo 2" />
+        <div class="module-caption">Módulo 2</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo3.jpg" alt="Módulo 3" />
+        <div class="module-caption">Módulo 3</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo4.jpg" alt="Módulo 4" />
+        <div class="module-caption">Módulo 4</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo5.jpg" alt="Módulo 5" />
+        <div class="module-caption">Módulo 5</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo6.jpg" alt="Módulo 6" />
+        <div class="module-caption">Módulo 6</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo7.jpg" alt="Módulo 7" />
+        <div class="module-caption">Módulo 7</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo8.jpg" alt="Módulo 8" />
+        <div class="module-caption">Módulo 8</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo9.jpg" alt="Módulo 9" />
+        <div class="module-caption">Módulo 9</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo10.jpg" alt="Módulo 10" />
+        <div class="module-caption">Módulo 10</div>
+      </div>
     </div>
   </section>
 
   <script>
     const carousel = document.getElementById('modules-carousel');
-    const scrollStep = 3;
     let scrollAmount = 0;
+    const scrollStep = 2;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
 
     function autoScroll() {
       scrollAmount += scrollStep;
-      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+      if (scrollAmount >= maxScroll) {
         scrollAmount = 0;
       }
       carousel.scrollTo({
         left: scrollAmount,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
-
-    function scrollCarousel(direction) {
-      const cardWidth = document.querySelector('.module-card').offsetWidth + 20;
-      carousel.scrollBy({
-        left: direction * cardWidth,
-        behavior: 'smooth'
-      });
-    }
-
     setInterval(autoScroll, 100);
   </script>
+
 </body>
 </html>
-
-  ------------------------------------------------------------------------------------------------------------------------------------------------
 <section class="descricao-mti fade-in">
   <div class="descricao-container">
     <h2>Sobre o Método Trader Inteligente</h2>
@@ -633,14 +609,16 @@
 
 <style>
   .descricao-mti {
-    background: #000000;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('assets/bg-mti.jpg') no-repeat center center/cover;
     padding: 60px 30px;
     color: #ffffff;
     animation: fadeIn 2s ease-in-out;
-    border-radius: 15px;
+
     box-shadow:
-      0 0 20px 5px #7b4fc133,
-      inset 0 0 30px 3px #7b4fc11a;
+      0 0 20px 5px #7b4fc1cc,
+      inset 0 0 30px 3px #7b4fc1bb;
+    border-radius: 15px;
   }
 
   .descricao-container {
@@ -651,9 +629,9 @@
 
   .descricao-container h2 {
     font-size: 2.5rem;
-    color: #9a6ffb;
+    color: #9a6ffb; /* roxo mais vibrante para melhor legibilidade */
     margin-bottom: 25px;
-    text-shadow: 0 0 20px #9a6ffb66;
+    text-shadow: 0 0 20px #9a6ffbcc;
   }
 
   .descricao-container p {
@@ -663,7 +641,7 @@
   }
 
   .descricao-container strong {
-    color: #bb86fc;
+    color: #7b4fc1; /* mantido roxo metálico */
   }
 
   @keyframes fadeIn {
@@ -681,10 +659,62 @@
     }
   }
 </style>
+<section class="depoimentos-auto">
+  <h2>O que estão dizendo sobre o MTI</h2>
+  <div class="depoimentos-slider">
+    <div class="depoimentos-track">
+      <!-- Repetido para efeito contínuo -->
+      <div class="depoimento">
+        <img src="assets/depo1.jpg" alt="João Silva" />
+        <h3>João Silva</h3>
+        <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
+      </div>
+      <div class="depoimento">
+        <img src="assets/depo2.jpg" alt="Camila Rocha" />
+        <h3>Camila Rocha</h3>
+        <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
+      </div>
+      <div class="depoimento">
+        <img src="assets/depo3.jpg" alt="Lucas Andrade" />
+        <h3>Lucas Andrade</h3>
+        <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
+      </div>
+      <div class="depoimento">
+        <img src="assets/depo4.jpg" alt="Fernanda Lima" />
+        <h3>Fernanda Lima</h3>
+        <p>"Conteúdo didático e direto. Foi o melhor investimento que fiz no ano."</p>
+      </div>
+      <div class="depoimento">
+        <img src="assets/depo5.jpg" alt="Rafael Souza" />
+        <h3>Rafael Souza</h3>
+        <p>"Aprendi mais em 1 semana do que em meses assistindo vídeos aleatórios."</p>
+      </div>
+      <div class="depoimento">
+        <img src="assets/depo6.jpg" alt="Bruna Torres" />
+        <h3>Bruna Torres</h3>
+        <p>"O MTI é direto ao ponto. Já estou operando com segurança e confiança."</p>
+      </div>
 
+      <!-- Copiando os mesmos para repetir a rolagem sem travar -->
+      <div class="depoimento">
+        <img src="assets/depo1.jpg" alt="João Silva" />
+        <h3>João Silva</h3>
+        <p>"O MTI mudou totalmente minha visão do mercado. Simplesmente sensacional!"</p>
+      </div>
+      <div class="depoimento">
+        <img src="assets/depo2.jpg" alt="Camila Rocha" />
+        <h3>Camila Rocha</h3>
+        <p>"Nunca imaginei que aprender sobre opções binárias fosse tão claro e direto!"</p>
+      </div>
+      <div class="depoimento">
+        <img src="assets/depo3.jpg" alt="Lucas Andrade" />
+        <h3>Lucas Andrade</h3>
+        <p>"Já estou vendo resultados reais. Esse curso é completo de verdade!"</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-
--------------------------------------------------------------------------------------------------------------------------------------------------------
 <style>
   .depoimentos-auto {
     background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
