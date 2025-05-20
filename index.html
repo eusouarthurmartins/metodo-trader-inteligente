@@ -617,7 +617,7 @@
 
   ------------------------------------------------------------------------------------------------------------------------------------------------
 <section class="descricao-mti fade-in">
-  <div class="star-bg"></div>
+  <div class="estrelas"></div>
   <div class="descricao-container">
     <h2>Sobre o Método Trader Inteligente</h2>
     <p>
@@ -637,56 +637,58 @@
     position: relative;
     overflow: hidden;
     padding: 60px 30px;
-    color: #ffffff;
-    box-shadow:
-      0 0 20px 5px #7b4fc1cc,
-      inset 0 0 30px 3px #7b4fc1bb;
     border-radius: 15px;
-  }
-
-  .star-bg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    color: white;
     background: #000;
-    z-index: 0;
   }
 
-  /* Estrelas animadas */
-  .star-bg::before, .star-bg::after {
-    content: "";
+  .estrelas {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 200%;
     height: 200%;
-    background: radial-gradient(white 1px, transparent 1px);
-    background-size: 3px 3px;
-    opacity: 0.4;
-    animation: twinkle 4s infinite linear;
+    background: transparent;
+    z-index: 0;
+    pointer-events: none;
   }
 
-  .star-bg::after {
-    animation-duration: 6s;
+  .estrelas::before, .estrelas::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 4px 4px;
+    opacity: 0.1;
+    animation: piscar 10s linear infinite;
+  }
+
+  .estrelas::after {
+    background-size: 6px 6px;
     opacity: 0.2;
+    animation-duration: 15s;
   }
 
-  @keyframes twinkle {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-50%, -50%); }
+  @keyframes piscar {
+    0% { transform: translate(0, 0); opacity: 0.1; }
+    50% { opacity: 0.3; }
+    100% { transform: translate(-50%, -50%); opacity: 0.1; }
   }
 
   .descricao-container {
+    position: relative;
+    z-index: 1;
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
-    position: relative;
-    z-index: 2;
   }
 
   .descricao-container h2 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 25px;
-    text-shadow: 0 0 10px #9a6ffb, 0 0 20px #9a6ffbcc;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
   }
 
   .descricao-container p {
