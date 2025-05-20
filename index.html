@@ -1085,7 +1085,7 @@
 
   .faq-sub {
     font-size: 1.2rem;
-    color: #ccc;
+    color: #fff;
     margin-bottom: 40px;
   }
 
@@ -1115,7 +1115,7 @@
   }
 
   .faq-pergunta:hover {
-    color: #a566ff;
+    color: #fff;
   }
 
   .faq-resposta {
@@ -1134,7 +1134,7 @@
   }
 
   .faq-item.active .faq-resposta {
-    max-height: 500px; /* melhor para telas maiores */
+    max-height: 500px;
   }
 
   .faq-item.active .seta {
@@ -1161,7 +1161,6 @@
 </style>
 
 <script>
-  // Script funcional para abrir/fechar uma FAQ por vez
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach(item => {
@@ -1181,6 +1180,7 @@
     });
   });
 </script>
+
 
 
 ---------------------------------------------------------------------
