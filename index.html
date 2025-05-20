@@ -617,6 +617,7 @@
 
   ------------------------------------------------------------------------------------------------------------------------------------------------
 <section class="descricao-mti fade-in">
+  <div class="star-bg"></div>
   <div class="descricao-container">
     <h2>Sobre o Método Trader Inteligente</h2>
     <p>
@@ -633,25 +634,52 @@
 
 <style>
   .descricao-mti {
-    background: #000 url('https://cdn.pixabay.com/photo/2013/07/18/10/56/stars-163335_1280.jpg') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
     padding: 60px 30px;
     color: #ffffff;
-    animation: fadeIn 2s ease-in-out;
-
     box-shadow:
       0 0 20px 5px #7b4fc1cc,
       inset 0 0 30px 3px #7b4fc1bb;
     border-radius: 15px;
-    position: relative;
-    overflow: hidden;
+  }
+
+  .star-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    z-index: 0;
+  }
+
+  /* Estrelas animadas */
+  .star-bg::before, .star-bg::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.4;
+    animation: twinkle 4s infinite linear;
+  }
+
+  .star-bg::after {
+    animation-duration: 6s;
+    opacity: 0.2;
+  }
+
+  @keyframes twinkle {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50%, -50%); }
   }
 
   .descricao-container {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
-    z-index: 2;
     position: relative;
+    z-index: 2;
   }
 
   .descricao-container h2 {
@@ -671,11 +699,6 @@
     color: #bb86fc;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
   @media (max-width: 600px) {
     .descricao-container h2 {
       font-size: 2rem;
@@ -685,7 +708,17 @@
       font-size: 1.05rem;
     }
   }
+
+  .fade-in {
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 </style>
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 <style>
