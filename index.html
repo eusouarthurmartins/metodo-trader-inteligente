@@ -1008,15 +1008,14 @@
   }
 </style>
 ---------------------------------------------------------------------------***************************************
-<section class="faq">
-  <div class="overlay"></div>
+<section class="faq-transparente">
   <h2>Dúvidas Frequentes</h2>
-  <p class="faq-sub">Clique nas perguntas para ver as respostas</p>
+  <p class="faq-sub">Clique nas perguntas abaixo para revelar as respostas</p>
 
   <div class="faq-item">
     <button class="faq-pergunta">
-      Preciso ter experiência para fazer o curso?
-      <span class="seta">▼</span>
+      <span>Preciso ter experiência para fazer o curso?</span>
+      <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
       <p>Não! O <strong>MTI</strong> foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
@@ -1025,124 +1024,117 @@
 
   <div class="faq-item">
     <button class="faq-pergunta">
-      Posso acessar o curso pelo celular?
-      <span class="seta">▼</span>
+      <span>Posso acessar o curso pelo celular?</span>
+      <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Sim! Todo o conteúdo é <strong>100% online</strong> e acessível por celular, computador ou tablet.</p>
+      <p>Sim! Todo o conteúdo é <strong>100% online</strong> e responsivo. Você pode assistir pelo celular, computador ou tablet.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-pergunta">
-      O acesso é vitalício?
-      <span class="seta">▼</span>
+      <span>O acesso é vitalício?</span>
+      <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Sim! Depois de adquirir o <strong>MTI</strong>, você poderá acessar o conteúdo para sempre.</p>
+      <p>Sim! Depois de adquirir o <strong>MTI</strong>, o acesso é vitalício. Você pode assistir quantas vezes quiser e no seu tempo.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-pergunta">
-      Terei suporte para dúvidas?
-      <span class="seta">▼</span>
+      <span>Terei suporte para dúvidas?</span>
+      <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Sim! Você contará com um canal de suporte para tirar dúvidas diretamente com a equipe.</p>
+      <p>Com certeza! Você terá acesso a um canal exclusivo de <strong>suporte</strong> para tirar todas as dúvidas diretamente com nossa equipe.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-pergunta">
-      E se eu não gostar do curso?
-      <span class="seta">▼</span>
+      <span>E se eu não gostar do curso?</span>
+      <span class="seta">↓</span>
     </button>
     <div class="faq-resposta">
-      <p>Você tem <strong>7 dias de garantia</strong>. Se não gostar, pode solicitar o reembolso total sem complicações.</p>
+      <p>Você tem <strong>7 dias de garantia</strong> incondicional. Se não gostar do conteúdo, pode solicitar reembolso total sem burocracia.</p>
     </div>
   </div>
 </section>
 
 <style>
-  .faq {
-    position: relative;
+  body {
+    margin: 0;
     background-color: #000;
+    font-family: Arial, sans-serif;
+  }
+
+  .faq-transparente {
+    width: 100%;
+    background: #000;
     color: #fff;
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-    overflow: hidden;
   }
 
-  .faq .overlay {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
-    z-index: 0;
-  }
-
-  .faq h2,
-  .faq-sub,
-  .faq-item {
-    position: relative;
-    z-index: 1;
-  }
-
-  .faq h2 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
+  .faq-transparente h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
   }
 
   .faq-sub {
     font-size: 1.2rem;
-    margin-bottom: 30px;
     color: #ccc;
+    margin-bottom: 40px;
   }
 
   .faq-item {
-    max-width: 800px;
-    margin: 0 auto 15px;
-    text-align: left;
-    border: 1px solid #333;
-    border-radius: 6px;
-    overflow: hidden;
-    background: #111;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    background: transparent;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
   }
 
   .faq-pergunta {
     width: 100%;
-    background: none;
-    border: none;
+    background: transparent;
     color: #fff;
-    padding: 15px 20px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    padding: 15px 0;
+    text-align: left;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .faq-pergunta:hover {
+    color: #a566ff;
   }
 
   .faq-resposta {
     max-height: 0;
     overflow: hidden;
+    background: transparent;
     transition: max-height 0.4s ease;
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   .faq-resposta p {
-    margin: 10px 0 15px;
-    font-size: 1rem;
+    margin: 10px 0;
+    font-size: 1.1rem;
     color: #ccc;
+    text-align: left;
   }
 
   .faq-item.active .faq-resposta {
-    max-height: 500px;
-  }
-
-  .seta {
-    transition: transform 0.3s ease;
+    max-height: 500px; /* melhor para telas maiores */
   }
 
   .faq-item.active .seta {
@@ -1150,7 +1142,7 @@
   }
 
   @media (max-width: 600px) {
-    .faq h2 {
+    .faq-transparente h2 {
       font-size: 2.2rem;
     }
 
@@ -1159,16 +1151,33 @@
     }
 
     .faq-pergunta {
+      font-size: 1.1rem;
+    }
+
+    .faq-resposta p {
       font-size: 1rem;
     }
   }
 </style>
 
 <script>
-  document.querySelectorAll('.faq-pergunta').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      item.classList.toggle('active');
+  // Script funcional para abrir/fechar uma FAQ por vez
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const pergunta = item.querySelector('.faq-pergunta');
+    const seta = item.querySelector('.seta');
+
+    pergunta.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(el => {
+        el.classList.remove('active');
+        el.querySelector('.seta').textContent = '↓';
+      });
+      if (!isActive) {
+        item.classList.add('active');
+        seta.textContent = '↑';
+      }
     });
   });
 </script>
