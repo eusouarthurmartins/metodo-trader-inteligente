@@ -426,13 +426,15 @@
 ------------------------------------------------------------------------------------------------------testezin da faixa
 <div class="faixa-logos">
   <div class="faixa-track">
-    <!-- Copie quantas logos quiser para repetir -->
+    <!-- Série 1 -->
     <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
     <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
     <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
     <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
     <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <!-- Repita mais para efeito contínuo -->
+    <!-- Série 2 (duplicada para loop contínuo) -->
+    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
     <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
     <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
     <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
@@ -441,20 +443,21 @@
 
 <style>
   .faixa-logos {
-    overflow: hidden;
-    background: black; /* fundo preto */
-    padding: 10px 0;
     width: 100%;
+    overflow: hidden;
+    background: black;
+    padding: 10px 0;
   }
 
   .faixa-track {
     display: flex;
-    gap: 30px;
+    width: calc(200%); /* importante para duplicar exatamente */
     animation: scroll-logos 20s linear infinite;
   }
 
-  .logo-pequena {
-    height: 40px; /* ajuste o tamanho da logo */
+  .faixa-track img {
+    height: 40px;
+    margin-right: 30px;
     user-select: none;
   }
 
