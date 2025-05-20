@@ -427,17 +427,17 @@
 <div class="faixa-logos">
   <div class="faixa-track">
     <!-- Série 1 -->
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <!-- Série 2 (duplicada para loop contínuo) -->
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
-    <img src="assets/sua-logo.png" alt="Logo pequena" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <!-- Série 2 (duplicada para loop) -->
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
+    <img src="assets/sua-logo.png" alt="Logo" class="logo-pequena" />
   </div>
 </div>
 
@@ -450,14 +450,15 @@
   }
 
   .faixa-track {
-    display: flex;
-    width: calc(200%); /* importante para duplicar exatamente */
+    display: inline-block;
+    white-space: nowrap;
     animation: scroll-logos 20s linear infinite;
   }
 
   .faixa-track img {
     height: 40px;
     margin-right: 30px;
+    vertical-align: middle;
     user-select: none;
   }
 
@@ -470,6 +471,7 @@
     }
   }
 </style>
+
 
 
 ------------------------------------------------------------------------------------------------------- testezinho da faixa
