@@ -1007,7 +1007,7 @@
     }
   }
 </style>
----------------------------------------------------------------------------
+---------------------------------------------------------------------------***************************************
 <section class="faq-transparente">
   <h2>Dúvidas Frequentes</h2>
   <p class="faq-sub">Clique nas perguntas abaixo para revelar as respostas</p>
@@ -1064,12 +1064,6 @@
 </section>
 
 <style>
-  body {
-    margin: 0;
-    background-color: #000;
-    font-family: Arial, sans-serif;
-  }
-
   .faq-transparente {
     width: 100%;
     background: #000;
@@ -1092,9 +1086,16 @@
   .faq-item {
     max-width: 900px;
     margin: 0 auto 20px;
-    background: transparent;
-    border-bottom: 1px solid #444;
-    padding-bottom: 10px;
+    background: #111;
+    border-left: 5px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .faq-item.active {
+    border-left: 5px solid gold;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
 
   .faq-pergunta {
@@ -1102,10 +1103,9 @@
     background: transparent;
     color: #fff;
     font-size: 1.3rem;
-    padding: 15px 0;
+    padding: 15px 20px;
     text-align: left;
     border: none;
-    border-radius: 0;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -1115,19 +1115,19 @@
   }
 
   .faq-pergunta:hover {
-    color: #fff;
+    color: gold;
   }
 
   .faq-resposta {
     max-height: 0;
     overflow: hidden;
     background: transparent;
-    transition: max-height 0.4s ease;
-    padding: 0 10px;
+    transition: max-height 0.5s ease;
+    padding: 0 20px;
   }
 
   .faq-resposta p {
-    margin: 10px 0;
+    margin: 10px 0 20px;
     font-size: 1.1rem;
     color: #ccc;
     text-align: left;
@@ -1135,6 +1135,11 @@
 
   .faq-item.active .faq-resposta {
     max-height: 500px;
+  }
+
+  .seta {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
   }
 
   .faq-item.active .seta {
@@ -1165,25 +1170,18 @@
 
   faqItems.forEach(item => {
     const pergunta = item.querySelector('.faq-pergunta');
-    const seta = item.querySelector('.seta');
-
     pergunta.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
-      faqItems.forEach(el => {
-        el.classList.remove('active');
-        el.querySelector('.seta').textContent = '↓';
-      });
-      if (!isActive) {
-        item.classList.add('active');
-        seta.textContent = '↑';
-      }
+      faqItems.forEach(el => el.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
     });
   });
 </script>
 
 
 
----------------------------------------------------------------------
+
+---------------------------------------------------------------------**********************************************************
 <section class="compra-final">
   <h2>Pronto para mudar sua forma de operar?</h2>
   <p>Garanta seu acesso agora ao <strong>Método Trader Inteligente</strong> e entre para o time dos vencedores!</p>
