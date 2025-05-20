@@ -1,160 +1,200 @@
-<section class="hero">
-  <div class="banner">
-    <div class="smoke"></div>
-    <img src="assets/banner-exemplo.jpg" alt="Banner Completo" class="banner-img" />
-    <div class="content">
-      <div class="title-container">
-        <img src="assets/moeda.png" alt="Moeda Flutuante" class="coin" />
-        <h1>Método Trader Inteligente</h1>
-      </div>
-      <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
-      <button>Quero conhecer o método</button>
-    </div>
-  </div>
-</section>
-
-<style>
-  .hero {
-  position: relative;
-  width: 100%;
-  height: 1000px; /* altura aumentada para 900px */
-  overflow: hidden;
-}
-
-  }
-
-  /* resto do CSS permanece igual */
-  .banner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .banner-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .smoke {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(0,0,0,0.6), transparent 50%),
-      radial-gradient(circle at 50% 60%, rgba(50,50,50,0.5), transparent 60%),
-      radial-gradient(circle at 80% 40%, rgba(0,0,0,0.7), transparent 55%);
-    animation: smokeMove 20s linear infinite;
-    mix-blend-mode: multiply;
-    z-index: 5;
-  }
-
-  @keyframes smokeMove {
-    0% {
-      background-position: 20% 30%, 50% 60%, 80% 40%;
-    }
-    100% {
-      background-position: 25% 35%, 55% 65%, 85% 45%;
-    }
-  }
-
-  .content {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    color: white;
-    max-width: 450px;
-    z-index: 10;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  }
-
-  .title-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-  }
-
-  .coin {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 8px #5200a3cc);
-    animation: floatCoin 4s ease-in-out infinite;
-    z-index: 12;
-  }
-
-  .content h1 {
-    font-size: 3rem;
-    margin: 0;
-  }
-
-  .content p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    font-weight: 500;
-  }
-
-  button {
-    padding: 18px 50px;
-    font-size: 1.3rem;
-    background-color: #5200a3;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 0 15px #5200a3cc;
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #3a0070;
-  }
-
-  @keyframes floatCoin {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .content {
-      left: 5%;
-      max-width: 90%;
-      text-align: center;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thurzinflix</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .title-container {
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    .image-side {
+      flex: 1;
+      background: url('assets/sua-foto6.jpg') center center / cover no-repeat;
+      position: relative;
+    }
+
+    /* Overlay escurecido sobre a imagem */
+    .image-side::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4); /* ajuste a opacidade aqui */
+      z-index: 1;
+    }
+
+    /* Sombra suave na transição do lado direito da foto */
+    .image-side::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 100%;
+      pointer-events: none;
+      background: linear-gradient(to left, rgba(0,0,0,0.75), rgba(0,0,0,0));
+      z-index: 2;
+      mix-blend-mode: multiply;
+    }
+
+    .content-side {
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+      padding: 60px;
+      background: #000;
+      overflow: hidden;
     }
 
-    .coin {
-      width: 50px;
-      height: 50px;
+    /* Céu mais escuro com toque roxo profundo */
+    .star-background {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at bottom, #000000 0%, #0a0010 100%);
+      z-index: 0;
     }
 
-    .content h1 {
-      font-size: 2.2rem;
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #b472f1;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: twinkle 2s infinite ease-in-out alternate;
     }
 
-    .content p {
-      font-size: 1rem;
+    @keyframes twinkle {
+      from { opacity: 0.2; transform: scale(1); }
+      to   { opacity: 1; transform: scale(1.5); }
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+      z-index: 2;
+    }
+
+    .content-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .content-text h1 {
+      font-size: 3.5rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px #8000ff;
       margin-bottom: 20px;
     }
 
-    button {
-      padding: 16px 40px;
-      font-size: 1.1rem;
+    .content-text p {
+      font-size: 1.4rem;
+      color: #e0e0e0;
+      margin-bottom: 40px;
+      max-width: 500px;
     }
-  }
-</style>
---------------------
+
+    .botao {
+      background: gold;
+      color: #1a002d;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 15px gold;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .botao:hover {
+      background: #ffe066;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .image-side,
+      .content-side {
+        flex: none;
+        width: 100%;
+        height: 50vh;
+      }
+
+      .content-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .content-text p {
+        font-size: 1.1rem;
+      }
+
+      .botao {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="image-side"></div>
+    <div class="content-side">
+      <div class="star-background" id="star-background"></div>
+
+      <div class="content-text">
+        <h1>Thurzinflix</h1>
+        <p>Pare de operar no escuro, aprenda com quem vive do mercado!</p>
+        <a href="https://pay.hotmart.com/S98634850D?off=zepj63xj&checkoutMode=10" class="botao" target="_blank">
+          Quero conhecer agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const container = document.getElementById('star-background');
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDelay = (Math.random() * 5) + 's';
+      container.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -167,12 +207,7 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      /* Fundo com imagem */
-      background-image: url('fundo45.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background: #0d001a;
       color: #ffffff;
     }
 
@@ -363,6 +398,7 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
+
   <!-- Conteúdo principal -->
   <div class="container">
     <h1 class="titulo">Método Trader Inteligente</h1>
@@ -389,32 +425,31 @@
 </html>
 
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método Trader Inteligente - Módulos</title>
+  <title>Métodos Trader Inteligente - Módulos</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: 'Arial Black', Arial, sans-serif;
       color: #7b4fc1;
       overflow-x: hidden;
+      padding: 0;
       background:
         linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
         url('assets/imagemdefundo5.jpg') no-repeat center center fixed;
       background-size: cover;
     }
 
+    /* --- CARROSSEL DE MÓDULOS --- */
     .modules-section {
-      width: 100%;
-      margin: 200px 0 80px 0;
-      padding: 0;
+      max-width: 1100px;
+      margin: 200px auto 80px;
+      padding: 0 20px;
       position: relative;
       z-index: 1;
     }
@@ -428,17 +463,12 @@
       text-shadow: 0 0 12px #000000cc;
     }
 
-    .modules-wrapper {
-      position: relative;
-      width: 100%;
-    }
-
     .modules-carousel {
       display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
       gap: 20px;
-      padding: 20px 60px;
+      padding-bottom: 15px;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
@@ -452,7 +482,7 @@
       width: 250px;
       border-radius: 14px;
       box-shadow: 0 0 15px #000000cc;
-      background: #111;
+      background: #111111;
       color: #7b4fc1;
       user-select: none;
       transition: transform 0.3s ease;
@@ -482,154 +512,83 @@
       text-align: center;
       color: #6e3ecf;
       text-shadow: 0 0 8px #000000cc;
-    }
-
-    .nav-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.7);
-      border: none;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 2;
-      padding: 10px 15px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .nav-button:hover {
-      background-color: rgba(123, 79, 193, 0.9);
-    }
-
-    .nav-left {
-      left: 10px;
-    }
-
-    .nav-right {
-      right: 10px;
+      user-select: none;
     }
 
     @media (max-width: 600px) {
       .modules-section {
         margin-top: 120px;
       }
-
-      .module-card {
-        width: 200px;
-      }
-
-      .nav-button {
-        font-size: 1.5rem;
-      }
     }
   </style>
 </head>
 <body>
 
+  <!-- SEÇÃO MÓDULOS -->
   <section class="modules-section">
     <h2 class="modules-title">O que você vai aprender com esse Método:</h2>
-    <div class="modules-wrapper">
-      <button class="nav-button nav-left" onclick="scrollCarousel(-1)">&#10094;</button>
-      <div class="modules-carousel" id="modules-carousel">
-        <!-- MÓDULOS -->
-        <div class="module-card"><img src="assets/modulo1.jpg" alt="Módulo 1" /><div class="module-caption">Módulo 1</div></div>
-        <div class="module-card"><img src="assets/modulo2.jpg" alt="Módulo 2" /><div class="module-caption">Módulo 2</div></div>
-        <div class="module-card"><img src="assets/modulo3.jpg" alt="Módulo 3" /><div class="module-caption">Módulo 3</div></div>
-        <div class="module-card"><img src="assets/modulo4.jpg" alt="Módulo 4" /><div class="module-caption">Módulo 4</div></div>
-        <div class="module-card"><img src="assets/modulo5.jpg" alt="Módulo 5" /><div class="module-caption">Módulo 5</div></div>
-        <div class="module-card"><img src="assets/modulo6.jpg" alt="Módulo 6" /><div class="module-caption">Módulo 6</div></div>
-        <div class="module-card"><img src="assets/modulo7.jpg" alt="Módulo 7" /><div class="module-caption">Módulo 7</div></div>
-        <div class="module-card"><img src="assets/modulo8.jpg" alt="Módulo 8" /><div class="module-caption">Módulo 8</div></div>
-        <div class="module-card"><img src="assets/modulo9.jpg" alt="Módulo 9" /><div class="module-caption">Módulo 9</div></div>
-        <div class="module-card"><img src="assets/modulo10.jpg" alt="Módulo 10" /><div class="module-caption">Módulo 10</div></div>
+    <div class="modules-carousel" id="modules-carousel">
+      <div class="module-card">
+        <img src="assets/modulo1.jpg" alt="Módulo 1" />
+        <div class="module-caption">Módulo 1</div>
       </div>
-      <button class="nav-button nav-right" onclick="scrollCarousel(1)">&#10095;</button>
+      <div class="module-card">
+        <img src="assets/modulo2.jpg" alt="Módulo 2" />
+        <div class="module-caption">Módulo 2</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo3.jpg" alt="Módulo 3" />
+        <div class="module-caption">Módulo 3</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo4.jpg" alt="Módulo 4" />
+        <div class="module-caption">Módulo 4</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo5.jpg" alt="Módulo 5" />
+        <div class="module-caption">Módulo 5</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo6.jpg" alt="Módulo 6" />
+        <div class="module-caption">Módulo 6</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo7.jpg" alt="Módulo 7" />
+        <div class="module-caption">Módulo 7</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo8.jpg" alt="Módulo 8" />
+        <div class="module-caption">Módulo 8</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo9.jpg" alt="Módulo 9" />
+        <div class="module-caption">Módulo 9</div>
+      </div>
+      <div class="module-card">
+        <img src="assets/modulo10.jpg" alt="Módulo 10" />
+        <div class="module-caption">Módulo 10</div>
+      </div>
     </div>
   </section>
 
   <script>
     const carousel = document.getElementById('modules-carousel');
-    const scrollStep = 3;
     let scrollAmount = 0;
+    const scrollStep = 2;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
 
     function autoScroll() {
       scrollAmount += scrollStep;
-      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+      if (scrollAmount >= maxScroll) {
         scrollAmount = 0;
       }
       carousel.scrollTo({
         left: scrollAmount,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
-
-    function scrollCarousel(direction) {
-      const cardWidth = document.querySelector('.module-card').offsetWidth + 20;
-      carousel.scrollBy({
-        left: direction * cardWidth,
-        behavior: 'smooth'
-      });
-    }
-
     setInterval(autoScroll, 100);
   </script>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <title>Teste Separador com Logo</title>
-  <style>
-    body {
-      background: black;
-      margin: 0;
-      padding: 0;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    .separador-com-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 40px auto;
-      width: 80%;
-      gap: 15px;
-      background: black;
-      padding: 10px 0;
-      border-radius: 10px;
-    }
-
-    .linha {
-      flex-grow: 1;
-      height: 3px;
-      background: linear-gradient(90deg, #7b4fc1, #9a6ffb, #7b4fc1);
-      border-radius: 2px;
-      box-shadow: 0 0 10px #9a6ffb88;
-    }
-
-    .logo-separador {
-      height: 40px;
-      user-select: none;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="separador-com-logo">
-    <div class="linha"></div>
-    <img src="assets/sua-logo.png" alt="Logo" class="logo-separador" />
-    <div class="linha"></div>
-  </div>
-
-</body>
-</html>
-
 
 </body>
 </html>
