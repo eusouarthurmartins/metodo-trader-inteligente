@@ -1012,163 +1012,188 @@
 </style> 
 -----------------------------------------------
 
-<section class="faq-mti">
-  <h2>Dúvidas Frequentes</h2>
-  <div class="faq-item">
-    <button class="faq-question">
-      <span>Preciso ter experiência para fazer o curso?</span>
-      <span class="arrow">▼</span>
-    </button>
-    <div class="faq-answer">
-      <p>Não! O <strong>MTI</strong> foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dúvidas Frequentes - MTI</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
 
-  <div class="faq-item">
-    <button class="faq-question">
-      <span>Posso acessar o curso pelo celular?</span>
-      <span class="arrow">▼</span>
-    </button>
-    <div class="faq-answer">
-      <p>Sim! Todo o conteúdo é <strong>100% online</strong> e responsivo. Você pode assistir pelo celular, computador ou tablet.</p>
-    </div>
-  </div>
+    .faq-mti {
+      max-width: 900px;
+      width: 100%;
+    }
 
-  <div class="faq-item">
-    <button class="faq-question">
-      <span>O acesso é vitalício?</span>
-      <span class="arrow">▼</span>
-    </button>
-    <div class="faq-answer">
-      <p>Sim! Depois de adquirir o <strong>MTI</strong>, o acesso é vitalício. Você pode assistir quantas vezes quiser e no seu tempo.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">
-      <span>Terei suporte para dúvidas?</span>
-      <span class="arrow">▼</span>
-    </button>
-    <div class="faq-answer">
-      <p>Com certeza! Você terá acesso a um canal exclusivo de <strong>suporte</strong> para tirar todas as dúvidas diretamente com nossa equipe.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">
-      <span>E se eu não gostar do curso?</span>
-      <span class="arrow">▼</span>
-    </button>
-    <div class="faq-answer">
-      <p>Você tem <strong>7 dias de garantia</strong> incondicional. Se não gostar do conteúdo, pode solicitar reembolso total sem burocracia.</p>
-    </div>
-  </div>
-</section>
-
-<style>
-  .faq-mti {
-    background-color: #000;
-    color: #fff;
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-  }
-
-  .faq-mti h2 {
-    color: #d4af37; /* dourado */
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid #333;
-    padding: 15px 0;
-  }
-
-  .faq-question {
-    width: 100%;
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    transition: color 0.3s ease;
-  }
-
-  .faq-question:hover {
-    color: #d4af37;
-  }
-
-  .arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    font-size: 1.3rem;
-  }
-
-  .faq-item.active .arrow {
-    transform: rotate(180deg);
-  }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 10px;
-    color: #ddd;
-    font-size: 1.1rem;
-  }
-
-  .faq-item.active .faq-answer {
-    max-height: 500px; /* ajusta conforme o conteúdo */
-    padding-top: 10px;
-  }
-
-  .faq-answer p {
-    margin: 0;
-  }
-
-  @media (max-width: 600px) {
     .faq-mti h2 {
-      font-size: 2rem;
+      color: #d4af37; /* dourado */
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #333;
+      padding: 15px 0;
     }
 
     .faq-question {
-      font-size: 1.1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: #d4af37;
+    }
+
+    .arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-size: 1.3rem;
+      user-select: none;
+    }
+
+    .faq-item.active .arrow {
+      transform: rotate(180deg);
     }
 
     .faq-answer {
-      font-size: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 10px;
+      color: #ddd;
+      font-size: 1.1rem;
     }
-  }
-</style>
 
-<script>
-  // Script para abrir/fechar as perguntas uma por vez
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      const isActive = faqItem.classList.contains('active');
+    .faq-item.active .faq-answer {
+      max-height: 500px; /* ajusta conforme o conteúdo */
+      padding-top: 10px;
+    }
 
-      // Fecha todos os itens abertos
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
+    .faq-answer p {
+      margin: 0;
+    }
 
-      // Se não estava ativo, ativa o clicado
-      if (!isActive) {
-        faqItem.classList.add('active');
+    @media (max-width: 600px) {
+      .faq-mti h2 {
+        font-size: 2rem;
       }
+
+      .faq-question {
+        font-size: 1.1rem;
+      }
+
+      .faq-answer {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="faq-mti" aria-label="Dúvidas Frequentes do Método Trader Inteligente">
+    <h2>Dúvidas Frequentes</h2>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+        <span>Preciso ter experiência para fazer o curso?</span>
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div id="faq1" class="faq-answer" hidden>
+        <p>Não! O <strong>MTI</strong> foi desenvolvido do zero ao avançado. Mesmo iniciantes conseguem acompanhar e aplicar todo o conteúdo.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+        <span>Posso acessar o curso pelo celular?</span>
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div id="faq2" class="faq-answer" hidden>
+        <p>Sim! Todo o conteúdo é <strong>100% online</strong> e responsivo. Você pode assistir pelo celular, computador ou tablet.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+        <span>O acesso é vitalício?</span>
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div id="faq3" class="faq-answer" hidden>
+        <p>Sim! Depois de adquirir o <strong>MTI</strong>, o acesso é vitalício. Você pode assistir quantas vezes quiser e no seu tempo.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+        <span>Terei suporte para dúvidas?</span>
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div id="faq4" class="faq-answer" hidden>
+        <p>Com certeza! Você terá acesso a um canal exclusivo de <strong>suporte</strong> para tirar todas as dúvidas diretamente com nossa equipe.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+        <span>E se eu não gostar do curso?</span>
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div id="faq5" class="faq-answer" hidden>
+        <p>Você tem <strong>7 dias de garantia</strong> incondicional. Se não gostar do conteúdo, pode solicitar reembolso total sem burocracia.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        const answer = faqItem.querySelector('.faq-answer');
+
+        if (isActive) {
+          faqItem.classList.remove('active');
+          button.setAttribute('aria-expanded', 'false');
+          answer.setAttribute('hidden', '');
+        } else {
+          // Fecha todas as outras
+          document.querySelectorAll('.faq-item.active').forEach(item => {
+            item.classList.remove('active');
+            item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            item.querySelector('.faq-answer').setAttribute('hidden', '');
+          });
+
+          faqItem.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          answer.removeAttribute('hidden');
+        }
+      });
     });
-  });
-</script>
+  </script>
+</body>
+</html>
 
 ----------------------------------
 <section class="compra-final">
