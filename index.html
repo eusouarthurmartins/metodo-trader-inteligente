@@ -617,7 +617,6 @@
 
   ------------------------------------------------------------------------------------------------------------------------------------------------
 <section class="descricao-mti fade-in">
-  <div class="estrelas"></div>
   <div class="descricao-container">
     <h2>Sobre o Método Trader Inteligente</h2>
     <p>
@@ -634,51 +633,17 @@
 
 <style>
   .descricao-mti {
-    position: relative;
-    overflow: hidden;
+    background: #000000;
     padding: 60px 30px;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
     border-radius: 15px;
-    color: white;
-    background: #000;
-  }
-
-  .estrelas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background: transparent;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .estrelas::before, .estrelas::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 4px 4px;
-    opacity: 0.1;
-    animation: piscar 10s linear infinite;
-  }
-
-  .estrelas::after {
-    background-size: 6px 6px;
-    opacity: 0.2;
-    animation-duration: 15s;
-  }
-
-  @keyframes piscar {
-    0% { transform: translate(0, 0); opacity: 0.1; }
-    50% { opacity: 0.3; }
-    100% { transform: translate(-50%, -50%); opacity: 0.1; }
+    box-shadow:
+      0 0 20px 5px #7b4fc133,
+      inset 0 0 30px 3px #7b4fc11a;
   }
 
   .descricao-container {
-    position: relative;
-    z-index: 1;
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
@@ -686,9 +651,9 @@
 
   .descricao-container h2 {
     font-size: 2.5rem;
-    color: #fff;
+    color: #9a6ffb;
     margin-bottom: 25px;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 20px #9a6ffb66;
   }
 
   .descricao-container p {
@@ -701,6 +666,11 @@
     color: #bb86fc;
   }
 
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   @media (max-width: 600px) {
     .descricao-container h2 {
       font-size: 2rem;
@@ -710,16 +680,8 @@
       font-size: 1.05rem;
     }
   }
-
-  .fade-in {
-    animation: fadeIn 2s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
 </style>
+
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
