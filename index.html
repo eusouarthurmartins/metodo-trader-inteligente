@@ -138,9 +138,153 @@
   }
 </style>
 
+-------------------------------------------------------------------
+
+<section class="curso-videos">
+  <div class="container">
+    <h2>Spoilers do que você vai encontrar no meu Método</h2>
+    <p>Confira alguns vídeos exclusivos que mostram o poder e a eficiência do Método Trader Inteligente.</p>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" aria-label="Vídeo anterior">&#10094;</button>
+
+      <div class="carousel">
+        <iframe src="https://www.youtube.com/embed/gaHYTomw-Yw" title="Vídeo 1" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vídeo 2" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Vídeo 3" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Vídeo 4" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/L_jWHffIx5E" title="Vídeo 5" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/uelHwf8o7_U" title="Vídeo 6" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/kJQP7kiw5Fk" title="Vídeo 7" allowfullscreen></iframe>
+      </div>
+
+      <button class="carousel-btn next" aria-label="Próximo vídeo">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .curso-videos {
+    background: #0d001a;
+    color: #fff;
+    padding: 60px 20px;
+  }
+
+  .curso-videos .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .curso-videos h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #FFD700; /* dourado brilhante */
+    margin-bottom: 15px;
+    text-shadow: 0 0 4px #a67c00;
+  }
+
+  .curso-videos p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.5s ease;
+    scroll-behavior: smooth;
+  }
+
+  .carousel iframe {
+    flex: 0 0 280px;
+    height: 160px;
+    border-radius: 15px;
+    border: 3px solid #FFD700;
+    box-shadow: 0 0 10px #a67c00aa;
+    transition: transform 0.3s ease;
+  }
+
+  .carousel iframe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffd700dd;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #FFD700;
+    border: none;
+    color: #0d001a;
+    font-size: 2.5rem;
+    font-weight: 900;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+
+  .carousel-btn:hover {
+    background: #a67c00;
+    color: #fff;
+  }
+
+  .carousel-btn.prev {
+    left: 0;
+  }
+
+  .carousel-btn.next {
+    right: 0;
+  }
+
+  @media (max-width: 600px) {
+    .curso-videos h2 {
+      font-size: 2rem;
+    }
+
+    .curso-videos p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .carousel iframe {
+      flex: 0 0 220px;
+      height: 130px;
+    }
+
+    .carousel-btn {
+      font-size: 2rem;
+      padding: 4px 12px;
+    }
+  }
+</style>
+
+<script>
+  const carousel = document.querySelector('.carousel');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const slideWidth = 305; // 280px width + 25px gap
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: slideWidth, behavior: 'smooth' });
+  });
+</script>
 
 
-
+---------------------------------------------------------------------
 ---------------------
 <!DOCTYPE html>
 <html lang="pt-br">
