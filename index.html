@@ -154,37 +154,56 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: #121212; /* fundo escuro suave, não preto total */
-      color: #fff;
+      background: #0d001a;
+      color: #ffffff;
     }
 
     .topo-frase {
-      background: #222;
+      position: relative;
+      background: linear-gradient(90deg, #d4af37 0%, #f9d71c 50%, #b8860b 100%);
       padding: 30px 20px 10px;
       text-align: center;
       font-size: 1.6rem;
       font-weight: bold;
-      color: #d4af37; /* dourado clássico */
-      text-shadow: 0 0 6px #bfa243cc;
+      color: #fff8dc; /* off-white */
+      text-shadow: 1px 1px 2px #5a4a00; /* sombra marrom suave */
+      overflow: hidden;
+      font-family: 'Arial Black', Arial, sans-serif;
+      margin-bottom: 30px;
+    }
+
+    .topo-frase::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+      opacity: 0.3;
+      z-index: 0;
+      filter: brightness(0.8);
+    }
+
+    .topo-frase > * {
+      position: relative;
+      z-index: 1;
     }
 
     .container {
       max-width: 900px;
       margin: 0 auto;
       text-align: center;
-      padding: 40px 20px;
+      padding: 0 20px 40px;
     }
 
     h1.titulo {
-      font-size: 3.6rem;
+      font-size: 3.2rem;
       font-weight: 900;
-      margin-bottom: 40px;
-      color: #ffd700; /* dourado vibrante */
-      text-shadow:
-        0 0 8px #fff3b0,
-        0 0 12px #ffd700,
-        0 0 18px #bfa243,
-        0 0 24px #d4af37;
+      margin-bottom: 30px;
+      color: #ffffff;
+      /* dourado brilhante no "Método Trader Inteligente" */
+      background: linear-gradient(90deg, #d4af37, #f9d71c, #b8860b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 3px #7a6400;
       animation: fadeSlideIn 1s ease forwards;
     }
 
@@ -193,68 +212,58 @@
       border-radius: 20px;
       overflow: hidden;
       max-width: 100%;
-      box-shadow:
-        0 0 15px #ffd700aa,
-        0 0 40px #d4af37cc;
-      animation: pulse-dourado 3s infinite;
+      box-shadow: 0 0 20px #d4af37cc;
+      animation: pulse-gold 2s infinite;
     }
 
     iframe {
       width: 100%;
-      height: 420px;
+      height: 400px;
       border: none;
     }
 
     .preco {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 3rem;
       font-weight: bold;
-      color: #ffd700;
-      text-shadow:
-        0 0 8px #fff3b0,
-        0 0 15px #d4af37;
-      animation: pulse-dourado 3s infinite;
+      color: #d4af37;
+      animation: pulse-gold 2s infinite;
     }
 
     .preco s {
-      color: #bfa243;
-      margin-right: 15px;
-      font-size: 2.2rem;
+      color: #b8860b;
+      margin-right: 10px;
+      font-size: 2rem;
       vertical-align: middle;
       text-decoration-thickness: 3px;
-      text-decoration-color: #bfa243;
+      text-decoration-color: #b8860b;
     }
 
     .botao {
-      margin-top: 30px;
-      background: linear-gradient(145deg, #ffd700, #bfa243);
-      color: #121212;
+      margin-top: 20px;
+      background: linear-gradient(90deg, #f9d71c, #d4af37, #b8860b);
+      color: #fff8dc;
       border: none;
       padding: 20px 50px;
-      border-radius: 50px;
+      border-radius: 40px;
       font-size: 1.5rem;
-      font-weight: 900;
+      font-weight: bold;
       cursor: pointer;
-      box-shadow:
-        0 0 10px #ffd700,
-        0 0 30px #d4af37;
-      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 0 20px #d4af37cc;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .botao:hover {
-      background: linear-gradient(145deg, #bfa243, #ffd700);
-      transform: scale(1.1);
-      box-shadow:
-        0 0 15px #ffd700,
-        0 0 50px #d4af37;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #f9d71ccc;
     }
 
     .frase-baixo {
-      margin-top: 25px;
-      font-size: 1.4rem;
+      margin-top: 20px;
+      font-size: 1.3rem;
       font-weight: 600;
-      color: #fff;
-      text-shadow: 0 0 8px #000000cc;
+      color: #ffffff;
+      text-shadow: 0 0 5px #000000cc;
     }
 
     .icone-whatsapp {
@@ -271,7 +280,7 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      box-shadow: 0 0 15px #128C7Ecc;
+      box-shadow: 0 0 15px #000000aa;
       z-index: 999;
       transition: transform 0.3s ease, background 0.3s ease;
     }
@@ -279,21 +288,16 @@
     .icone-whatsapp:hover {
       transform: scale(1.1);
       background: #128C7E;
-      box-shadow: 0 0 25px #128C7Ecc;
     }
 
-    @keyframes pulse-dourado {
+    @keyframes pulse-gold {
       0%, 100% {
         transform: scale(1);
-        box-shadow:
-          0 0 15px #ffd700,
-          0 0 30px #d4af37;
+        box-shadow: 0 0 20px #d4af37cc;
       }
       50% {
-        transform: scale(1.05);
-        box-shadow:
-          0 0 25px #ffd700,
-          0 0 60px #d4af37;
+        transform: scale(1.03);
+        box-shadow: 0 0 40px #f9d71ccc;
       }
     }
 
@@ -311,14 +315,15 @@
     @media (max-width: 600px) {
       .topo-frase {
         font-size: 1.2rem;
+        padding: 20px 10px 5px;
       }
 
       h1.titulo {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
       }
 
       iframe {
-        height: 240px;
+        height: 220px;
       }
 
       .preco {
@@ -331,11 +336,11 @@
 
       .botao {
         font-size: 1.2rem;
-        padding: 18px 40px;
+        padding: 15px 35px;
       }
 
       .frase-baixo {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .icone-whatsapp {
@@ -352,6 +357,11 @@
   <a class="icone-whatsapp" href="https://wa.me/5522992568259" target="_blank" title="Falar no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <!-- Frase topo com fundo imagem dourada -->
+  <div class="topo-frase">
+    O MELHOR MÉTODO PARA VOCÊ SE TORNAR UM TRADER INTELIGENTE
+  </div>
 
   <!-- Conteúdo principal -->
   <div class="container">
