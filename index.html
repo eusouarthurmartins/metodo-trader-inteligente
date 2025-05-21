@@ -169,12 +169,16 @@
     background: #f9f9f9;
     color: #333;
     padding: 50px 10px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Container do texto no topo, centralizado */
   .container-texto {
     max-width: 900px;
-    margin: 0 auto 40px;
+    width: 100%;
+    margin-bottom: 40px;
     text-align: center;
   }
 
@@ -193,20 +197,21 @@
     margin: 0 auto;
   }
 
-  /* Wrapper do carrossel com largura total */
+  /* Wrapper do carrossel com largura igual ao container texto */
   .carousel-wrapper {
     position: relative;
+    max-width: 900px;
+    width: 100%;
     overflow: hidden;
-    width: 100vw; /* largura total da viewport */
   }
 
   /* Carrossel flexível */
   .carousel {
     display: flex;
     gap: 20px;
-    padding: 0 60px; /* para os botões não sobrepor os iframes */
+    padding: 0 50px; /* espaço para os botões */
     scroll-behavior: smooth;
-    overflow-x: scroll;
+    overflow-x: auto;
     scrollbar-width: none; /* Firefox */
   }
   .carousel::-webkit-scrollbar {
@@ -253,11 +258,11 @@
   }
 
   .carousel-btn.prev {
-    left: 8px;
+    left: 10px;
   }
 
   .carousel-btn.next {
-    right: 8px;
+    right: 10px;
   }
 
   /* Responsividade */
