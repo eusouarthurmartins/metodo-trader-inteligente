@@ -154,18 +154,18 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: #0d001a;
-      color: #ffffff;
+      background: #121212; /* fundo escuro suave, não preto total */
+      color: #fff;
     }
 
     .topo-frase {
-      background: #000;
+      background: #222;
       padding: 30px 20px 10px;
       text-align: center;
       font-size: 1.6rem;
       font-weight: bold;
-      color: #FFD700;
-      text-shadow: 0 0 5px #000;
+      color: #d4af37; /* dourado clássico */
+      text-shadow: 0 0 6px #bfa243cc;
     }
 
     .container {
@@ -176,71 +176,85 @@
     }
 
     h1.titulo {
-      font-size: 3.2rem;
+      font-size: 3.6rem;
       font-weight: 900;
-      margin-bottom: 30px;
-      color: #ffffff;
-      text-shadow: 2px 2px 8px #8000ff;
+      margin-bottom: 40px;
+      color: #ffd700; /* dourado vibrante */
+      text-shadow:
+        0 0 8px #fff3b0,
+        0 0 12px #ffd700,
+        0 0 18px #bfa243,
+        0 0 24px #d4af37;
       animation: fadeSlideIn 1s ease forwards;
     }
 
     .video-pulsando {
-      border: 5px solid #8000ff;
+      border: 5px solid #d4af37;
       border-radius: 20px;
       overflow: hidden;
-      animation: pulse 2s infinite;
       max-width: 100%;
-      box-shadow: 0 0 20px #8000ff88;
+      box-shadow:
+        0 0 15px #ffd700aa,
+        0 0 40px #d4af37cc;
+      animation: pulse-dourado 3s infinite;
     }
 
     iframe {
       width: 100%;
-      height: 400px;
+      height: 420px;
       border: none;
     }
 
     .preco {
-      margin-top: 30px;
+      margin-top: 40px;
       font-size: 3rem;
       font-weight: bold;
-      color: #FFD700;
-      animation: pulse-roxo 2s infinite;
+      color: #ffd700;
+      text-shadow:
+        0 0 8px #fff3b0,
+        0 0 15px #d4af37;
+      animation: pulse-dourado 3s infinite;
     }
 
     .preco s {
-      color: #d4af37;
-      margin-right: 10px;
-      font-size: 2rem;
+      color: #bfa243;
+      margin-right: 15px;
+      font-size: 2.2rem;
       vertical-align: middle;
       text-decoration-thickness: 3px;
-      text-decoration-color: #d4af37;
+      text-decoration-color: #bfa243;
     }
 
     .botao {
-      margin-top: 20px;
-      background: #8000ff;
-      color: white;
+      margin-top: 30px;
+      background: linear-gradient(145deg, #ffd700, #bfa243);
+      color: #121212;
       border: none;
-      padding: 15px 35px;
-      border-radius: 40px;
-      font-size: 1.2rem;
-      font-weight: bold;
+      padding: 20px 50px;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      font-weight: 900;
       cursor: pointer;
-      animation: pulse-roxo 2s infinite;
-      transition: transform 0.3s ease;
+      box-shadow:
+        0 0 10px #ffd700,
+        0 0 30px #d4af37;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .botao:hover {
-      transform: scale(1.05);
-      background: #a64dff;
+      background: linear-gradient(145deg, #bfa243, #ffd700);
+      transform: scale(1.1);
+      box-shadow:
+        0 0 15px #ffd700,
+        0 0 50px #d4af37;
     }
 
     .frase-baixo {
-      margin-top: 20px;
-      font-size: 1.3rem;
+      margin-top: 25px;
+      font-size: 1.4rem;
       font-weight: 600;
-      color: #ffffff;
-      text-shadow: 0 0 5px #000000cc;
+      color: #fff;
+      text-shadow: 0 0 8px #000000cc;
     }
 
     .icone-whatsapp {
@@ -257,7 +271,7 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      box-shadow: 0 0 15px #000000aa;
+      box-shadow: 0 0 15px #128C7Ecc;
       z-index: 999;
       transition: transform 0.3s ease, background 0.3s ease;
     }
@@ -265,27 +279,21 @@
     .icone-whatsapp:hover {
       transform: scale(1.1);
       background: #128C7E;
+      box-shadow: 0 0 25px #128C7Ecc;
     }
 
-    @keyframes pulse {
+    @keyframes pulse-dourado {
       0%, 100% {
         transform: scale(1);
-        box-shadow: 0 0 15px #8000ff;
-      }
-      50% {
-        transform: scale(1.03);
-        box-shadow: 0 0 30px #8000ff;
-      }
-    }
-
-    @keyframes pulse-roxo {
-      0%, 100% {
-        transform: scale(1);
-        text-shadow: 0 0 10px #8000ff;
+        box-shadow:
+          0 0 15px #ffd700,
+          0 0 30px #d4af37;
       }
       50% {
         transform: scale(1.05);
-        text-shadow: 0 0 25px #a64dff;
+        box-shadow:
+          0 0 25px #ffd700,
+          0 0 60px #d4af37;
       }
     }
 
@@ -306,11 +314,11 @@
       }
 
       h1.titulo {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
       }
 
       iframe {
-        height: 220px;
+        height: 240px;
       }
 
       .preco {
@@ -322,12 +330,12 @@
       }
 
       .botao {
-        font-size: 1rem;
-        padding: 12px 25px;
+        font-size: 1.2rem;
+        padding: 18px 40px;
       }
 
       .frase-baixo {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
 
       .icone-whatsapp {
@@ -344,7 +352,6 @@
   <a class="icone-whatsapp" href="https://wa.me/5522992568259" target="_blank" title="Falar no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
-
 
   <!-- Conteúdo principal -->
   <div class="container">
@@ -372,6 +379,7 @@
 </html>
 
 
+---------------------------------
 
 <!DOCTYPE html>
 <html lang="pt-br">
