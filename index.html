@@ -1,6 +1,5 @@
 <section class="hero">
   <div class="banner">
-    <!-- Removi a div smoke para deixar a imagem limpa -->
     <img src="assets/banner-exemplo.jpg" alt="Banner Completo" class="banner-img" />
     <div class="content">
       <div class="title-container">
@@ -19,7 +18,7 @@
   .hero {
     position: relative;
     width: 100%;
-    height: 1000px; /* altura aumentada para 1000px */
+    height: 1000px;
     overflow: hidden;
   }
 
@@ -28,8 +27,6 @@
     width: 100%;
     height: 100%;
   }
-
-  /* Removi o overlay da fumaça e do gradiente inferior */
 
   .banner-img {
     width: 100%;
@@ -43,10 +40,9 @@
     top: 50%;
     left: 10%;
     transform: translateY(-50%);
-    color: #bfa76a; /* dourado suave para o texto */
+    color: white; /* texto branco */
     max-width: 450px;
     z-index: 10;
-    /* removi text-shadow para visual mais clean */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
@@ -62,7 +58,6 @@
     width: 60px;
     height: 60px;
     object-fit: contain;
-    /* removi drop-shadow para visual clean */
     animation: floatCoin 4s ease-in-out infinite;
     z-index: 12;
   }
@@ -70,31 +65,36 @@
   .content h1 {
     font-size: 3rem;
     margin: 0;
-    color: #a68540; /* tom dourado mais escuro para o título */
+    /* dourado brilhante com gradiente para brilho metálico */
+    background: linear-gradient(45deg, #FFD700, #FFC200, #FFB700, #FFD54F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 900;
   }
 
   .content p {
     font-size: 1.3rem;
     margin-bottom: 30px;
     font-weight: 500;
-    color: #bfa76a; /* dourado suave para o texto */
   }
 
   button {
-    padding: 18px 50px;
-    font-size: 1.3rem;
-    background-color: #bfa76a; /* dourado barra de ouro */
+    padding: 22px 60px; /* botão maior */
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #FFD700, #FFC200, #FFB700, #FFD54F);
     border: none;
     border-radius: 30px;
-    color: white;
+    color: #3b2e00; /* dourado escuro para contraste */
     cursor: pointer;
-    box-shadow: none; /* sem brilho */
-    transition: background-color 0.3s ease;
-    font-weight: 600;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
+    transition: background 0.3s ease;
   }
 
   button:hover {
-    background-color: #a68540; /* dourado mais escuro no hover */
+    background: linear-gradient(45deg, #FFC200, #FFB700, #FFD700, #FFF176);
   }
 
   @keyframes floatCoin {
@@ -132,11 +132,12 @@
     }
 
     button {
-      padding: 16px 40px;
-      font-size: 1.1rem;
+      padding: 18px 50px;
+      font-size: 1.3rem;
     }
   }
 </style>
+
 
 
 
