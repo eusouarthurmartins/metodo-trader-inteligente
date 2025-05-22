@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oferta Especial - MTI Downsell</title>
+  <style>
+    /* Fundo com a imagem */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('assets/fundomti1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .overlay {
+      background: rgba(0,0,0,0.75);
+      flex-grow: 1;
+      padding: 40px 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+      text-shadow: 0 0 5px #ffd700;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    /* Hotmart widget container */
+    #hotmart-sales-funnel {
+      margin-bottom: 40px;
+    }
+
+    /* Contador regressivo */
+    .countdown {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ff4500;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #ff4500;
+    }
+
+    /* Vídeo responsivo */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+      margin-bottom: 40px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    /* WhatsApp flutuante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      z-index: 9999;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Oferta Especial - MTI</h1>
+    <p>Eu sei que você está em dúvida, e por isso quero te oferecer essa oportunidade única.<br>
+    Por favor, não saia dessa página.<br><br>
+    Por apenas <strong>R$ 99,99</strong> você leva para casa o MTI, o melhor método do mercado de opções binárias!</p>
+
+    <div class="countdown" id="countdown">15:00</div>
+
+    <!-- Hotmart Sales Funnel Widget -->
+    <div id="hotmart-sales-funnel"></div>
+
+    <!-- Vídeo YouTube -->
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/seu_codigo_de_video" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/5522992568259?text=Ol%C3%A1%2C+quero+saber+mais+sobre+a+oferta+do+MTI+-+M%C3%A9todo+Trader+Inteligente%21" target="_blank" aria-label="Fale conosco no WhatsApp" class="whatsapp-float">
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+      <circle cx="12" cy="12" r="12" fill="#25D366"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.149-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.371-.025-.52-.075-.148-.672-1.611-.92-2.204-.242-.579-.487-.5-.672-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.709.306 1.26.489 1.69.625.71.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347z" fill="#fff"/>
+    </svg>
+  </a>
+
+  <!-- Hotmart Widget Script -->
+  <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+  <script>
+    checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+  </script>
+
+  <!-- Script contador regressivo -->
+  <script>
+    let timerDuration = 15 * 60; // 15 minutos em segundos
+    const countdownElement = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const minutes = Math.floor(timerDuration / 60);
+      const seconds = timerDuration % 60;
+      countdownElement.textContent = 
+        `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+      
+      if (timerDuration > 0) {
+        timerDuration--;
+        setTimeout(updateCountdown, 1000);
+      } else {
+        countdownElement.textContent = "Tempo esgotado!";
+      }
+    }
+
+    updateCountdown();
+  </script>
+</body>
+</html>
