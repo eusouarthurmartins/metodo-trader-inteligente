@@ -147,9 +147,12 @@
 
 
 
-<!-- Ícone flutuante do WhatsApp com mensagem personalizada -->
-<a class="whatsapp-float" href="https://wa.me/5522992568259?text=Ol%C3%A1%2C+acabei+de+ver+sua+oferta+e+quero+saber+mais+sobre+o+MTI+-+M%C3%A9todo+Trader+Inteligente%21" target="_blank" aria-label="Fale conosco no WhatsApp">
-  <img src="https://cdn.jsdelivr.net/gh/rafaelalmeidatk/cdn/whatsapp-icon.png" alt="WhatsApp">
+<!-- Ícone flutuante do WhatsApp com SVG verde oficial -->
+<a href="https://wa.me/5522992568259?text=Ol%C3%A1%2C+acabei+de+ver+sua+oferta+e+quero+saber+mais+sobre+o+MTI+-+M%C3%A9todo+Trader+Inteligente%21" target="_blank" aria-label="Fale conosco no WhatsApp" class="whatsapp-float">
+  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+    <circle cx="12" cy="12" r="12" fill="#25D366"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.149-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.371-.025-.52-.075-.148-.672-1.611-.92-2.204-.242-.579-.487-.5-.672-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.709.306 1.26.489 1.69.625.71.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347z" fill="#fff"/>
+  </svg>
 </a>
 
 <style>
@@ -157,18 +160,14 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    width: 60px;
+    height: 60px;
     z-index: 9999;
-  }
-
-  .whatsapp-float img {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px #25d366;
+    cursor: pointer;
     transition: transform 0.3s ease;
   }
-
-  .whatsapp-float img:hover {
+  .whatsapp-float:hover {
     transform: scale(1.1);
   }
 </style>
+
