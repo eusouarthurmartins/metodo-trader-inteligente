@@ -1,33 +1,106 @@
-<section class="upsell-mensagem">
-  <h2>🎉 Parabéns por adquirir o <span class="destaque">Código da Alavancagem</span>!</h2>
-  <p>Você acaba de dar um passo importante, mas se você realmente quer dominar o mercado de opções binárias, o caminho ideal é o <strong>MTI - Método Trader Inteligente</strong>.</p>
-  <p>O MTI é um treinamento completo que te ensina absolutamente tudo: das estratégias mais simples às técnicas avançadas usadas pelos traders profissionais. O próprio nome já diz: <strong>Operar de forma inteligente</strong>!</p>
-  <p>No MTI, você vai aprender todas as técnicas para lucrar de forma consistente no mercado. É o método que transforma iniciantes em operadores de verdade!</p>
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oferta Especial MTI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: #000 url('https://your-image-link.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
 
-<section class="depoimentos-mti" style="background: #111; color: #fff; padding: 40px 20px;">
-  <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">O que dizem os alunos do MTI:</h3>
-  <div class="depoimentos-container" style="display: grid; gap: 20px; max-width: 900px; margin: 0 auto;">
-    <div class="depoimento" style="background: #1a1a1a; padding: 20px; border-radius: 10px;">
-      <p>🔥 "Com o MTI, eu finalmente entendi como o mercado funciona. Tive meu primeiro mês positivo depois de anos tentando sozinho!"</p>
-      <p style="font-weight: bold; margin-top: 10px;">– Lucas M.</p>
-    </div>
-    <div class="depoimento" style="background: #1a1a1a; padding: 20px; border-radius: 10px;">
-      <p>📈 "O curso é muito direto ao ponto, sem enrolação. Aprendi mais em uma semana de MTI do que em meses de vídeos aleatórios no YouTube."</p>
-      <p style="font-weight: bold; margin-top: 10px;">– Ana Paula T.</p>
-    </div>
-    <div class="depoimento" style="background: #1a1a1a; padding: 20px; border-radius: 10px;">
-      <p>💰 "Investimento mais inteligente que fiz. Hoje eu opero com confiança e consistência. MTI vale cada centavo!"</p>
-      <p style="font-weight: bold; margin-top: 10px;">– Renan S.</p>
+    .overlay {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .depoimentos {
+      background: #111;
+      border: 1px solid #ffd70066;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+
+    .depoimento {
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #ddd;
+    }
+
+    .widget-container {
+      margin-top: 40px;
+    }
+
+    /* Botão de estilo personalizado como fallback */
+    .botao {
+      background: #ffd700;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ffd70099;
+      transition: transform 0.3s ease;
+    }
+
+    .botao:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Parabéns por adquirir o Código da Alavancagem!</h1>
+      <p>
+        O Código da Alavancagem é um produto incrível, mas se você quer entender absolutamente TUDO sobre o mercado e aprender a operar de forma inteligente, o <strong>MTI – Método Trader Inteligente</strong> é pra você.<br><br>
+        Como o próprio nome já diz: é o método para operar do jeito certo. Aqui você vai aprender todas as técnicas que realmente funcionam para lucrar com consistência!
+      </p>
+
+      <div class="depoimentos">
+        <h2 style="color:#ffd700;">O que dizem sobre o MTI:</h2>
+        <div class="depoimento">"O MTI mudou completamente minha forma de operar. Hoje tenho confiança e consistência nos meus trades!" – <strong>Lucas S.</strong></div>
+        <div class="depoimento">"Já fiz vários cursos, mas nenhum é tão direto e completo quanto o MTI. Vale cada centavo." – <strong>Ana Paula T.</strong></div>
+        <div class="depoimento">"Com o MTI, finalmente entendi como o mercado realmente funciona. Gratidão!" – <strong>Thiago R.</strong></div>
+      </div>
+
+      <div class="widget-container">
+        <!-- HOTMART - Sales Funnel Widget -->
+        <div id="hotmart-sales-funnel"></div>
+
+        <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+        <script>
+          checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+        </script>
+        <!-- HOTMART - Sales Funnel Widget -->
+      </div>
     </div>
   </div>
-</section>
-
-<!-- HOTMART - Sales Funnel Widget -->
-<div id="hotmart-sales-funnel"></div>
-
-<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
-<script>
-  checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
-</script>
-<!-- HOTMART - Sales Funnel Widget -->
+</body>
+</html>
