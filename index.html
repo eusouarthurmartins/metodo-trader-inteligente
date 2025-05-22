@@ -2,14 +2,14 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Oferta Especial MTI</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       color: white;
-      background: #000 url('https://your-image-link.jpg') no-repeat center center fixed;
+      background: #000 url('assets/fundomti1.jpg') no-repeat center center fixed;
       background-size: cover;
     }
 
@@ -55,22 +55,34 @@
       margin-top: 40px;
     }
 
-    /* Botão de estilo personalizado como fallback */
-    .botao {
-      background: #ffd700;
-      color: #000;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2rem;
+    .contador {
+      font-size: 2rem;
       font-weight: bold;
+      color: #ffd700;
+      background: #111;
       border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #ffd70099;
-      transition: transform 0.3s ease;
+      padding: 10px 20px;
+      display: inline-block;
+      margin: 20px 0;
+      box-shadow: 0 0 10px #ffd700aa;
     }
 
-    .botao:hover {
-      transform: scale(1.05);
+    .video-container {
+      margin-top: 40px;
+      border: 2px solid #ffd70055;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 400px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .contador { font-size: 1.5rem; }
+      .video-container iframe { height: 250px; }
     }
   </style>
 </head>
@@ -83,6 +95,15 @@
         Como o próprio nome já diz: é o método para operar do jeito certo. Aqui você vai aprender todas as técnicas que realmente funcionam para lucrar com consistência!
       </p>
 
+      <!-- CONTADOR REGRESSIVO -->
+      <div id="contador" class="contador">15:00</div>
+
+      <!-- VÍDEO YOUTUBE -->
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="MTI Vídeo" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- DEPOIMENTOS -->
       <div class="depoimentos">
         <h2 style="color:#ffd700;">O que dizem sobre o MTI:</h2>
         <div class="depoimento">"O MTI mudou completamente minha forma de operar. Hoje tenho confiança e consistência nos meus trades!" – <strong>Lucas S.</strong></div>
@@ -90,17 +111,35 @@
         <div class="depoimento">"Com o MTI, finalmente entendi como o mercado realmente funciona. Gratidão!" – <strong>Thiago R.</strong></div>
       </div>
 
-      <div class="widget-container">
-        <!-- HOTMART - Sales Funnel Widget -->
-        <div id="hotmart-sales-funnel"></div>
-
-        <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
-        <script>
-          checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
-        </script>
-        <!-- HOTMART - Sales Funnel Widget -->
-      </div>
+      <!-- HOTMART - Sales Funnel Widget -->
+      <div id="hotmart-sales-funnel" class="widget-container"></div>
+      <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+      <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+      </script>
     </div>
   </div>
+
+  <!-- SCRIPT DO CONTADOR REGRESSIVO -->
+  <script>
+    let tempo = 15 * 60; // 15 minutos em segundos
+    const contadorEl = document.getElementById("contador");
+
+    function atualizarContador() {
+      const minutos = Math.floor(tempo / 60);
+      const segundos = tempo % 60;
+      contadorEl.textContent = 
+        `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+      tempo--;
+
+      if (tempo >= 0) {
+        setTimeout(atualizarContador, 1000);
+      } else {
+        contadorEl.textContent = "00:00";
+      }
+    }
+
+    atualizarContador();
+  </script>
 </body>
 </html>
