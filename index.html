@@ -147,12 +147,28 @@
 
 
 
-<!-- Ícone flutuante do WhatsApp -->
-<a href="https://wa.me/5522992568259?text=Ol%C3%A1%2C+tenho+interesse+no+MTI+-+M%C3%A9todo+Trader+Inteligente!" 
-   target="_blank" 
-   style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-  <img src="https://cdn.jsdelivr.net/gh/rafaelalmeidatk/cdn/whatsapp-icon.png" 
-       alt="WhatsApp" 
-       style="width: 65px; height: 65px; box-shadow: 0 0 15px #ffd700bb; border-radius: 50%;">
+<!-- WhatsApp Flutuante -->
+<a class="whatsapp-float" href="https://wa.me/5522992568259?text=Ol%C3%A1%2C+quero+falar+com+voc%C3%AA%21" target="_blank">
+  <img src="https://cdn.jsdelivr.net/gh/rafaelalmeidatk/cdn/whatsapp-icon.png" alt="WhatsApp">
 </a>
 
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+
+  .whatsapp-float img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #25d366;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float img:hover {
+    transform: scale(1.1);
+  }
+</style>
